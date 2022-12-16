@@ -1,0 +1,9 @@
+#Verificar a versão do NGINX
+$ nginx -v
+---------------------------------
+#Testar a conexão
+$ sudo nginx -t
+-------------------
+#Reload a máquina
+$ sudo nginx -s reload
+ 

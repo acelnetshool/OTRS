@@ -1,0 +1,10 @@
+1. DESPISTE: ZAP BO 
+
+
+1. IPTV >> Troubleshooting >> IPTV STATUS: Conta de Serviços - Ex: 210736590101
+R: Verificar se a stb perde a comunicação, volta a comunicar, volta a perder continuamente.
+
+2.ManifestProxy
+R: Analisar pedidos de sintonização para o live se bate no mesmo canal vezes n vezes sem conta.
+Ex: Channel: 2280 e as requisições
+

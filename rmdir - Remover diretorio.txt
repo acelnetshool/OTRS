@@ -1,0 +1,4 @@
+#Remover diretorio
+
+$ rmdir ssh_gitlab.txt -> Se estiver vazio
+$ rm -rf ssh_gitlab.txt ->Se estiver protegigo contra leitura

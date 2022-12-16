@@ -1,0 +1,60 @@
+#chmod: server para alterar as permissões de arquivos
+
+Nota: Um arquivo tem sempre três tipos de permissões:
+
+r = read/leitura = 4
+w = write/escrita = 2
+x = Execute/Executar = 1
+
+rwx = leitura, escrita, executar = 4+2+1 = 7
+
+(-rw):dono (-rw-):grupo (r--):outros. 1 acaluege acaluege 0 Sep 16 09:42 pessoas
+
+----------------------------
+Permissões Binario
+
+111 1= Ligado  / 0 = desligado
+
+--x   Converter em binario
+001 	= 		1
+
+-w-
+010 	= 		2
+
+r--
+100 	= 		4
+
+---------------------------------------------
+rw-  = Dar permissão de Leitura e Escrita para o usuario:
+110 = 4+2+0=6
+----------------------------------------------------------
+rwx  = Dar todas permissões para o usuario:
+111 = 4+2+1=7
+----------------------------------------------------------
+
+-----------------------------------------
+[root@naemon ~]# chmod --help
+
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+  -c, --changes          like verbose but report only when a change is made
+  -f, --silent, --quiet  suppress most error messages
+  -v, --verbose          output a diagnostic for every file processed
+      --no-preserve-root  do not treat '/' specially (the default)
+      --preserve-root    fail to operate recursively on '/'
+      --reference=RFILE  use RFILE's mode instead of MODE values
+  -R, --recursive        change files and directories recursively
+      --help     display this help and exit
+      --version  output version information and exit
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/chmod>
+or available locally via: info '(coreutils) chmod invocation'
+----------------------------------------------------------
+

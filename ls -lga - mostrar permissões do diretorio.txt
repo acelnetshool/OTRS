@@ -1,0 +1,32 @@
+ls -lga: ilustra as permissões de um directorio ou arquivo
+---------------
+[root@naemon ~]# ls -lga
+
+total 60
+dr-xr-x---.  6 root   233 Sep 13 05:32 .
+dr-xr-xr-x. 17 root   224 Jun  2 09:19 ..
+-rw-------.  1 root  1244 Jun  1 17:16 anaconda-ks.cfg
+-rw-------.  1 root 14659 Sep 12 21:40 .bash_history
+-rw-r--r--.  1 root    18 Mar 14  2021 .bash_logout
+-rw-r--r--.  1 root   176 Mar 14  2021 .bash_profile
+-rw-r--r--.  1 root   193 Sep  6 18:06 .bashrc
+drwx------.  3 root    17 Jun  2 09:31 .cache
+-rw-r--r--.  1 root   100 Mar 14  2021 .cshrc
+drwxr-xr-x.  3 root    22 Sep 12 10:50 .esmtp_queue
+drwxr-xr-x.  7 root   119 Jun  2 15:48 .git
+-rw-r--r--.  1 root 13754 Sep 12 15:47 install_nrpe.sh
+drwx------.  2 root    25 Sep 13 05:33 .ssh
+-rw-r--r--.  1 root   129 Mar 14  2021 .tcshrc
+-rw-r--r--.  1 root    80 Sep  6 19:02 teste.txt
+------------------------------------
+Prmissões:
+-rw:raiz "dono principal do arquivo"
+-rw-rw-"sub-pasta dono secundario do arquivo"
+-rw-rw-r--"criador do ficheiro "r--" dentro da subpasta"
+
+r = leitura =4
+write = escrita=2
+x = executar = 1
+
+rwx = leitura, escrita, executar = 4+2+1=7
+

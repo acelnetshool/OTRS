@@ -1,0 +1,77 @@
+Problemas Interatividade IRIS
+--------------------------------------------
+
+Descrição Geral
+
+Funcionalidades
+-RestartTV - Recomeçar um conteúdo que esta a passar agora
+-nPVR - Capacidade de gravar e ver conteudos gravados
+-Timewarp - Visualizar um conteúdo que deu nos últimos 7 dias
+-VOD - Video on Demand / VideoClube
+
+Problemas
+
+1. Não obtém EPG
+2. Não consegue fazer RestartTV ou ver conteúdos do VideoClube (ERRO:05 ou ecrã preto)
+3. Não aparece a opção de fazer RestarTV no EPG
+4. Cliente alega que não conseguiu visualizar um filme do VideoClube
+5. Não acede ás APPS
+
+Diagnosticos
+
+- Não obtém EPG
+​- As STB’s não obtêm EPG em 2 casos:
+
+1. Perde conectividade com a ZAP
+2. Existe um problema nas plataformas de serviço
+
+Para despiste deve-se:
+
+1. Verificar se caixa fez pedidos aos servidores IRIS nas últimas horas (Elasticsearch, index irisfe-*).
+2. Caso negativo, caixa deixou de contactar servidores da ZAP. Normalmente problema de conectividade do cliente.
+3. Pedir para fazer reset de fábrica, confirmar cabos, e confirmar que luz ETH aparece ligada na STB.
+4. Verificar se caixa aparece ligada ao HG(via cabo).
+5. Verificar no JRMS se macaddress da caixa se encontra ligado ao Home Gateway.
+6. Verificar se existem mais ocorrências para o mesmo problema e encaminhar para Integração.
+7. Caso exista um número considerável de reclamações do mesmo tipo, deve ser contactado imediatamente um membro da equipa de Integração
+8. Não consegue fazer RestartTV ou ver conteúdos do VideoClube
+
+*****Para despiste de problemas relacionados com RestartTV/Timewarp/VOD:
+
+1. Verificar últimos pedidos do cliente (Elasticsearch, index: rtsp-*)
+
+Os estados podem ser:
+
+- Failed - Caixa enviou cancelamento de visualização por não conseguir sintonizar o conteúdo.
+- NOTFND - O Conteúdo que o cliente tentou visualizar não existe (contactar Integração).
+- NOTEBA - Problemas de largura de banda na rede do cliente (necessária expansão de rede).
+- ROTARION - Caixa tenta fazer o mesmo pedido novamente (normalmente por problemas de sinal).
+- OK - Sessão iniciada sem problemas
+
+Para problemas de Failed, confirmar com o cliente: ​
+
+- Valor de Sinal - deve ser entre 60 e 76.
+- BER - tem de ser entre E-9 e E-7
+- Service Group: deve estar num destes Service Group (SG10 - SG12 - SG14 - SG16 - SG18 - SG20 - SG22 - SG24 - SG26 - SG28 - SG44 - SG42 - SG40 - SG38 - SG36 - SG34 - SG32 - SG30) e deve ser o mesmo que aparece no ftthStatustem de ser entre 1 a 4, e deve ser o mesmo que aparece no ftthStatus
+- Valores fora deste parâmetro, devem ser encaminhados para equipa técnica Caso problema se verifique apenas em uma das caixas do cliente, convém confirmar se os valores de sinal são coerentes em todas as caixas.
+- Como complemento aos despistes já mencionados, deverão usar o ZAPBOX, aa qual se consegue ter um resumo do estado da STB, a opção está disponível através do FTTH status conforme imagem”
+
+Cliente alega que não conseguiu visualizar um filme do VideoClube
+
+Para reclamações de cliente que alega não ter visualizado filme:
+
+1. Verificar em ZW data de compra do conteúdo
+2. Consultar: http://10.151.13.15/phalcon/search/clientView
+3. Pesquisar usando conta de serviço
+4. Verificar para o conteúdo/data
+5. Se aparece com OK e se tem um numero em segundos considerável para se considerar visualização, (Normalmente consideramos mais de 5 minutos/300 segundos)
+6. Se aparecer outros erros, sem nenhuma tentativa com sucesso, então consideramos que não visualizou.
+
+Não acede ás APPS
+
+Cliente não acede a APP:
+
+1. Verificar se APP se encontra disponível (http://10.151.8.129/tvapps/apps/selfcare/index.html?service_id=vod&boxId=34:7a:60:27:8a:1b)
+2. Substituir o MacAddress pelo que aparece em ZW.
+3. Caso esteja OK, pedir para fazer reset á STB
+4. Caso não esteja OK, contactar Desenvolvimento DESI para correção de possível BUG

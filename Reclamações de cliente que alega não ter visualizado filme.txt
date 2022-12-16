@@ -1,0 +1,10 @@
+Para reclamações de cliente que alega não ter visualizado filme:
+-------------------------------------------------------
+1.	Verificar em ZW data de compra do conteúdo
+------> Clicar na bolsa de pontos
+2.	Consultar: http://10.151.13.15/phalcon/search/clientView
+3.	Pesquisar usando conta de serviço
+4.	Verificar para o conteúdo/data
+----------------------------------------------
+1.	Se aparece com OK e se tem um numero em segundos considerável para se considerar visualização, (Normalmente consideramos mais de 5 minutos/300 segundos)
+2.	Se aparecer outros erros, sem nenhuma tentativa com sucesso, então consideramos que não visualizou.

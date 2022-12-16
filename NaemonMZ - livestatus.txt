@@ -1,0 +1,23 @@
+# Livestatus-log
+
+1.
+
+cd /var/log/naemon
+
+2.
+
+ll -h
+
+3.
+/var/log/naemon/livestatus/*.log { 
+compress 
+missingok 
+weekly 
+copytruncate 
+rotate 4 
+notifempty 
+dateext 
+dateformat -%Y-%m-%d
+}
+Reload ao Naemon
+

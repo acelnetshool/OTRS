@@ -1,0 +1,4 @@
+#STB: Troca de canal aleatoriamente não apresenta a imagem e desliga-se por si.
+
+- Deve-se analisar os intervalos e no manifestproxy se estiver tudo OK
+é importante verificar se o comando esta preso "botoes".

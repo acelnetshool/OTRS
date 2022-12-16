@@ -1,0 +1,6 @@
+# Nota:IRIS/Informação Carlos Peixoto
+===========================================
+A STB da bancada está na v4, fácil de identificar pois no VOD aparece o "Tellas" no Videoclube.
+
+===========================================
+Se forem necessários testes em produção, peçam para tirar e meter em prod

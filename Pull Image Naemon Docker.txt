@@ -1,0 +1,35 @@
+# Baixar uma imagem e colocar na porta 8091
+docker run --name nagiosteste -d -p 8091:80 xetusoss/naemon
+
+---------
+#Docker logs
+[root@naemon ~]# docker logs angola
+
+--------------------------------
+#Procurar imagens nos containers
+[root@naemon ~]# docker search ubuntu
+
+------------------------------
+#atribuir a porta do Ubuntu
+[root@naemon ~]# docker run -d --name naemon-container -e TZ=UTC -p 8091:80 ubuntu/nginx:1.18-22.04_beta
+
+-------------------------
+Parametros:
+-e TZ=UTC --------------> Timezone.
+-p 8080:80 ------------->Expose Nginx on localhost:8080.
+v /local/path/to/website:/var/www/html ----->Mount and serve a local website.
+-v /path/to/conf.template:/etc/nginx/templates/conf.template ----->Mount template files inside /etc/nginx/templates. They will be processed and the results will be placed at /etc/nginx/conf.d. (e.g. listen ${NGINX_PORT}; will generate listen 80;).
+-v /path/to/nginx.conf:/etc/nginx/nginx.conf --->Local configuration file nginx.conf (try this example).
+
+-----------------------------
+#Testar o debug do Log do container
+docker logs -f nginx-container
+
+-------------------------
+#To get an interactive shell:
+docker exec -it nginx-container /bin/bash
+----------------------------------
+1.[root@naemon ~]# docker run --name centos1 -d -p 8091:80 dokken/centos-7
+
+2.[root@naemon ~]# docker exec -it centos1 /bin/bash
+

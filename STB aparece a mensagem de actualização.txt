@@ -1,0 +1,9 @@
+ Cliente informa que está a mais de 1 semana que a STB aparece a mensagem de actualização
+ficou um bom tempo se carregar, quando clica em actualizar a STB aparece mensagem de erro
+não processa, as vezes aparece o erro -1000 ou -7
+-------------------------------------------------------
+Despiste:
+1. Verificar Kibana versão do OTN
+2. Verificar no manifetproxy a sintonização
+3. Verificar a atualização do HGW
+4. Verificar a configuração do HGW se esta em modo bridge (Ativado ou desativado)?

@@ -1,0 +1,101 @@
+# Uninstall old versions
+$ sudo dnf remove docker docker-latest docker-engine docker-client docker-common docker-client-latest docker-logrotate docker-latest-logrotate
+
+# Installing Docker
+$ sudo dnf check-update
+
+$ sudo dnf upgrade
+
+# Set up the repository
+
+$ sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+# Install Docker Engine
+$ sudo dnf install docker-ce --nobest --allowerasing -y
+
+$ sudo systemctl start docker
+
+$ sudo systemctl status docker
+
+$ sudo systemctl enable docker
+
+# Usage of the Docker Command-line Utility
+$ docker [option] [command] [arguments]
+
+$ docker
+
+# Work with Docker Images
+$ sudo docker run hello-world
+
+$ sudo docker search centos
+
+$ sudo docker pull centos
+
+$ sudo docker run centos
+
+$ sudo docker images
+
+# Running a Docker Container
+$ sudo docker run -it centos
+
+# dnf install @mysql
+
+# Committing Changes
+
+# exit
+$ sudo docker commit -m "changes that you made" -a "Author Name" container-id repository/new_image_name
+
+“-m” is for commit message that explains what you did and what changes did you made,
+“-a” is for the Author name who is committing these changes,
+“Container-id” is the ID of the container that we have just seen in the Container shell,
+At last, provide the “repository name.” The repository name can any new name that you want to give; it is a new image name.
+
+For example:
+$ sudo docker commit -m "added MySQL" -a "John Doe" 163e7ed6525f centos
+
+$ sudo docker images
+
+# Listing Docker Containers
+$ sudo docker ps
+
+$ sudo docker ps -a
+
+$ sudo docker stop container-id
+
+# Pushing Docker Image
+$ docker login -u docker-registry-username
+
+$ docker push docker-registry-username/docker-image-name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

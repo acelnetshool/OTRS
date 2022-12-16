@@ -1,0 +1,107 @@
+# If you don't know how to configure SElinux, put it in permissive mode:
+sudo sed -i "s/SELINUX=enforcing/SELINUX=permissive/" /etc/selinux/config
+sudo setenforce 0
+
+# First install the repositories needed for this setup
+sudo rpm -Uvh "https://labs.consol.de/repo/stable/rhel8/i386/labs-consol-stable.rhel8.noarch.rpm"
+
+# Enable EPEL
+## RHEL/CentOS 8:
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+## CentOS Stream 8:
+sudo dnf install -y epel-release
+
+# Install dependency packages
+
+sudo yum install -y git acl mod_ssl git python36 python36-devel python3-pip python3-setuptools
+sudo pip3 install --upgrade pip
+
+# Install Naemon / Thruk
+sudo yum install -y naemon
+sudo systemctl enable naemon httpd
+sudo systemctl start naemon httpd
+sudo firewall-cmd --add-service=https --add-service=http --permanent
+sudo chown -R naemon:naemon /etc/naemon
+sudo chmod -R 775 /etc/naemon
+sudo chmod g+s /etc/naemon
+
+# Move livestatus broker location so Pynag can find it
+cat /etc/naemon/module-conf.d/livestatus.cfg >> /etc/naemon/naemon.cfg
+sudo mv /etc/naemon/module-conf.d/livestatus.cfg /etc/naemon/module-conf.d/livestatus.cfg.d
+sudo systemctl restart naemon
+
+# Lets make sure Adagios can write to Naemon configuration files, and that
+# it is a valid git repo so we have audit trail
+cd /etc/naemon/
+git init
+git config user.name "Adagios"
+git config user.email "adagios@opensource.is"
+git add .
+git commit -a -m "Initial commit"
+
+## Install Adagios
+sudo git clone -b master --depth 1 https://gitlab.com/prodrigues1990/adagios.git /opt/adagios
+
+sudo groupadd --system adagios
+sudo adduser --system -g adagios adagios
+sudo usermod -aG naemon adagios
+sudo chown --recursive adagios:adagios /opt/adagios/
+
+## Configure Adagios
+
+sudo mkdir -p /etc/adagios/conf.d /var/lib/adagios /etc/naemon/adagios
+sudo cp /opt/adagios/adagios/etc/adagios/adagios.conf /etc/adagios/adagios.conf
+sudo sed -i '
+    s|/nagios|/naemon|g
+    s|"nagios"|"naemon"|g
+    s|# ALLOWED_HOSTS|ALLOWED_HOSTS|g
+    s|"/usr/sbin/naemon"|"/usr/bin/naemon"|g' /etc/adagios/adagios.conf
+sudo cp /opt/adagios/adagios/etc/adagios/conf.d/force_script_name.conf /etc/adagios/conf.d/
+sudo cp /opt/adagios/adagios/etc/adagios/conf.d/okconfig.conf /etc/adagios/conf.d/
+sudo cp /opt/adagios/adagios/etc/sudoers.d/adagios /etc/sudoers.d/
+sudo sed -i '
+    s/nagios/naemon/g
+    s|/usr/sbin/naemon|/usr/bin/naemon|g' /etc/sudoers.d/adagios
+sudo chown --recursive adagios:adagios /etc/adagios /var/lib/adagios
+
+
+# The following script will create a new Python virtual environment where Adagios is located.
+sudo /opt/adagios/upgrade.sh
+
+# Activate Python virtualenv
+source /opt/adagios/venv/bin/activate
+pynag config --append cfg_dir=/etc/naemon/adagios
+
+## Install Adagios as systemd service
+
+sudo cp /opt/adagios/contrib/gunicorn.py /opt/adagios/gunicorn.py
+sudo cp /opt/adagios/contrib/*.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl start adagios
+sudo systemctl enable adagios
+
+# Apache
+sudo cp /opt/adagios/contrib/apache_gunicorn_adagios.conf /etc/httpd/conf.d/
+sudo systemctl restart naemon adagios httpd
+
+## Install OKconfig from Github
+source /opt/adagios/venv/bin/activate
+sudo git clone -b master --depth 1 https://github.com/opinkerfi/okconfig.git /opt/okconfig
+cd /opt/okconfig
+pip install setuptools-rust
+pip install -r requirements.txt
+python setup.py install
+sudo cp /opt/okconfig/etc/okconfig.conf /etc/
+# Make okconfig Naemon aware
+sed -i '
+    s|/etc/nagios/nagios.cfg|/etc/naemon/naemon.cfg|g
+    s|/etc/nagios/okconfig/|/etc/naemon/okconfig/|g' /etc/okconfig.conf
+okconfig init
+okconfig verify
+
+chmod -R g+w /etc/naemon/
+
+yum install -y --skip-broken nagios-plugins-*
+
+sudo systemctl restart naemon adagios httpd

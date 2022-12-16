@@ -1,0 +1,20 @@
+# Validar configurações LBs IPTV vs CLU
+
+Nota: Validar configurações dos backends na Nordija com base no CLU, identificamos eventuais diferenças.
+
+003.bakends.conf
+channels_be_map
+
+Acesso:
+
+TLT-DC-IPTVLB00
+172.16.4.82
+
+> TLT-DC-IPTVLB00 > cd/etc/hapee-2.2/
+> channels_be_map
+
+
+2. Aceder o Nordija e verificar os bundles 
+
+TV Service > Channel Bundles
+

@@ -1,0 +1,20 @@
+[Pedido Actualização de dados FTTH]
+
+Para validar se os canais estão ok, deve-se primeiramente validar no NOC e após isso no grupo
+quem esta prevenção deve responder ao pedido do ticket FTTH.
+---------------------------------------------------------------
+Como os canais chegam as caixas IRIS?
+R:Via RF Overlay 
+
+Quem trata da codificação?
+Nagra...é o responsavel pela abertura dos canais no sistema de codificação.
+
+Canais FTTH se não abre é porque esta codicficado.
+
+- Verificar se o cliente tem pacote que lhe permite ver o canal
+Ex: 30M e STB
+
+- Quem Trata da Nagra?
+Engenharia
+
+Nota: Se o canal não abre no IRIS/FTTH é porque o canal esta codificado e deve ser passado o ticket para a Engenharia.

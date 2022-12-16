@@ -1,0 +1,22 @@
+Assunto Ex: Canal TPA2 e STV Noticias com EPG em falta
+-------------------------------------
+Para: nos.ddp.tickets@gmail.com
+CC:alexandra.vieira@nos.pt;DL DER Integração;roberto.a.martins@nos.pt;Fabio.ASousa@parceiros.nos.pt;noc.upstar@zap.co.ao
+
+---------------------------------------------------------
+Boa dia,
+
+Podem por verificar o Canal TPA2 e STV Noticias HD está com EPG em falta.
+
+Nome: TPA 2 HD
+id: 2276
+posição: 2
+
+Nome: STV Noticias HD
+id: 2445
+posição: 139 
+
+Obrigado,
+
+Cumprimentos,
+Daniel Rosa

@@ -1,0 +1,8 @@
+[afonso.caluege@TLT-DC-NAEMON ~]$ cat .bash_history
+
+#Lista todos os comandos executados no servidor
+----------------------------------------------------
+Exclamação lista os ultimos comandos que foram digitados
+# !!
+
+--------------------------------------------

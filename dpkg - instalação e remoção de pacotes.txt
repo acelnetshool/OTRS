@@ -1,0 +1,8 @@
+# DPKG : Comando para instalação e remoção de pacotes
+
+Nota: Para versão Ubuntu
+
+[root@naemon acaluege]# dpkg --help: Mosta as opções dos comandos
+[root@naemon acaluege]# dpkg -i : Para instalação
+[root@naemon acaluege]# dpkg -r : Para remover
+

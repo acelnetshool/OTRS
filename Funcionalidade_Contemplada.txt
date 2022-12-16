@@ -1,0 +1,14 @@
+Funcionalidades não contempladas:
+
+* Upgrade STBs - OTN
+* Selfcare IPTV (IRIS)
+* Atualizações EPG
+* Importaçãocatalogo VOD
+
+------------------------------
+Funcionalidade "ingest"
+EPG + VOD
+
+----------------
+
+Ficheiros e metadados?

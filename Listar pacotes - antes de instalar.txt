@@ -1,0 +1,29 @@
+[root@naemon ~]# yum list | grep naemon
+
+#Listar pacotes disponiveis antes de instalar
+
+[root@naemon ~]# yum list | grep naemon
+libnaemon.x86_64                                                  1.3.0-0                                                   @labs_consol_stable
+naemon.noarch                                                     1.3.0-0                                                   @labs_consol_stable
+naemon-core.x86_64                                                1.3.0-0                                                   @labs_consol_stable
+
+-------------------------------------------------
+                            
+[root@naemon ~]# yum list | grep fedora
+fedora-license-data.noarch                                        1.0-1.20220630104643294034.master.24.gf05744d.el8         epel
+fedora-messaging.noarch                                           3.0.0-1.el8                                               epel
+fedora-messaging-doc.noarch                                       3.0.0-1.el8                                               epel
+fedora-packager.noarch                                            0.6.0.6-1.el8                                             epel
+fedora-packager-yubikey.noarch                                    0.6.0.6-1.el8                                             epel
+fedora-repo-zdicts.noarch                                         2208.1-1.el8                                              epel
+
+--------------------------------------
+[root@naemon ~]# yum list | grep teams
+python3-openid-teams.noarch                                       1.1-14.el8.1                                              epel
+[root@naemon ~]# yum list | grep watsap
+[root@naemon ~]# yum list | grep chrome
+chrome-gnome-shell.x86_64                                         10.1-7.el8                                                appstream
+chrome-remote-desktop.x86_64                                      103.0.5060.114-1.el8                                      epel
+chromedriver.x86_64                                               103.0.5060.114-1.el8                                      epel
+mathjax-winchrome-fonts.noarch                                    2.7.4-2.el8                                               epel
+[root@naemon ~]#

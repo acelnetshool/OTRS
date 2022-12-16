@@ -1,0 +1,4 @@
+#EXEC : Comando de execução
+---------
+[root@naemon ~]#exec /sbin/ifconfig : verificar as configurações
+oes

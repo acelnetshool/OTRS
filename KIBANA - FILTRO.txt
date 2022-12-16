@@ -1,0 +1,149 @@
+Filtro Kibana:
+
+NOTA: NO HAPEE-IPTV VIMOS:
+1. No index do hapee-iptv, vês chamadas de pedidos às streams dos canais, o que quer dizer que o cliente estava a ver
+2. Não só às streams como à Nordija, aos CDNs, etc... até ao OTN também passa nos LBs e fica tb nesse index
+> Tempo:
+> Status_code:"para ver se está a dar erro ou nao"
+> http_request:verificar os pedidos 
+> time_duration:"Tempo que os pedidos estão a demorar para o cliente"
+> bytes_sent:"para ver a quantidade de informação nos pedidos de audio e video"
+> Tempo:
+> cliente_ip:
+> @versão:
+> @timestamp:
+----------------------------------------------------------------------------------
+Filtro -> IPTV-OTN (OTN - esta relacionado com os upgrades ao firmware da caixas)
+> Time:"Tempo de pesquisa (Data, ano e hora)"
+> otn.client_make:
+1º Modelo da STB - INTEK - hisi ->1.26.01
+2º Modelo da STB - INTEK - REALTEK ->1.03.04
+> otn.client_model x:
+> otn.client_version:
+> otn.firmware_version:
+> otn.firmware_mode:
+> otn.firmware_file:
+> bytes_read:"quantidade de byates enviados"
+> Captured_request_cookie:
+> Captured_response_cookie:
+> Client_ip:
+> Client_mac:
+> client_port:"Porta em que o cliente esta ligado"
+> feconn:
+> frontend_name:
+> host_name:
+> http_request:"Link do segmento da stream"EX: /ZAPR/2200.stream_zap/segment_
+> Status_code:"para ver se está a dar erro ou nao"
+------------------------------------------------------------------------
+Nordija e Kibana
+>>>>Para despiste no Kibana:
+1. Pega o IP VOD a partir do Nordija Ex: 10.153.254.6
+2. Filtrar no Kibana:
+> client_ip: 10.153.254.6
+3. Visualizar:
+> Time:
+> client:ip:"IP do VOD: 10.153.254.6"
+> host.name:"Verificar o nome LB - Ex:"TLT-DC-HAPEE03"
+> server_name:"Nome do Servidor preso a stream Ex:"->"TLT-DC-WTFARM06"
+> status_code:"para ver se está a dar erro ou nao"
+> http_request:"Link do segmento da stream"EX: /ZAPR/2200.stream_zap/segment_
+
+
+Nota: No Nordija conseguimos visualizar:
+1. IP Vod: Ex: 10.153.254.6
+2. MAC: Ex: 30:eb:25:26:30:9f
+3. IP Public:192.168.2.91
+---------------------------------------------------------------------------
+Nota: WOWZA
+1. Verificar os pedidos no Wowza para esse cliente?
+>>>>No Kibana Filtrar:
+------> WOWZA:
+------>c_client_id:*10.152.72.122
+Nota: Testar os filros nos Wowza
+1.1. tEMPO
+1.2. Server
+1.3. Data
+1.4. Localização
+-----------------------------------
+Nota: CDN
+1. 
+>>>>>>>>CDN-*
+>>>>>FILTRO kIBANA:
+1. CDN-* -> request.keyword: /colar aqui o link do http_request e filtrar
+
+>Time:
+>clientip
+>bytes
+
+Nota1: Verificar se diferentes ips estão a ter a mesma quantidade de dados no manifesto
+ex:
+1º IP: 172.18.240.1  ->bytes 81634
+2º IP: 10.151.137.42 ->bytes 83461
+3º IP: 10.151.137.41 ->bytes 83461
+4º IP: 10.151.137.41 ->bytes 83461
+-----------------------------------------
+1.cliente que não consegue comprar filme:
+2.Cliente não consegue selecionar o filme os Incríveis interatividades
+--------------------------------
+Despiste:
+1.Verificar no BO e vizualizar as compras feitas pelo cliente
+2. Verificar no IPTV Status no "drm"
+3. Verificar no ZW se o cliente tem pontos ou descontou
+4. Ver no ZW se existe pontos ou se foi descontado
+5. Verificar no ZW os pontos e o historico de vods
+6. Filtrar pelo cipk e pelo IP no index do cdn
+Nota: Se ele já viu e entretanto expirou... Se quiser ver novamente que compre
+
+KIBANA:
+Filtrar:
+CDN-* ->clientip:xx.xx.xx.xx ->Ex: CIPK2E6A8053AD764F77
+Nota:
+1. Verificar nos cdn se o cliente comprou e não reproduziu
+2. Verificar se ha registo nos CDNs
+---------------------
+Nota: Se no Kibana aparecer grafico e registo é porque o cliente visualizou o filme.
+------------------------------------------------
+verificar no KIbana 
+manifest_proxy -> mac:"".
+> Tempo:
+> ID do canal: 2439
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

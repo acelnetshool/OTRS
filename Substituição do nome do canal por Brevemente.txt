@@ -1,0 +1,11 @@
+Substituição do nome do canal por "Brevemente"
+
+1.SSH para TLT-DC-INT-00 (10.151.52.119)
+
+2. cd /var/www/html/zap_iris_bo/app/plugins/fixEPGYoutube
+
+3. Criar o seguinte javascript com o nome id do canal (exemplo BomSom TV - IrisID: 2459)
+
+cat 2459.js
+
+// BomSom TV db.getCollection('Channel').update( {'_id':'2459'}, { $set: { "Name": "Brevemente" } } );

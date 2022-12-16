@@ -1,0 +1,14 @@
+Caixas da Bancada - IPTV
+30:eb:25:2b:d5:9d - 172.16.4.136 - 172.16.4.136 – Realtek – I61AD
+30:eb:25:20:09:09 - 172.16.4.142	 - 172.16.4.142 – Hisi I56AD
+30:eb:25:1a:a8:b4 -  172.16.4.137 -  172.16.4.137 - Hisi I56AD 
+
+Pacotes:
+ZAP Fibra Super 200M
+ZAP Fibra Extra 
+----------------------
+Conta: 200577860201
+----------------------
+
+FTTH
+MAC: fc6fb755b6db

@@ -1,0 +1,9 @@
+cd /etc/naemon
+adicionar em contactos
+- grup
+- alias
+- nome
+- telefone
+
+cd /etc/thruk
+adicionar em permissões o utilizador

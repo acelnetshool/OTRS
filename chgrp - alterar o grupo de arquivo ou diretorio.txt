@@ -1,0 +1,39 @@
+chgrp (change group) - Alterar o grupo de um arquivo ou diretorio
+
+sintaxe:
+chgrp [novo_grupo][nome_arquivo]
+
+chown (change owner) - Alterar o proprietario de um arquivo ou diretorio
+
+sintaxe:
+chown [novo_proprietario][nome_arquivo]
+
+-----------------------------------------------------------
+[root@naemon ~]# cd /home/
+[root@naemon home]# ll
+
+
+[root@naemon home]# cd acaluege/
+
+#Alterar o proprietario do arquivo
+[root@naemon edson]# sudo chown acaluege pessoas
+-rw-r--r--. 1 acaluege root   25 Sep 16 16:31 pessoas
+-rw-r--r--. 1 root     root 9055 Sep 16 16:31 Teste
+
+#criar um grupo
+1. Forma forçada
+[root@naemon ~]# groupadd -f planilhas
+2. Forma Normal
+[root@naemon]# sudo addgroup zapteste
+
+#adicionar o groupo a planilha
+[root@naemon]# sudo chgrp zapteste Teste
+			  [grupo]  [arquivo]
+
+#Alterar o grupo
+[root@naemon]# sudo chgrp planilha Teste 
+--------------------------------------------------------------
+Creating a System Group with Password
+groupadd -p grouppassword mygroup
+
+

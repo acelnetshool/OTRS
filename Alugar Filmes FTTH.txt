@@ -1,0 +1,22 @@
+Aluguel de Filme FTTH
+-------------------------------------------------------------------------------
+
+Cliente não consegue alugar filme quando tenta alugar vem a SMS: Caro cliente o seu saldo de video club terminou.
+
+Despiste:
+1. Validar em ZW se tem pontos
+2. Se o cliente tem saldo e não consegue alugar é na IRIS
+3. Verificar no MONGO de Produção se a conta tem vod_rentals
+
+Como aceder o mongo de produção:
+
+PRD MONGO: 10.151.8.193 - BD dos AAs
+
+- AA -> Collections -> Accounts
+
+- ProductCategories -> [1] -> _t -> _id : vod-rentals
+
+Nota: se verificar a frase vod-rentals então não existe qualquer problema.
+
+
+

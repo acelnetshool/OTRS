@@ -1,0 +1,17 @@
+# Ajustar valores do alarme Wowza Sessions de acordo com os valores atuais das sessões nos transcoders.
+
+1. Verificar o Dashboard IPTV - WTFARMs Sessions
+2. Analisar o WTFARM com maior fluxo de pedido  ex: 6.5003 k Max e ajustar no Adagios
+3. Localizar o Serviço Wowza Sessions e alterar os valores conforme relevo dos WTFARM
+Nota: Localização do Dashboard "IPTV - WTFARMs Sessions"
+
+http://10.151.12.97/naemon/cgi-bin/panorama.cgi#186
+
+4. WTFARM00 - 09: alterar os valores de warning e critical nos Wowza Sessions
+Nota: Fazer alteração em todos os WTFARM
+
+CONNECTION CRITICAL HIGH:6000
+CONNECTION WARNINH HIGH: 7000
+
+
+

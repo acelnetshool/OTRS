@@ -1,0 +1,23 @@
+###Importação EPG
+
+Verificação de todos os steps do processo relacionado com o import do EPG.
+
+1. Executa no servidor NPVRBE00 task EPG_REPO_NOTIFY - Adiciona mensagem ao Rabbit para iniciar processo de importação EPG.
+
+2. Executa serviço EPGSyncer no servidor IRISBE00, EPGsyncer liga-se à task colocada no Rabbit.
+
+>>>>>>D:\Logs\EPG.Repository.WindowsService\ZON.EPG.Catalog.Syncer.WindowsService.log
+
+
+GitLab Caminho:
+https://gitlab.zap.intra/integracao/kb/issues/52
+--------------------------
+---------------------
+Importação EPG - IRIS
+Verificação de todos os steps do processo relacionado com o import do EPG.
+
+Executa no servidor NPVRBE00 task EPG_REPO_NOTIFY - Adiciona mensagem ao Rabbit para iniciar processo de importação EPG.
+
+Ao fim de X tempo executa o check EPGSyncer no servidor IRISBE00, que verifica se houve erros no processo e envia mensagem ao naemon (NOK / NOK).
+
+D:\Logs\EPG.Repository.WindowsService\ZON.EPG.Catalog.Syncer.WindowsService.log

@@ -1,0 +1,6 @@
+naemon passive check timeout
+--------------------------------
+
+Ao colocar um passive check com um valor superior a 24h é necessário configurar o freshness_threshold e check_interval
+
+https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/freshness.html

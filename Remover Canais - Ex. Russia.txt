@@ -1,0 +1,6 @@
+1. Remover o canal -> Nordija -> para retirar do perfil de pacotes
+2. Refresh -> clu para verificar os canais
+3. stop stream - Wowza "transcolding"
+4. remover o check no - Naemon
+5. Configurar repo -wowza
+---------------------------

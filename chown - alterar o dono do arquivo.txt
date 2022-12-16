@@ -1,0 +1,25 @@
+chown: Alterar o dono do arquivo existente é representado pelas permissões no inicio
+----------
+
+chmod -R 755 Check_apachestats
+---------------
+
+chown --help : livro de ajuda
+-----
+
+[edson@naemon ~]$ chown joaosilva lista*
+[edson@naemon ~]$ ls -l lista*
+
+[permissão][dono do ficheiro][grupo do arquivo]
+[-rw-rw-r--,1]|joaosilva|uiraribeiro
+
+---
+Alterar recursivamente as permissões do grupo
+---
+[root@naemon ~]# sudo chown -R acaluege *
+[root@naemon ~]# sudo chown -R root:root * - nome da pasta e do arquivo
+[root@naemon ~]# ls -l
+total 24
+-rw-------. 1 acaluege root  1244 Jun  1 17:16 anaconda-ks.cfg
+-rw-r--r--. 1 acaluege root 13754 Sep 12 15:47 install_nrpe.sh
+-rw-r--r--. 1 acaluege root    80 Sep  6 19:02 teste.txt

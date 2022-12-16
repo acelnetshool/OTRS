@@ -1,0 +1,14 @@
+"Check AMS" Alarm"
+
+"Check AMS" Alarm is active is Naemon for more than 2h~
+
+Solution:
+
+SSH to TLT-DC-INT00 (10.151.52.119)
+Run the following script:
+/opt/althech_ams/src/fixAMSsql.py
+
+Note: Please only run once a day. Otherwise it will create a new table (with a new name)
+
+----------------------------
+/opt/altech_ams/bin/python /opt/altech_ams/src/fixAMSsql.py

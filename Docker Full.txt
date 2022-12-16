@@ -1,0 +1,11 @@
+# Listar
+[root@naemon ~]# docker container ps -a
+
+
+----------------------
+# Remover
+[root@naemon ~]# docker rm -f ed17274a32f5 : Remoção container forçada
+[root@naemon ~]# docker rmi -f ed17274a32f5 : Remoção de imagem forçada
+
+---------------------
+#Executar

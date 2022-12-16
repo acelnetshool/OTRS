@@ -1,0 +1,16 @@
+#Limpeza do Disco/ logs no MONGO
+-----------------------
+
+ssh: conexão remota
+df -h : verificar a capacidade do disco
+cd /etc/var/log
+
+:Aceder o cd mongodb para efetuar a limpeza dos logs "fazer a limpeza dos logs em runtime"
+
+echo "" > mongod.log
+
+du -sh: verificar a capacidade da pasta
+
+
+
+

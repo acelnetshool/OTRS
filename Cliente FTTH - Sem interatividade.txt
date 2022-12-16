@@ -1,0 +1,17 @@
+Despiste:
+
+1.Dizem que STB está com luz laranja, nao vejo nada de anormal no nosso zapweb/bo
+2. Verificar HGW no Jungo se esta OK
+3. Verificar falhas nas caixas STB e no FTTH Status
+4. Verificar os parametros DVL aos equipamentos (1ªlinha de suporte)
+5. Verificar os logs para ver o comportamento da fibra e do Frame
+6. Verificar se tem "live" e "interatividade" -> Pois são duas coisas diferentes
+7. Verificar "request_all" para ver se há alguma informação
+Nota1: Verificar no "Log nPVR/VOD":
+1. O estado se esta "OK";
+2. Total de Sessões/Caso exista - Ex: "153" ou "None"
+3. Tipo: Se é "EPG"
+4. E o ultimo tempo do envio dos dados.
+-------------------------------------------
+Nota: Se a box estiver desligada durante 3 dias não havera interatividade.
+4. Validar a ligação ONT ao HGW

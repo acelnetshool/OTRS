@@ -1,0 +1,106 @@
+channels = []
+res = es.search(index=elk_index,body=query)
+total = res['hits']['total']['value']
+new_res = res['hits']['hits']
+#print (new_res)
+for dictio in new_res:
+        try:
+                sage =dictio['_source']['message']
+                pchannel = sage.split('.mp4')[0]
+                channel = pchannel.split('/')[-1]
+                print (channel)
+                channels.append(channel)
+        except:
+                pass
+
+#print(elk_index, res)
+if int(total)>int(warning_value):
+        status = "WARNING"
+        return_code = 1
+
+if int(total)>int(critical_value):
+        status = "CRITICAL"
+        return_code = 2
+aggregate = Counter(channels)
+print("%s %s - %s # %s" % (check_description, status, total, aggregate.most_common(10)))
+exit(return_code)
+
+------------
+José Mendes @jose.mendes changed title from Naemon - Adicionar check para top stream volume em cada wowza to Naemon - CDN Errors 404 3 weeks ago
+------------
+/usr/lib64/nagios/plugins/check_newelk_generic_v2.py "cdn-" "5m" "response:40*" "ERROR CODES" 130 150
+------------
+query = {
+  "size": 1000,
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc",
+        "unmapped_type": "boolean"
+      }
+    }
+  ],
+  "aggs": {
+    "2": {
+      "date_histogram": {
+        "field": "@timestamp",
+        "fixed_interval": "30s",
+        "time_zone": "Europe/Lisbon",
+        "min_doc_count": 1
+      }
+    }
+  },
+  "stored_fields": [
+    "*"
+  ],
+  "script_fields": {},
+  "docvalue_fields": [
+    {
+      "field": "@timestamp",
+      "format": "date_time"
+    },
+    {
+      "field": "timestamp",
+      "format": "date_time"
+    }
+  ],
+  "_source": {
+    "excludes": []
+  },
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "filter": [
+        {
+          "match_phrase": {
+            "response": "404"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": search_time
+            }
+          }
+        }
+      ],
+      "should": [],
+      "must_not": []
+    }
+  },
+  "highlight": {
+    "pre_tags": [
+      "@kibana-highlighted-field@"
+    ],
+    "post_tags": [
+      "@/kibana-highlighted-field@"
+    ],
+    "fields": {
+      "*": {}
+    }
+  }
+}

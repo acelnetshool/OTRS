@@ -1,0 +1,52 @@
+O comando "cat" serve para listar o contéudo de um determinado arquivo
+# cat passwd
+---------------------------------------------
+Concatenar arquivo ">" criar e guardar no diretorio desejado
+
+[root@naemon naemon]# cat > /tmp/meutexto
+Olá mundo[root@naemon naemon]# ls /tmp/meutexto
+/tmp/meutexto
+[root@naemon naemon]# cd /tmp/
+[root@naemon tmp]# ll
+total 4
+-rw-r--r--. 1 root root 10 Sep 12 15:01 meutexto
+drwx------. 3 root root 17 Sep 12 09:45 systemd-private-1bd85d2e4c694d3c8dd55a4468232f70-adagios.service-OKLTrg
+drwx------. 3 root root 17 Sep 12 09:45 systemd-private-1bd85d2e4c694d3c8dd55a4468232f70-chronyd.service-VNGBuh
+drwx------. 3 root root 17 Sep 12 09:45 systemd-private-1bd85d2e4c694d3c8dd55a4468232f70-httpd.service-isPdth
+drwx------. 3 root root 17 Sep 12 09:45 systemd-private-1bd85d2e4c694d3c8dd55a4468232f70-php-fpm.service-eJzgri
+----------------------------------------
+Concatenar o "passwd + meutexto" depois do fim ">>" e teremos arquivos unificados.
+
+[root@naemon etc]# cat /etc/passwd >> /tmp/meutexto
+[root@naemon etc]# cat /tmp/meutexto
+Olá mundoroot:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
+tss:x:59:59:Account used for TPM access:/dev/null:/sbin/nologin
+polkitd:x:998:996:User for polkitd:/:/sbin/nologin
+sssd:x:997:994:User for sssd:/:/sbin/nologin
+chrony:x:996:993::/var/lib/chrony:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+edson:x:1000:1000:edson:/home/edson:/bin/bash
+unbound:x:995:992:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+naemon:x:994:991:naemon:/var/lib/naemon:/bin/sh
+adagios:x:993:990::/home/adagios:/bin/bash
+nagios:x:992:989::/var/spool/nagios:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+nginx:x:991:988:Nginx web server:/var/lib/nginx:/sbin/nologin
+nrpe:x:990:987:NRPE user for the NRPE service:/var/run/nrpe:/sbin/nologin
+

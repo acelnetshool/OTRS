@@ -1,0 +1,44 @@
+Naemon - Create Service on Host
+-------------------------------------
+****Adagios Way
+
+Copiar host > saved to /etc/naemon/okconfig/hosts/hostname.cfg.
+
+Copiar serviço , associar ao host , associar Check
+
+****Naemon Way
+
+create check > /usr/lib64/nagios/plugins/iptv/check_iptv_recordings.py
+
+create command > /etc/naemon/okconfig/commands/check_iptv_recordings.cfg
+-------------------
+define command {
+        command_line                  $USER1$/iptv/check_iptv_recordings.py -w '$_SERVICE_WARNING$' -c '$_SERVICE_CRITICAL$'
+         command_name                   check_iptv_recordings
+}
+------------------
+/etc/naemon/okconfig/hosts/hostname.cfg
+----------------
+
+define host {
+         use                            okc-default-host
+         check_command                  check_http
+         hostgroups                     default
+         contact_groups                 Integracao
+         alias                          ZAPWIFI
+         host_name                      ZAPWIFI
+         address                        zapwifi.co.ao
+}
+
+define service {
+         use                            okc-check_http_remote
+        __VIRTUAL_HOST                www.zapwifi.co.ao
+        contact_groups                Rede IP,Infra-Estruturas
+         host_name                      ZAPWIFI
+         __RESPONSE_WARNING             5
+         service_description            HTTP - www.zapwifi.co.ao
+         max_check_attempts             5
+         __REMOTE_ADDRESS               www.zapwifi.co.ao
+        servicegroups                 Rede IP
+}
+

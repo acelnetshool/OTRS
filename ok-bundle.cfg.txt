@@ -1,0 +1,36 @@
+# Cat Ok-bundle.cfg
+------------------------
+[root@ADR lib64]# cd
+[root@ADR ~]# cd /etc/nrpe.d/
+[root@ADR nrpe.d]# cat ok-bundle.cfg
+
+Configurações do NRPE.D /NAEMON
+---------------------------------------
+'# OK Nrpe configuration
+'# Try to be as flexible as possible, with as little dependencies as possible
+command[get_disks]=/bin/df -k -x none -x tmpfs -x shmfs -x unknown -x iso9660
+command[get_time]=/bin/date +%s
+command[get_proc]=ps -Aw -o pid,ppid,user,start,state,pri,pcpu,time,pmem,rsz,vsz,cmd
+command[get_netstat]=netstat -an
+command[get_ifconfig]=/sbin/ifconfig
+command[get_uptime]=uptime
+command[get_selinux]=getenfore
+command[get_lvm_vgs]=sudo /sbin/vgs --all -o all --nameprefixes --noheadings
+command[get_lvm_lvs]=sudo /sbin/lvs --all -o all --nameprefixes --noheadings
+command[get_lvm_pvs]=sudo /sbin/pvs --all -o all --nameprefixes --noheadings
+command[get_rpms]=rpm -qa --queryformat 'PACKAGES="%{NAME}-%{VERSION}-%{RELEASE}.%{ARCH}" NAME="%{NAME}" INSTALLTIME="%{INSTALLTIME}" VERSION="%{VERSION}" RELEASE="%{RELEASE}" ARCH="%{ARCH}" VENDOR="%{VENDOR}" LICENSE="%{LICENSE}"\n'
+command[get_disks_inodes]=/bin/df -i
+'#command[check_linux_memory]=/usr/lib/nagios/plugins//check_linux_memory -w '$' -c '$' -f
+'# The following require dont_blame_nrpe to be on
+'# Please be careful what commands you add here
+command[check_ntp_time]=/usr/lib64/nagios/plugins//check_ntp_time -H '$ARG1$' -w '$ARG2$' -c '$ARG3$'
+command[check_procs]=/usr/lib64/nagios/plugins//check_procs.sh -w '$ARG1$' -c '$ARG2$' -C '$ARG3$'
+command[check_swap]=/usr/lib64/nagios/plugins//check_swap -w '$ARG1$' -c '$ARG2$' --allswaps
+command[check_disk]=/usr/lib64/nagios/plugins//check_disk -w '$ARG1$' -c '$ARG2$' -p '$ARG3$'
+command[check_load]=/usr/lib64/nagios/plugins//check_load -w '$ARG1$' -c '$ARG2$'
+command[check_total_procs]=/usr/lib64/nagios/plugins//check_procs.sh -w '$ARG1$' -c '$ARG2$'
+command[check_linux_memory]=/usr/lib64/nagios/plugins//check_linux_memory -C -w '$ARG1$' -c '$ARG2$' -u
+command[check_cpu]=/usr/lib64/nagios/plugins/check_cpu.sh
+command[check_service]=/usr/lib64/nagios/plugins//check_service.sh -o linux -s '$ARG1$'
+command[check_mysql_health]=/usr/lib64/nagios/plugins//check_mysql_health --port '$ARG1$' --database "'$ARG2'" --username $_SERVICEMYSQLUSERNAME$ --password $_SERVICEMYSQLPASSWORD$ --mode '$ARG3$' --warning '$ARG4$' --critical '$ARG5$' '$ARG6$'
+command[check_ssl_days_to_expire]=/usr/lib64/nagios/plugins//check_ssl_days_to_expire '$ARG1$' '$ARG2$' '$ARG3$'

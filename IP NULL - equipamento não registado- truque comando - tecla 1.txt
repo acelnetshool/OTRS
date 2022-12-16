@@ -1,0 +1,9 @@
+aceder o nordija - comando pressione a tecla 1 
+
+Nota: Este truque é usado quando aparece "IP NULL"
+
+1. conectar a rede interna - verificar um ponto que esta ok!
+2. vai pressionando a tecla 1 - para efetuar o registo
+até aparecer a informação abaixo:
+
+"Equipamento ainda não se encontra registado.!

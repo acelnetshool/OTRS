@@ -1,0 +1,11 @@
+Exportar CTI-BO da NOS
+
+Exportar 2 coisas para um excel:
+
+Separador Offerings com um dump da tabela dbo.app_Offerings da IRIS FE Separador CTI com dump do catálogo da IRIS (TLT-DC-IRISFE00)
+
+Catalog IRIS (SilverLight) > http://10.144.27.2/ZAP/CTIBO/Account/LogOn?ReturnUrl=%2fZAP%2fCTIBO > Package Reports > Template completo > Exportar para ficheiro (canto inferior direito)
+
+1 vez por mês para a Paula, ela pede
+
+Acesso CTI da NOS cmpeixoto:mSq-g1fh135

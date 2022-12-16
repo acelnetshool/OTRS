@@ -1,0 +1,7 @@
+https://www.youtube.com/c/SimplificandoRedes/playlists
+----------------------------------------------------
+# docker pull debian
+# docker run -it debian
+root@618878ea6202:/# apt-get update
+root@618878ea6202:/# apt-get install net-tools
+apt-get install systemd -; Instalar o systemd para renomear hostnames etc.

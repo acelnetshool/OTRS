@@ -1,0 +1,8 @@
+Não acede ás APPS
+
+Cliente não acede a APP:
+
+1. Verificar se APP se encontra disponível (http://10.151.8.129/tvapps/apps/selfcare/index.html?service_id=vod&boxId=34:7a:60:27:8a:1b)
+2. Substituir o MacAddress pelo que aparece em ZW.
+3. Caso esteja OK, pedir para fazer reset á STB
+4. Caso não esteja OK, contactar Desenvolvimento DESI para correção de possível BUG

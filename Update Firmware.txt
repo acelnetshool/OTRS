@@ -1,0 +1,3 @@
+Para atualizar o fimeware:
+
+pressione no comando:  Back + Menu : em quequencia até pegar a atualização

@@ -1,0 +1,19 @@
+# IRISFE03 - Clear Cash
+----------------------------------------------
+**Problema***
+TLT-DC-IRISFE03
+Message: Critical
+Status: Sem resultado no check periodo definido
+
+1. Aceder o servidor: TLT-DC-IRISFE03 (RDP)
+2. Validar se o import de EPG correu sem problemas (Imagens .JPG, .PNG). 
+Nota: Verificar no log se processo de importação executou verificando se existem pedidos de download de imagens, etc. Server IRISBE00;
+
+*  D:\\Logs\\EPG.Repository.WindowsService\\ZON.EPG.Catalog.Syncer.WindowsService.log
+
+2 - Aceder ao IRIS_BO > IRIS e correr o "Fix EPG youtube Prod"
+
+(Em caso de necessidade, aceder á maquina por ssh @10.151.8.132 e correr o seguinte comando: varnishadm "ban req.url ~ /")
+
+LINK GITLAB:
+https://gitlab.zap.intra/integracao/kb/issues/9

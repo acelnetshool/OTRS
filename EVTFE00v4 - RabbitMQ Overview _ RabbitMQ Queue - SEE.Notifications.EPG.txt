@@ -1,0 +1,7 @@
+# Aceder o Servidor EVTFE00 > D:/lOGS/Eventa.Smf-QA
+Nota: Vamos visualizar todos os logs eistentes
+
+# Validar a capacidade da pasta logs em Propriedade Space disk > apagar os logs
+
+
+

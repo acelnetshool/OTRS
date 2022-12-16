@@ -1,0 +1,7 @@
+#Validar filmes Video Clube (IRIS/IPTV)
+---------------------------------------------
+1. Validar se o filme esta no video clube IRIS ou IPTV
+
+Nota: Se não esta deve-se aguardar que a NOS faça o "ingest não vai existir tanto para IRIS ou IPTV"
+
+

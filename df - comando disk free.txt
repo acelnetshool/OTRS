@@ -1,0 +1,29 @@
+# Mostrar quando de disco usado e quanto desponivel
+e diretorio montado em cada central de arquivo do Linux
+
+[acaluege@naemon ~]$ df
+Filesystem          1K-blocks    Used Available Use% Mounted on
+devtmpfs               894620       0    894620   0% /dev
+tmpfs                  914116       0    914116   0% /dev/shm
+tmpfs                  914116    8828    905288   1% /run
+tmpfs                  914116       0    914116   0% /sys/fs/cgroup
+/dev/mapper/rl-root  17811456 2750940  15060516  16% /
+/dev/sda1             1038336  264968    773368  26% /boot
+tmpfs                  182820       0    182820   0% /run/user/1001
+--------------------------------------------------------------
+
+#df -h : É usado num formato/humano legivel para os profissional analisarem
+
+[acaluege@naemon ~]$ df -h
+Filesystem           Size  Used Avail Use% Mounted on
+devtmpfs             874M     0  874M   0% /dev
+tmpfs                893M     0  893M   0% /dev/shm
+tmpfs                893M  8.7M  885M   1% /run
+tmpfs                893M     0  893M   0% /sys/fs/cgroup
+/dev/mapper/rl-root   17G  2.7G   15G  16% /
+/dev/sda1           1014M  259M  756M  26% /boot
+tmpfs                179M     0  179M   0% /run/user/1001
+--------------------------------------------------------------
+[root@TLT-DC-WTFARM10 afonso.caluege@zap.intra]# df -h --total|grep ^total
+total                      529T  324T  188T  64% 
+

@@ -1,0 +1,11 @@
+# Naemon Adagios
+
+1.
+configuration > copy contact > edit
+
+2.
+ cd /etc/ naemon
+
+3. 
+
+htpasswd htpasswd user.name

@@ -1,0 +1,15 @@
+# Verificar a versão atua do KERNEL
+---------------------------
+uname -r -: Verificar a versão atual do kernel
+
+[root@naemon ~]# uname -r
+
+------------------------------------
+#Verificar versões kernel instalado
+
+[root@naemon ~]# yum list installed kernel
+Installed Packages
+kernel.x86_64                                                                                4.18.0-305.3.1.el8_4                                                                                 @anaconda
+kernel.x86_64                                                                                4.18.0-372.9.1.el8                                                                                   @baseos
+[root@naemon ~]#
+

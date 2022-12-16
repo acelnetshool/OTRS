@@ -1,0 +1,13 @@
+1. Verificar pedido no ZAP BO - Manifestproxy
+1.1.Nota: O objectivo é verificar se os pedidos de sintonização para live do lado do cliente esta a ser trocado
+se os canais não estao a ser repetidos.
+1.2. Nota: Se no Manifestproxy no lado do canal se estiver "undefined" pode dar-se ao caso de que houve falha
+de energia, ou desligou-se a STB e podemos verificar também no lado do Kibana.
+
+2. Verificar no Kibana -> happe-iptv
+2.1.Nota: O objectico é filtrar os ultimos 15min, 24h, 30min se os pedidos estão a chegar via stream
+e devemos adicionar os "bytes_sent" para ver a quantidade de informação nos pedidos de audio e video e ainda...
+o "status code" para ver se esta a dar erro ou não.
+2.2. Nota: No kibana-> atraves do MAC Adrress- hapee-iptv -> Caso haja picos entre os intervalos de despistes
+é importante perceber se houve falha de energia, stb desligada etc...no ultimo caso se o cliente continuar
+com a reclamação "Degradação de Imagem" deve-se ver com a "equipe de Rede IP" para validar a verção do HGW.

@@ -1,0 +1,33 @@
+#Liberar espaço no naemon 
+
+1. Aceder o Naemon e verificar a pasta com maior cosumo de alerta
+[root@ZAPNAEMONVN log]# du -sh
+
+2. Verificar o consumo
+[root@ZAPNAEMONVN log]# df
+
+3. Alerta na partilha Iris
+//10.151.58.65/iris      8.0T  6.4T  1.7T  80% /mnt/NASDS01
+
+4. [root@ZAPNAEMONVN log]# df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   21G   17G  4.3G  80% /
+devtmpfs                 911M     0  911M   0% /dev
+tmpfs                    921M     0  921M   0% /dev/shm
+tmpfs                    921M  102M  819M  12% /run
+tmpfs                    921M     0  921M   0% /sys/fs/cgroup
+/dev/vda1                509M  163M  346M  33% /boot
+//10.151.58.65/iris      8.0T  6.4T  1.7T  80% /mnt/NASDS01
+tmpfs                    185M     0  185M   0% /run/user/0
+tmpfs                    185M     0  185M   0% /run/user/977409870
+tmpfs                    185M     0  185M   0% /run/user/977414287
+tmpfs                    185M     0  185M   0% /run/user/977410158
+
+5. Remover arquivos com + de 1 mês
+Nota: Aceder a pasta de log especifico
+[root@naemon naemon]# du -sh
+136K    .
+[root@naemon naemon]# find . -mtime +30 -exec rm {} \;
+
+[root@naemon naemon]# du -sh
+36K     .

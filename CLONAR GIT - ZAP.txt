@@ -1,0 +1,102 @@
+Nota: 
+CMD: Para gerar a chave de acesso ao gitlab e sincronizar com a maquina local
+1. ssh-keygen
+2. Enter
+3. Overwrite (Y/N):Y
+4. Enter duas vezes
+Copiar o caminho da pasta do diretorio onde esta alocado a chave SSH: C:\Users\afonso.caluege/.ssh/ "id_rsa"
+5. Your identification has been saved in C:\Users\afonso.caluege/.ssh/id_rsa.
+Your public key has been saved in C:\Users\afonso.caluege/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:LllgEI6/ePr8WjYMZe0WQCKuuRJRMAoPiYDerHwme2I zapnet\afonso.caluege@LT1329FNST
+The key's randomart image is:
++---[RSA 3072]----+
+|Xoo +oo          |
+|** + o o         |
+|+ * . = o        |
+| = + + o .       |
+|= . o   S        |
+| * + + =         |
+|o * o B .        |
+|.E = o o         |
+|. +.+o.          |
++----[SHA256]-----+
+6. Apois localização do arquivo "id_rsa.pub" 
+6.1. Abrir o bloco de nota e arrasta o ficheiro para dentro do bloco de nota aberto para visualizar a chave e copiar 
+7. Colar a chave no gitlab "Zap" e colar na caixa SSH Key e salvar - nome zap
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDqUUY694W4Fqc2Q/EXlcyy/Y7sMzeHw1SqAxnmNPUB3drCQC5fzDFDuqkN7mgX0iUTa0PUoh2E8VwQ2mdaHWBCjzP9QHnkIK4SxGD1js1kJZgixqwc000/4XTy251isIBiuRvsFVg2rGaPI3jY8gC6CA4N2A169t62u7VA5bKlckmHGov4QWHf5KvMFmficX7q6rTTBPDEJSBKwUXHdNzzt3KG9I6+c7i7cHM3Pjvxc1TAhEawvv1S4Jf/nggJ9k1Lolrg2chFBTSsjQmLNy3mY/QLc+MJkVZx3jB3w7P8CP075EUEgVvywI2TVKKVDDlUN9cNaxlj5GEvrfq5Sz7hKqv9QkwBSFgD+IDNqlVCqEiggGme45j7zTZOkwBfNv6xld+tPWIB9k3FYwB/GnmbDHyIHVZ3LW3gUFbxABBvaUX7fjKq2Lfnb8+Q+snXj+lX6NpczlJg/4mina8oL1XKvs/eM7yuvWhq37q9M+BGWodfKBRUsWaIdfUZFeNRh7k= zapnet\afonso.caluege@LT1329FNST
+
+----------------------------------------------------------------------------------------
+
+1. Adicionar o certificado no Windows
+$ git config http.sslVerify "false"
+$ git config --global http.sslCAinfo
+
+2. Adicionar o usuario:
+$ git config --global user.name "afonso.caluege"
+$ git config --global user.email "afonso.caluege@zap.co.ao"
+
+3. forçar clonagem
+$ git -c http.sslVerify=false clone https://gitlab.zap.intra/integracao/iptv/hapee.git
+
+4. Criar uma branch
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (master)
+$ git checkout -b adiciona-canal-girassolTV
+Switched to a new branch 'adiciona-canal-girassolTV'
+
+4.1: Modificar os ficheiros
+
+5. afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git status
+On branch adiciona-canal-girassolTV
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   channels_be_map
+        modified:   hapee-lb.cfg.d/003.backends.conf
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+6. afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git add .
+
+7. afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git status
+On branch adiciona-canal-girassolTV
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   channels_be_map
+        modified:   hapee-lb.cfg.d/003.backends.conf
+
+8. afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git commit -m "adiciona-canal-GirassolTV"
+[adiciona-canal-girassolTV 020adf3] adiciona-canal-GirassolTV
+ 2 files changed, 18 insertions(+)
+
+9.afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git config http.sslVerify "false"
+
+10.afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git push --set-upstream origin adiciona-canal-girassolTV
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 463 bytes | 463.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: To create a merge request for adiciona-canal-girassolTV, visit:
+remote:   https://gitlab.zap.intra/integracao/iptv/hapee/merge_requests/new?merge_request%5Bsource_branch%5D=adiciona-canal-girassolTV
+remote:
+To https://gitlab.zap.intra/integracao/iptv/hapee.git
+ * [new branch]      adiciona-canal-girassolTV -> adiciona-canal-girassolTV
+branch 'adiciona-canal-girassolTV' set up to track 'origin/adiciona-canal-girassolTV'.
+
+Extra:
+13.$ vi ~/.gitconfig
+"false"
+
+
+
+
+

@@ -1,0 +1,17 @@
+>>>VALIDAÇÃO VODs IPTV<<<<
+VALIDAÇÃO ENTRADA
+VALIDAÇÃO SAÍDA
+
+**Pedido DE: DER ZAP <der@zap.co.ao> 
+
+---------------------------------------<<<VALIDAR>>>> / Assisti
+1. VODS - Novos e Saídas:
+>>Titulo;
+>>Genero;
+>>Tipo;
+>>Trailer;
+>>Inicio;
+>>Meio;
+>>Fim;
+
+

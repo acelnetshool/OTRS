@@ -1,0 +1,22 @@
+# Install Mysql in docker container for Mysql
+[root@naemon ~]# mkdir -p /zbx-server/mysql/data && docker container run -d -p 3306:3306 -v /zbx-server/mysql/data:/var/lib/mysql -e MYSQL_HOST=192.168.232.146 -e MYSQL_USER=zabbix -e MYSQL_ROOT_PASSWORD=zabbix -e MYSQL_DATABASE=zabbix -e MYSQL_PASSWORD=zabbix --name mysql-zbx mysql:5.7
+
+# Verificar se o container esta a ser executado através dos logs
+[root@naemon ~]# docker logs -f mysql-zbx
+
+# Executar o Banco de dados no container "Zabbix"
+[root@naemon ~]# docker container run -d -p 10051:10051 -e MYSQL_ROOT_PASSWORD=zabbix -e DB_SERVER_HOST=192.168.232.146 -e DB_SERVER_PORT=3306 -e MYSQL_USER=zabbix -e MYSQL_PASSWORD=zabbix -e MYSQL_DATABASE=zabbix --name zbx-server zabbix/zabbix-server-mysql:ubuntu-4.0-latest
+
+# Subir a interfaxe WEB do Zabbix
+[root@naemon ~]# docker container run -d -p 8080:8080 -e DB_SERVER_HOST=192.168.232.146 -e DB_SERVER_PORT=3306 -e MYSQL_USER=zabbix -e MYSQL_PASSWORD=zabbix -e MYSQL_DATABASE=zabbix -e ZBX_SERVER_HOST=192.168.232.146 -e PHP_TZ=Africa/Windhoek --name zbx-web zabbix/zabbix-web-apache-mysql:ubuntu-4.0-latest
+
+#Aceder a maquina via browser
+http://192.168.232.146:8080/sysmaps.php
+
+User: Admin
+Pw: zabbix
+
+--------------
+user:thrukadmin
+pw:thrukadmin
+

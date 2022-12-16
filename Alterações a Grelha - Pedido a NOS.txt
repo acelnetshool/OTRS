@@ -1,0 +1,34 @@
+Alterações a Grelha - Pedido a NOS
+-------------------------------------------
+Alterações a Grelha - Pedido a NOS
+
+A grelha da IRIS é gerida pela NOS, pelo que é necessário ser enviado um pedido de alteração a grelha para nos.ddp.tickets@gmail.com.
+
+Consequentemente o ID (IRISID) criado pela NOS ao inserir um novo canal é o ID utilizado em IPTV.
+
+A informação a transmitir a NOS é a providênciada pela equipa de Engenharia de TV no CLU DTH:
+
+Posição
+Nome
+DvbNetworkId
+DvbServiceId
+DvbTransportId
+ChannelId
+nPVR
+RestartFlag
+
+Adicionalmente, se os canais que não pertencem a grelha da NOS (confirmar esta condição com Engenharia de TV), deve-se também comunicar:
+
+Logo
+Contactos EPG
+
+O exemplo desta comunicação segue:
+
+TO: nos.ddp.tickets@gmail.com; Joao.Gracio@parceiros.nos.pt;
+CC: leandro.m.tavares@nos.pt; alexandra.vieira@nos.pt; dl.der.integracao@zap.co.ao;   roberto.a.martins@parceiros.nos.pt;Fabio.ASousa@parceiros.nos.pt;
+SUBJ: Alterações grelha ZAP
+
+Bom dia,
+Iremos proceder a alterações a grelha da ZAP. Queiram por favor proceder conforme excel em anexo.
+
+LINK PARA VERIFICAR ANEXO XLSX:https://gitlab.zap.intra/integracao/kb/issues/5

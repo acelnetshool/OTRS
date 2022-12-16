@@ -1,0 +1,106 @@
+# Instale o repositório EPEL:
+ sudo yum install epel-release
+
+# Atualize o repositório:
+ sudo yum update
+
+# Instale o NGINX Open Source:
+ sudo yum install nginx
+
+# Verifique a instalação:
+ sudo nginx -v
+
+# Configure o yumrepositório para RHEL ou CentOS criando o arquivo nginx.repo em /etc/yum.repos.d , por exemplo usando vi:
+ sudo vi /etc/yum.repos.d/nginx.repo
+
+# Adicione as seguintes linhas ao nginx.repo :
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/mainline/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+
+# Atualize o repositório:
+ sudo yum update
+
+# Instale o pacote NGINX Open Source
+ sudo yum install nginx
+
+# Inicie o NGINX Open Source:
+ sudo nginx
+
+# Verifique se o NGINX Open Source está funcionando:
+ $ curl -I 127.0.0.1
+
+----------------
+
+LINK Externo NGINX:http://192.168.232.100:3354/
+
+--------------------------------
+#Após verificação e instalação do NGINX devemos criar as pastas para alocar os pacotes que vamos baixar e depois instalar - APPS
+[root@localhost ~]# clear
+[root@localhost ~]# mkdir /opt/install
+[root@localhost ~]# cd /opt/install/
+[root@localhost install]# mkdir /APPS
+[root@localhost install]# wget https://ftp.exim.org/pub/pcre/pcre2-10.37.tar.gz
+------------------------------------
+# Segundo Arquivo - Para não verificar o certificado pacote Openssl
+[root@localhost install]# wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.1q.tar.gz
+-----------------------------------------------
+#Baixar o pacote Zlib
+[root@localhost install]# wget http://zlib.net/fossils/zlib-1.2.12.tar.gz
+--------------------------------------------------
+#Baixar o pacote principal do nginx
+[root@localhost install]# wget http://nginx.org/download/nginx-1.19.3.tar.gz
+----------------------------------------------
+Pacotes Instalados:
+[root@localhost install]# ll
+total 14368
+-rw-r--r--. 1 root root 1052581 Sep 29  2020 nginx-1.19.3.tar.gz
+-rw-r--r--. 1 root root 9864061 Jul  5 12:09 openssl-1.1.1q.tar.gz
+-rw-r--r--. 1 root root 2299767 May 26  2021 pcre2-10.37.tar.gz
+-rw-r--r--. 1 root root 1490071 Mar 28 01:39 zlib-1.2.12.tar.gz
+---------------------------------------------------------------
+# Instalar todos os pacotes baixados:
+[root@localhost install]# tar -zxvf nginx-1.19.3.tar.gz
+----------------------------------------------
+#Configurar os pacotes do NGINX
+[root@localhost nginx-1.19.3]# ./configure --prefix=/APPS/nginx
+-----------------------------------------
+#Instalar as ferramentas de desenvolvimento
+[root@localhost nginx-1.19.3]# yum group install 'Development tools'
+-----------------------------
+[root@localhost nginx-1.19.3]# ./configure --prefix=/APPS/nginx --with-openssl=/opt/install/openssl-1.1.1q --with-pcre=/opt/install/pcre2-10.37 --with-zlib=/opt/install/zlib-1.2.12
+
+-------------------------------------------
+# Apos instalação dos pacotes entrar na configuração do NGINX
+[root@localhost install]# cd nginx-1.19.3/
+
+------------------------------------
+# Executar o make
+[root@localhost nginx-1.19.3]# make
+------------------------------
+#Configurações do NGINX
+Configuration Files: /etc/nginx
+Binary/Executable Files: /usr/sbin
+Log Directory or Files: /var/log/nginx
+Data or Document directory files: /usr/share/nginx
+------------------------------------------
+#Localização dos Logs do NGINX
+[root@localhost ~]# cd /var/log/nginx
+----------------------------------------------
+#Localização dos Documentos do NGINX
+[root@localhost ~]# cd /usr/share/nginx/
+---------------------------------------------------
+#Configurações da Tela principal do NGINX
+[root@localhost nginx]# cd html/
+[root@localhost html]# vim index.html
+----------------------------------------------
+#Comando para verificar o PID
+[root@localhost nginx]# cat /run/nginx.pid
+
+
+
+
+
+

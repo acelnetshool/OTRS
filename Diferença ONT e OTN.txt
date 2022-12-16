@@ -1,0 +1,2 @@
+ONT -> Liga ao HGW (Equipamento)
+OTN -> Servidor/máquina cuida das atualizações dos firmware das STBs

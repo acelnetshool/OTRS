@@ -1,0 +1,9 @@
+TLT-DC-IRISFE03 - Clear Cache - Sem Check no periodo definido.
+
+1ª Opção:
+
+Aceder ao IRIS_BO > IRIS e correr o "Fix EPG youtube Prod"
+
+2ª Opção:
+
+Aceder á maquina por ssh @10.151.8.132 e correr o seguinte comando: varnishadm "ban req.url ~ /"

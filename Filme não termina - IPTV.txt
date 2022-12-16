@@ -1,0 +1,3 @@
+Filme não termina:
+
+1. Validar no "Kibana" : CDNs e cache se devolvem o mesmo tamanho de resposta.

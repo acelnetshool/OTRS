@@ -1,0 +1,12 @@
+Cliente com anomalia nos canais 21, 4, 26, 31 apresentam em câmara lenta, com travamentos.
+------------------------------------------------
+Despiste:
+1. Reinínico da STB
+2. Reinicio do HGW e Validar ligações
+
+----------------
+Nota: 
+1. Verificar se os pedidos aos canais com queixas batem nos mesmos transcoders.
+2. Se o problema do cliente é "live" não faz sentido ver os pedidos dos CDNs.
+3. Verificar no Kibana as queries do problema do cliente e mostrar a informação na tabela
+4. Verificar se a caixa esta aprovisionar no DRM

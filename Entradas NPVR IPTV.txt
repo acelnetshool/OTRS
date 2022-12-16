@@ -1,0 +1,35 @@
+Entradas NPVR IPTV
+
+NPVR
+
+- Alterar as configs em configs/WTFARM??.py e adicionar o canal no fim da lista
+- Reiniciar os serviços de npvr
+
+Wowzas
+
+- Alterar o ficheiro de startup
+- Iniciar a stream na app ZAPR
+- Parar a stream na app ZAP
+
+Hapee
+
+- Alterar o healthcheck para a app ZAPR
+
+Nordija
+
+Configuração do canal
+
+- URL da stream
+- Min. recording lifetime: 168
+- Network recorder: CDN
+
+Products
+
+Network Products
+
+Adicionar o canal as variants dos produtos:
+
+- Network recording
+- Network start over
+- Network restart
+- Network pause / live

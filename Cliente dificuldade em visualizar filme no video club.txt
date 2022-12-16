@@ -1,0 +1,21 @@
+Clt esta com dificuldade em visualizar o filme selecionado no video club
+Apos a selecção do filme so lhe permite visualizar por 3 minutos
+------------------------------------------------------------------
+1. Verificar se cliente tem "Pontos no VOD"
+2. Verificar se o filme ainda esta disponivel 
+Nota: Verifica o filme a partir da Bancada Engenharia se ainda existe.E se tem "Trailler","Inicio","Meio" e "Fim"
+3. Verificar se foi registada a compra do filme:
+Nota: ZW -> "Consumo do Filme" ----> Verificar nos pontos consumidos
+4. Verificar o Tempo do Filme na STB;
+5. Verificar no Kibana Happer se algo se passou:
+Filtro:hapee-iptv ->client_ip:ex:10.152.131.28
+>Time:
+>Source:
+>server_name:
+>client_ip:
+>client_mac:
+>http_request:"" -> No final conseguimos ve a ultima versão da box
+>time_duration:
+6. Pedir a 1ª linha que seja feito DVL a STB e testar novamente.
+7. Verificar a versão do Firmware
+8.

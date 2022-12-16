@@ -1,0 +1,225 @@
+comandos docker
+-----------------------------
+1.This command shows you only documentation and configuration files
+# rpm -ql docker-registry | grep -E "(/etc)|(/usr/share)|(systemd)"
+R:
+/etc/docker-registry.yml
+/etc/sysconfig/docker-registry
+/usr/lib/systemd/system/docker-registry.service
+/usr/share/doc/docker-registry
+/usr/share/doc/docker-registry/AUTHORS
+/usr/share/doc/docker-registry/CHANGELOG.md
+/usr/share/doc/docker-registry/LICENSE
+/usr/share/doc/docker-registry/README.md
+
+2.Open Firewall run these commands to open the port on the firewall
+# firewall-cmd --zone=public --add-port=5000/tcp
+# firewall-cmd --zone=public --add-port=5000/tcp --permanent
+# firewall-cmd --zone=public --list-ports
+R:
+5000/tcp
+
+3.Start the docker-registry service
+# systemctl start docker-registry
+# systemctl enable docker-registry
+R:
+Created symlink from
+/etc/systemd/system/multi-user.target.wants/docker-registry.
+service
+to /usr/lib/systemd/system/docker-registry.service.
+
+#systemctl status docker-registry
+R:
+docker-registry.service - Registry server for Docker
+Loaded: loaded (/usr/lib/systemd/system/docker-registry.
+service;enabled)
+Active: active (running) since Mon 2015-05-25 12:02:14 EDT; 42s ago
+Main PID: 5728 (gunicorn)
+CGroup: /system.slice/docker-registry.service
+├─5728 /usr/bin/python /usr/bin/gunicorn --access-logfile
+- --max-requests 100 --graceful-timeout 3600-t 36...
+...
+
+4.Get an image Run / that image as follows:
+# docker run --name myhello hello-world
+R:
+Unable to find image ‘hello-world:latest' locally
+latest: Pulling from docker.io/hello-world
+91c95931e552: Download complete
+a8219747be10: Download complete
+Hello from Docker.
+docker.io/hello-world:latest: The image you are pulling has been
+verified.
+...
+
+5.Allow access to registry 
+
+you can identify the
+registry as insecure by editing the /etc/sysconfig/docker file and creating
+the following lines in that file:
+ADD_REGISTRY='--add-registry localhost:5000'
+INSECURE_REGISTRY='--insecure-registry localhost:5000'
+
+After that, restart the local Docker service:
+# systemctl restart docker
+
+6.Tag the image:
+# docker tag hello-world localhost:5000/hello-me:latest
+
+7.Push the image: To push the hello-world to the local Docker registry, typethe following:
+# docker push localhost:5000/hello-me:latest
+
+The push refers to a repository [localhost:5000/hello-me] (1 tags)
+...
+Pushing tag for rev [91c95931e552] on
+{http://localhost:5000/v1/repositories/hello-me/tags/latest}
+
+8.Pull the image:
+# docker rm myhello
+# docker rmi hello-world localhost:5000/hello-me:latest
+# docker pull localhost:5000/hello-me:latest
+
+Pulling repository localhost:5000/hello-me
+91c95931e552: Download complete
+a8219747be10: Download complete
+
+# docker images
+REPOSITORY  TAG IMAGE ID CREATED VIRTUAL SIZE
+localhost:5000/hello-me latest 91c95931e552 5 weeks ago 910 B
+
+#Here’s what you can learn from this command line:
+
+■ --access-logfile: Access to the docker-registry service is logged to any file
+you set. In this case, however, the log file is set to a single hyphen (-), so
+access messages are simply sent to standard output (where they are picked
+up by the systemd journal and can be viewed by the journalctl command).
+
+■ --max-requests 100: Sets the maximum number of requests that a
+gunicorn daemon can accept to 100. After that, the worker is restarted.
+
+■ --graceful-timeout 3600: Gives the gunicorn worker 3600 seconds (6
+minutes) to finish handling a request once it has been sent a restart signal.
+If it has not completed what it is doing by that time, it is killed.
+
+■ -t 3600: If the gunicorn worker is silent for more than 3600 seconds
+(6 minutes), it is killed and restarted.
+
+■ -k gevent: Sets the type of gunicorn worker to gevent (an asynchronous type
+of worker based on Greenlets).
+
+■ -b 0.0.0.0:5000: Sets the worker to bind on all IP addresses on the system
+(0.0.0.0) on port 5000. This allows docker clients to connect to the Docker
+registry through any external network interface on the system via TCP port
+5000.
+
+■ -w 4: Sets the number of worker processes to 4 (above the original gunicorn
+process).
+■ docker_registry.wsgi:application: Runs the process with the Docker registry
+wsgi application.
+
+# To change the behavior of the docker-registry service, you can edit the /etc/
+sysconfig/docker-registry file. Here is how that file is set by default in Fedora :
+
+# The Docker registry configuration file
+DOCKER_REGISTRY_CONFIG=/etc/docker-registry.yml
+
+# The configuration to use from DOCKER_REGISTRY_CONFIG file
+SETTINGS_FLAVOR=local
+
+# Address to bind the registry to
+REGISTRY_ADDRESS=0.0.0.0
+
+# Port to bind the registry to
+REGISTRY_PORT=5000
+
+# Number of workers to handle the connections
+GUNICORN_WORKERS=4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

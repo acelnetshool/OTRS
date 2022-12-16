@@ -1,0 +1,56 @@
+3.1.Serviços e sistemas em DTH (Direct to home)
+-----------------------------
+Corresponde á grelha de canais de televisão transmitidos por satélite pela ZAP, e isto inclui 169 serviços de áudio e vídeo, 
+incluindo canais de música e rádios. 
+É necessário que os clientes tenham uma antena parabólica e uma STB/descodificador da ZAP para a possibilitar a visualização dos serviços.
+
+Os sistemas que suportam e mantêm esses serviços estão instalados no Head End de VN e AO e podem ser divididos em:
+• Sistema de Downlink RF.
+• Sistema de compressão.
+• Sistema de Uplink RF.
+• Sistema Rx/Tx óticos.
+------------------~
+3.1.1 Sistema de Downlink RF.
+
+antenas parabólicas que recebem vários serviços por satélite que á posterior farão parte do sistema de compressão e da grelha de canais.
+
+A antena parabólica tem a função de receber as frequências por satélite em Banda KU e C que transportam serviços de vários provedores 
+e canais que farão parte da grelha. Aqui em AO temos um parque de cerca de 20 antenas.
+--------------
+Os encoders são equipamentos que têm a função de comprimir os sinais de
+vídeo digital captado pelas câmaras de filmagem
+..................
+3.1.2.Os Multiplexadores ou Mux’s são os equipamentos responsáveis para a
+agregação de todos os serviços comprimidos pelos diversos encoders em
+apenas um único canal.
+----------------------------------
+3.1.3 Sistema de Uplink RF
+O sistema de Uplink RF é o responsável pela transmissão ao satélite da TS que carrega os serviços processados pelo anterior sistema de compressão.
+
+As antenas de Uplink da ZAP transmitem os sinais através de 6 frequências.Na receção estas frequências são 
+11221Mhz,11262Mhz,11304Mhz,11345,11387 e 11428Mhz que correspondem a TS#21, TS#22, TS#23,TS#24,TS#25 e TS#11
+----------------------------
+---------------------------------------------------------------FIM DTH
+---------------------------------------------------------------INICIO FTTH
+4.1. Serviços e sistemas em FTTH (Fibra to the home)- Rede GPON (Giga passive optical network)
+-------------------
+Em FTTH estão disponibilizados 3 tipos de serviços:
+
+1. A TV Live, que são os mesmos canais disponibilizados aos clientes DTH.
+2. Os serviços de VOD, que correspondem o videoclube, o NPVR, o time warp, e o restart TV. 
+São serviços interativos que permitem ao cliente visualizar programas gravados, gravar programas em rede, regressar no guia TV para visualizar eventos passados, etc.
+3.A internet é também um serviço disponibilizado para os clientes FTTH.
+Nota: Todos estes serviços são disponibilizados através da tecnologia de fibra ótica.
+
+Os sistemas que geram e mantêm estes serviços estão instalados no Datacenter e podem ser divididos pelos seguintes sistemas:
+• Sistema de modulação e transconding
+• Sistema de combinação RF
+• Sistema de combinação ótica
+
+1. O sistema de modulação e transcoding é responsável para adaptação dos serviços á serem transmitidos no padrão DVB-C.
+2. O Apex é o equipamento que tem a função de modular os serviços VOD para a transmissão á rede de fibra.
+3. Os EDFA’s são os equipamentos que fazem a multiplexação ótica dos cabos que trazem a internet e a TV.
+4. As OLT’s são os equipamentos que disponibilizam a internet aos EDFA’s.
+5. A DGO é o gabinete responsável para a distribuição das fibras á rede cliente.
+6. No lado do cliente, será necessário um ONT para demultiplexação e demodulação ótica, 
+ Uma STB para demodulação e decodificação dos serviços Live e VOD, e um router para acesso á internet.

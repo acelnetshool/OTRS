@@ -1,0 +1,27 @@
+1.Reporting: Constitui as bases para comparação de metas, avaliação de desempenho e incentivos.
+
+1.1.Constituição:
+
+1.1.1.Report Operacional:
+RTSP: Protocolo responsavel pelo controle das tranferencia dos dados em tempo real.
+-----
+Restart + nPVR: 
+Restart: Recomeçar um conteúdo que esta a ser transmitido no momento.
+nPVR: Gravar e ver conteúdos gravados
+
+
+--------------------------
+1.1.2.CCUR:
+1.1.3.Estatisticas Diarias:
+1.1.4.Estatisticas de Hoje:
+----------
+
+RTSP: O Real Time Streaming Protocol é um protocolo a nível de aplicação para controle na transferência de dados com propriedades de tempo real.
+-------------------------------------------------------------
+2. Match CCUR: Validação dos VODs (Video/Clube).
+Nota: VODs (sem preview, sem movie ou ainda se o preço está errado)
+------------------------------------------------------------------
+2.1. CCUR VOD:
+Nota:VODs que não existem nos FE da Iris (e/ou existem no Storage e/ou na AssetMapping (Mapeamento de recursos)):
+---------------------------
+3. Estatisticas diárias

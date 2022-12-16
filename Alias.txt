@@ -1,0 +1,3 @@
+ls -lga : Mosta uma lista de arquivos que existem no servidor e também arquivos ocultos
+
+git checkout -b <nome_branch_novo>

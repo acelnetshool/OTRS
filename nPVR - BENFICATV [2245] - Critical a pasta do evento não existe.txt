@@ -1,0 +1,110 @@
+# Zaplay - Aplicação do telemovel [Telefone]
+----------------------------------------------
+**Problema***
+TLT-DC-TRNS00: Verificar serviço
+Message: Critical
+Status: Critical!A pasta do evento não existe /mnt/transcode/epg/BTV/20220920224562487:[Ano:2022][Mes:09][Dia:20][IDCanal:2045][Evento:62487]
+
+Objectivo: O objectivo passa em recriar uma nova entrada.
+----------------------------------------
+1. Aceder o TLT-DC-TRNS00:
+sudo vi -c sh
+
+2. Testar o serviço do canal
+TLT-DC-TRNS00# 
+service Trans.TPA.service status
+
+---------------------------------
+Resolver: Transcoder
+TLT-DC-TRNS06:
+-----------------------------------------------------------------------
+1º Opção: Aceder o redis-cli -c
+[root@tlt-dc-trns06 ~]# redis-cli -c
+
+2º Opção: Verificar data do canal no redis: Executar "keys *" para verificar todos os canais e encontrar o canal amarrado ao erro através do alerta.
+127.0.0.1:6379> keys *
+ 1) "2018"
+ 2) "2245"
+ 3) "2191"
+ 4) "2275"
+ 5) "2366"
+ 6) "unacked"
+ 7) "2071"
+ 8) "2027"
+ 9) "_kombu.binding.addtask"
+10) "2434"
+11) "2226"
+12) "2276"
+13) "_kombu.binding.celery.pidbox"
+14) "2019"
+15) "2114"
+16) "2174"
+17) "2076"
+18) "2300"
+19) "2419"
+20) "2175"
+21) "2141"
+22) "2310"
+23) "2059"
+24) "2383"
+25) "_kombu.binding.updateKeytask"
+26) "2281"
+27) "2309"
+28) "_kombu.binding.endtasks"
+29) "2267"
+30) "unacked_index"
+31) "2439"
+32) "2277"
+33) "2303"
+34) "2160"
+35) "2161"
+36) "2355"
+37) "2264"
+38) "2272"
+39) "2066"
+40) "2081"
+41) "2379"
+42) "2031"
+43) "_kombu.binding.celeryev"
+44) "2064"
+45) "2176"
+46) "2243"
+47) "2013"
+48) "2177"
+49) "2311"
+50) "2020"
+51) "2280"
+52) "2062"
+53) "closing"
+54) "2084"
+55) "2273"
+
+3º Opção: ex: mget 2267 : Eliminar data referente ao canal. Se for eliminada vai ser craida nova entrada referente ao canal.
+
+127.0.0.1:6379> mget 2267
+1) "{\"sepTime\": 1664460000, \"closing\": false, \"actual\": {\"folder\": \"20220929226721814\", \"id\": \"226721814\"}, \"next\": {\"folder\": \"20220929226721815\", \"id\": \"226721815\"}}"
+
+4º Opção: del 2267 : Forçar novamente refresh no naemon para verificar estado do alerta.
+127.0.0.1:6379> del 2267
+
+(integer) 1
+127.0.0.1:6379>
+
+LINK GITLAB
+https://gitlab.zap.intra/integracao/kb/issues/53
+
+------------------------------------------------------------------
+ # Overviwer sem impacto
+
+[afonso.caluege@tlt-dc-trns06 ~]$ ll /opt/
+drwxr-xr-x. 2 root root 103 Sep 21  2017 NetShows
+drwxr-xr-x. 6 root root  71 Mar 20  2017 nPVR
+drwxr-xr-x. 2 root root  29 Aug 23  2017 StreamingTools
+
+2. Transcoder
+[afonso.caluege@tlt-dc-trns06 ~]$ ls /mnt/transcode/
+Backup  epg  keys  live  teste.txt  viva.html
+
+2. listar EPG
+[afonso.caluege@tlt-dc-trns06 ~]$ ls /mnt/transcode/epg/BTV/
+Backup  epg  keys  live  teste.txt  viva.html

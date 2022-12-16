@@ -1,0 +1,5 @@
+INT00 - IPTVstatus error
+
+screen -S session_name
+
+/usr/bin/php /var/www/html/zap_iris_bo/app/cli.php Iptvstatus

@@ -1,0 +1,2 @@
+#Comando para verificar portas de escula livre - caso o 80 esteja ocupado
+sudo lsof -t -i:80

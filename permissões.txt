@@ -1,0 +1,27 @@
+# Entradas e legenda de arquivos linux no inicio
+
+ex:
+
+drwxr-xr-x
+-rwxr-xr-x
+crwxr-xr-x
+brwxr-xr-x
+lrwxr-xr-x
+
+d = diretorio
+- = arquivo comum de usuario
+c = arquivo de caractere
+b = arquivo de bloco
+l = link
+
+conjuntos
+--------------------
+1º proprietario = rwx
+2º grupos = r-x
+3º outros = r-x
+--------------------------
+
+r = read 
+w = write
+x = Execute
+- = Sem permissão

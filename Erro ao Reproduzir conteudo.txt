@@ -1,0 +1,85 @@
+Despiste:
+1. Primeiro questionar o tipo de conteudo que o cliente vizualiza ou deseja:
+>>>>>>1.1. VOD?
+>>>>>>1.2. Gravação?
+>>>>>>1.3. Live?
+
+2. Verificar Direitos, caso não exista deve-se pedir autorização ao carlos para o reenvio dos direitos;
+3. Verificar os pedidos CDNs para esse cliente;
+4. Verificar os pedidos no Wowza para esse cliente?
+>>>>No Kibana Filtrar:
+------> WOWZA:
+------>c_client_id:*10.152.72.122
+Nota: Testar os filros nos Wowza
+
+5. Verificar os pedidos no manifest_proxy?
+----------------------------------------------------
+Nota: Verificar se o cliente
+Linha Vermelho - não é erro depois de 2h na troca da box o processo expira e fica avermelhado
+
+- Verificar no manifestproxy o status code "307 ou 404"?
+
+------
+Verificar também se a STB existe no DRM controlar a mensagem no BO
+"STB not find in DRM"
+caso existir então pergunta na equipe se pode reeviar os direitos e se não resultar copia o ID do reenvio dos direitos
+e manda para alguem do team.
+
+----------------
+Boxes "STBs"
+
+- Validar no ZW se tem boxes extras e estão pagas pois se não estiverem pagas vai aparecer o erro 404 e não 307 no status_code: Manifestproxy
+- Verificar se existe problemas no provisioning
+
+
+-------------------------
+Exemplo informação DRM:
+----------------------------------
+Drm information
+30:EB:25:1F:FC:60
+{
+    "mac": "30:EB:25:1F:FC:60", ------------------------mac box
+    "deviceId": "ZAP20071514706", ------------------------id do dispositivo no DRM
+    "sn": "723H2031L015578", -------------------------------Serial number
+    "live": [
+        {
+            "id": "162", ------------------------------->Box não paga
+            "begin": "2022-09-13 00:00:00", ------------
+            "end": "2022-10-10 23:59:59"
+        }
+    ],
+    "vod": []
+}
+30:EB:25:1F:F8:7D
+{
+    "mac": "30:EB:25:1F:F8:7D",
+    "deviceId": "ZAP20071513711",
+    "sn": "723H2031L015569",
+    "live": [
+        {
+            "id": "500",-----------------------------------box paga
+            "begin": "2022-10-11 00:00:00", ---------------inicio
+            "end": "2022-11-12 23:59:59" ..................Fim
+        },
+        {
+            "id": "162",
+            "begin": "2022-10-23 00:00:00",
+            "end": "2022-11-21 23:59:59"
+        }
+    ],
+    "vod": []
+}
+30:EB:25:1F:E9:15
+{
+    "mac": "30:EB:25:1F:E9:15",
+    "deviceId": "ZAP20071509767",
+    "sn": "723H2031L015577",
+    "live": [
+        {
+            "id": "162",
+            "begin": "2022-09-13 00:00:00",
+            "end": "2022-10-10 23:59:59"
+        }
+    ],
+    "vod": []
+}

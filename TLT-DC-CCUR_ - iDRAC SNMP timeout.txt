@@ -1,0 +1,5 @@
+TLT-DC-CCUR_**** - iDRAC SNMP timeout
+
+#ipmitool lan print 1 - Lista configuração do idrac.
+
+#ipmitool mc reset cold - Efetua restart à controladora.

@@ -1,0 +1,6 @@
+# Equipamento não existente na Nordija
+-----------------------------------------
+1. Validar em ZW se a box aparece e existe
+2. validar informação no DRM/BO e verificar quantas stbs existem
+3. verificar em ZW quantas stbs estão associadas a subscrição
+4. quantas stbs existem no DRM e quantas existem na Nordija

@@ -1,0 +1,7 @@
+IRISFE00~03 - Disk Space
+
+Access to C:\inetpub\Logs\LogFiles\W3SVC1\
+
+Zip by month and choose delete after archived.
+
+Destination zip: z:\Archives_Logs\Iris\IIs\month.rar

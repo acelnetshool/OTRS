@@ -1,0 +1,85 @@
+FortyGigabitEthernet1/0/5       ** LAD-DC-SWIP001A_Eth1/14 (MAIN) **
+
+FortyGigabitEthernet1/0/6        ** KIL-00-SWIP001A_Eth1/14 (MAIN) **
+
+FortyGigabitEthernet1/0/7       ** TLT-DC-SWIP023A_Eth1/14 (MAIN) **
+
+FortyGigabitEthernet1/0/8       ** TLT-DC-SWIP015_Eth1/49 **
+
+ 
+
+FortyGigabitEthernet1/0/19      ** TLT-DC-SWIP023B_Eth1/31 (BKCP) **
+
+FortyGigabitEthernet1/0/20      ** TLT-DC-SWIP016_Eth1/49 **
+
+FortyGigabitEthernet1/0/21      ** LAD-DC-SWIP001B_Eth1/31 (BKCP) **
+
+FortyGigabitEthernet1/0/22      ** KIL-00-SWIP001B_Eth1/31 (BKCP) **
+
+ 
+
+HundredGig1/0/33      ** TO TLT-DC-CRIP001:FortyGigabitEthernet0/5/0/0 **
+
+HundredGig1/0/34      ** TO TLT-DC-CRIP002:FortyGigabitEthernet0/4/1/0 **
+
+ 
+
+HundredGig1/0/44      ** TO TLT-DC-CRIP001:FortyGigabitEthernet0/4/1/0 **
+
+HundredGig1/0/45      ** STACKWISE_VIRTUAL_LINK **
+
+ 
+
+HundredGig1/0/48      ** STACKWISE_VIRTUAL_LINK **
+
+ 
+
+FortyGigabitEthernet2/0/5        ** LAD-DC-SWIP001B_Eth1/14 (MAIN) **
+
+FortyGigabitEthernet2/0/6        ** KIL-00-SWIP001B_Eth1/14 (MAIN) **
+
+FortyGigabitEthernet2/0/7        ** TLT-DC-SWIP023B_Eth1/14 (MAIN) **
+
+FortyGigabitEthernet2/0/8        ** TLT-DC-SWIP015_Eth1/50 **
+
+ 
+
+FortyGigabitEthernet2/0/19      ** TLT-DC-SWIP023A_Eth1/31 (BKCP) **
+
+FortyGigabitEthernet2/0/20      ** TLT-DC-SWIP016_Eth1/50 **
+
+FortyGigabitEthernet2/0/21      ** LAD-DC-SWIP001A_Eth1/31 (BKCP) **
+
+FortyGigabitEthernet2/0/22      ** KIL-00-SWIP001A_Eth1/31 (BKCP) **
+
+ 
+
+HundredGig2/0/33      ** TO TLT-DC-CRIP001:FortyGigabitEthernet0/4/0/0 **
+
+HundredGig2/0/34      ** TO TLT-DC-CRIP002:FortyGigabitEthernet0/3/1/1 **
+
+ 
+
+HundredGig2/0/44      ** TO TLT-DC-CRIP001:FortyGigabitEthernet0/4/0/1 **
+
+HundredGig2/0/45      ** STACKWISE_VIRTUAL_LINK **
+
+HundredGig2/0/46     
+
+HundredGig2/0/47     
+
+HundredGig2/0/48      ** STACKWISE_VIRTUAL_LINK **
+
+Po3              ** TO TLT-DC-SWIP017:PC1 **
+
+Po11            ** TO LAD-DC-SWIP001A/B **
+
+Po12           ** TO KIL-00-SWIP001A/B **
+
+Po13           ** LINK to TLT-DC-SWIP023A/B **
+
+Po100         ** TO TLT-DC-CRIP001/2 **
+
+Po110         ** ANGONIX-MAIN **
+
+Po123         ** TO TLT-LAB-SWIP023 **

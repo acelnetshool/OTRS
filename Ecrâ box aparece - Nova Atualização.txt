@@ -1,0 +1,2 @@
+Nova atualização:
+Nota1: Caso na box apareça a mensagem nova atualização, deve-se reencaminhar o ticket para a rede IP

@@ -1,0 +1,42 @@
+# Verificar o DNS amarrado ao canal
+
+# vai retornar todos IPs amarrado a este canal "Round Robin"
+[afonso.caluege@TLT-DC-HAPEE00 etc]$ dig 2379.cdn.iptv.zap
+---------------------------------------
+[root@naemon etc]# dig
+
+; <<>> DiG 9.11.36-RedHat-9.11.36-3.el8 <<>>
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55499
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 4
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; MBZ: 0x0005, udp: 4000
+;; QUESTION SECTION:
+;.                              IN      NS
+
+;; ANSWER SECTION:
+.                       5       IN      NS      k.root-servers.net.
+.                       5       IN      NS      d.root-servers.net.
+.                       5       IN      NS      f.root-servers.net.
+.                       5       IN      NS      g.root-servers.net.
+.                       5       IN      NS      a.root-servers.net.
+.                       5       IN      NS      l.root-servers.net.
+.                       5       IN      NS      m.root-servers.net.
+.                       5       IN      NS      c.root-servers.net.
+.                       5       IN      NS      j.root-servers.net.
+.                       5       IN      NS      b.root-servers.net.
+.                       5       IN      NS      h.root-servers.net.
+.                       5       IN      NS      i.root-servers.net.
+.                       5       IN      NS      e.root-servers.net.
+
+;; ADDITIONAL SECTION:
+k.root-servers.net.     5       IN      A       193.0.14.129
+a.root-servers.net.     5       IN      A       198.41.0.4
+a.root-servers.net.     5       IN      AAAA    2001:503:ba3e::2:30
+
+;; Query time: 4 msec
+;; SERVER: 192.168.232.2#53(192.168.232.2)
+;; WHEN: Tue Oct 04 06:59:30 WAT 2022
+;; MSG SIZE  rcvd: 312

@@ -1,0 +1,11 @@
+#ldconfig - Configura ligações em tempo de execução do ligador dinamico (ld.so).
+
+> Cria os links e cache necessarios para as bibliotecas compartilhadas mais recentes 
+encontradas nos diretorios especificados na CLI, no arquivo /etc/ld.so.conf e nos diretorios
+/lib e /usr/lib
+
+#Executar apois a instalação de uma nova biblioteca, para interligar o cache
+[root@naemon acaluege]# ldconfig
+
+#Para verificar as linkagens
+[root@naemon acaluege]# ldconfig -p

@@ -1,0 +1,4 @@
+#Caminho para pegar as keys do wowza
+
+/usr/local/WowzaStreamingEngine/conf/Server.license
+

@@ -1,0 +1,13 @@
+A rede IP esta a migrar os equipamentos BNG mais SW Nexus (LAB-MAIANGA)
+
+Nota: Verificar se existe algum comportamento estranho dos clientes pois os pedidos não bate nos caches mais 
+sim vem buscar no DC- Talatona diretamente.
+
+Obs: Fazer uma analise diretamente: BO
+, 22 :  
+
+
+validar se o OSPF (Protocolo externo) soube
+Nexus
+
+http://10.151.58.229:5601/app/kibana#/visualize/edit/1c0f4960-fbe1-11ec-8546-15a405333397?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-5m,to:now))&_a=(filters:!(('$state':(store:appState),meta:(alias:!n,disabled:!f,index:'644d4910-308d-11ea-9dd8-2337db8fe410',key:frontend_name.keyword,negate:!f,params:(query:nordija_client_portal_fe~),type:phrase),query:(match_phrase:(frontend_name.keyword:nordija_client_portal_fe~)))),linked:!f,query:(language:kuery,query:''),uiState:(vis:(params:(sort:(columnIndex:!n,direction:!n)))),vis:(aggs:!((enabled:!t,id:'1',params:(),schema:metric,type:count),(enabled:!t,id:'2',params:(field:client_ip.keyword,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:'1',otherBucket:!f,otherBucketLabel:Other,size:17),schema:bucket,type:terms)),params:(dimensions:(buckets:!((accessor:0,aggType:terms,format:(id:terms,params:(id:string,missingBucketLabel:Missing,otherBucketLabel:Other,parsedUrl:(basePath:'',origin:'http:%2F%2F10.151.58.229:5601',pathname:%2Fapp%2Fkibana))),label:'client_ip.keyword:%20Descending',params:())),metrics:!((accessor:1,aggType:count,format:(id:number),label:Count,params:()))),perPage:30,percentageCol:'',showMetricsAtAllLevels:!f,showPartialRows:!f,showTotal:!f,sort:(columnIndex:!n,direction:!n),totalFunc:sum),title:'IPTV%20-%20TOP%20Ten%20Nordija%20Requests',type:table))

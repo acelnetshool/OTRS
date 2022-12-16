@@ -1,0 +1,5 @@
+#Procurar serviço associado ao host
+
+[afonso.caluege@TLT-DC-NAEMON ~]$ grep -rnw '/etc/naemon/okconfig' -e 'check_passive_noreport'
+8912896
+9961472

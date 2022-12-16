@@ -1,0 +1,20 @@
+/usr/lib64/nagios/plugins/check_nrpe -H 10.151.155.1 -c check_service -a filebeat
+
+# O nrpe vai correr o comando check_service no host 10.151.155.1, passando o argumento "filebeat"
+
+Mensage:
+
+" NRPE: Command 'check_service' not define
+
+[17/08 16:54] Carlos Peixoto
+o que quer dizer que não sabe o que é o check_service
+
+[17/08 16:55] Carlos Peixoto
+se fores à pasta das confs do nrpe na máquina
+
+[17/08 16:55] Carlos Peixoto
+/etc/nrpe.d/
+
+[17/08 16:55] Carlos Peixoto
+vais ver que tens lá as definições de cada comando
+

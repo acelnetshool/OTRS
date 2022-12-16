@@ -1,0 +1,3 @@
+#Desabilitar o selinu
+[root@naemon ~]# vi /etc/selinux/config
+[root@naemon ~]# systemctl stop firewalld

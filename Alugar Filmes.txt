@@ -1,0 +1,8 @@
+Feedback do cliente: Clt indica que recebe a informação de PIN incorrecto
+-------------------------------------------------------------------------------
+
+Diagnóstico: 
+1. Verificar com pontos do cliente se suficientes para alugar filmes no VOD -> ZW
+2. Pede para ver a ligação UTP da stb a hgw e tentar nvamente com o codigo 5555
+3. Vrificar se há interatividade
+4. Verificar pin default do client

@@ -1,0 +1,40 @@
+#Criair partição no disco
+[acaluege@naemon ~]$ sudo fdisk /dev/sdd
+
+
+
+---------------------------------------------------------------
+#Serve para criair e apagar partições de Discos
+
+#sudo fdisk -l
+---------------------------------------------------------------
+
+[acaluege@naemon ~]$ fdisk --help
+
+Usage:
+ fdisk [options] <disk>      change partition table
+ fdisk [options] -l [<disk>] list partition table(s)
+
+Display or manipulate a disk partition table.
+
+Options:
+ -b, --sector-size <size>      physical and logical sector size
+ -B, --protect-boot            don't erase bootbits when creating a new label
+ -c, --compatibility[=<mode>]  mode is 'dos' or 'nondos' (default)
+ -L, --color[=<when>]          colorize output (auto, always or never)
+                                 colors are enabled by default
+ -l, --list                    display partitions and exit
+ -o, --output <list>           output columns
+ -t, --type <type>             recognize specified partition table type only
+ -u, --units[=<unit>]          display units: 'cylinders' or 'sectors' (default)
+ -s, --getsz                   display device size in 512-byte sectors [DEPRECATED]
+     --bytes                   print SIZE in bytes rather than in human readable format
+ -w, --wipe <mode>             wipe signatures (auto, always or never)
+ -W, --wipe-partitions <mode>  wipe signatures from new partitions (auto, always or never)
+
+ -C, --cylinders <number>      specify the number of cylinders
+ -H, --heads <number>          specify the number of heads
+ -S, --sectors <number>        specify the number of sectors per track
+
+ -h, --help                    display this help
+ -V, --version                 display version

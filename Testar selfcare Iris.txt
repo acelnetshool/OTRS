@@ -1,0 +1,3 @@
+Testar o selfcare significa (verificar a conta da bancada)
+1. Aceder o Apps e verificar se a informação da conta da bancada aparece.
+Caso sim, então o selfcare esta OK.

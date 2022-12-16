@@ -1,0 +1,82 @@
+logrotate: Tarefas a adicionar
+
+Atenção: Explorar o comando man --help das configurações do logrotate
+
+/opt/zap_iris_bo/app/logs/
+/opt/zap_iris_bo/jpgraph/logs/
+
+------------------------
+Steps:
+
+1. ssh: 10.151.52.119
+2.[afonso.caluege@TLT-DC-INT00 ~]$ cd /etc/logrotate.d -> Verificar os serviços instalados
+3. [afonso.caluege@TLT-DC-INT00 logrotate.d]$ ll
+-rw-r--r--  1 root root 198 Sep  7 17:00 boapp *adicionado* [Copia do bootlog e adicionado a diretiva timezone]
+-rw-r--r--. 1 root root  91 Sep 30  2020 bootlog
+-rw-r--r--. 1 root root  93 Nov 16  2020 firewalld
+-rw-r--r--  1 root root 194 Sep 30  2020 httpd
+-rw-r--r--. 1 root root 320 Sep  1  2020 mod_gearman
+-rw-r--r--. 1 root root 972 Dec 10  2020 mysql
+-rw-r--r--  1 root root 261 Oct 19  2021 nginx
+-rw-r--r--. 1 root root 115 Dec 15  2020 samba
+-rw-r--r--. 1 root root 237 Dec 15  2020 sssd
+-rw-r--r--. 1 root root 224 Sep 30  2020 syslog
+-rw-r--r--. 1 root root 100 Oct 31  2018 wpa_supplicant
+-rw-r--r--. 1 root root 103 Oct  1  2020 yum
+
+4. [afonso.caluege@TLT-DC-INT00 /]$ cd /etc/logrotate.d
+   [afonso.caluege@TLT-DC-INT00 logrotate.d]$ cat boapp
+
+/opt/zap_iris_bo/app/logs/*.log /opt/zap_iris_bo/jpgraph/logs/*.log { :tarefa adicionada /logrotate
+    compress
+    missingok
+    weekly
+    copytruncate
+    rotate 4
+    notifempty
+    dateext              :adicionado nova directiva
+    dateformat -%Y-%m-%d :adicionado nova directiva
+
+}
+
+5. root@TLT-DC-INT00 daniel.rosa@zap.intra]# logrotate -v -f /etc/logrotate.d/boapp :Comando a executar após adicionar caminhos
+   
+   reading config file /etc/logrotate.d/boapp
+   Allocating hash table for state file, size 15360 B
+---------------------------------------------------------------------------------------------------------------
+
+5.[afonso.caluege@TLT-DC-INT00 /]$ cat /etc/logrotate.conf  [Configurações padrão somente para visualizar!!!]
+# see "man logrotate" for details
+# rotate log files weekly
+weekly
+
+# keep 4 weeks worth of backlogs
+rotate 4
+
+# create new (empty) log files after rotating old ones
+create
+
+# use date as a suffix of the rotated file
+dateext
+
+# uncomment this if you want your log files compressed
+#compress
+
+# RPM packages drop log rotation information into this directory
+include /etc/logrotate.d
+
+# no packages own wtmp and btmp -- we'll rotate them here
+/var/log/wtmp {
+    monthly
+    create 0664 root utmp
+        minsize 1M
+    rotate 1
+}
+
+/var/log/btmp {
+    missingok
+    monthly
+    create 0600 root utmp
+    rotate 1
+}
+

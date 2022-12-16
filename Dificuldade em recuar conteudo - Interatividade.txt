@@ -1,0 +1,7 @@
+Diagnostico: Dificuldade em recuar os conteúdos passados
+-----------------------------
+Despiste:
+
+1. Assistir o filme a partir da Bancada
+2. Verificar o tempo do Filme: "Trailler", "Inicio", "Meio" e "Fim"
+

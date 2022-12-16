@@ -1,0 +1,20 @@
+#Verificar a versão do pacote instalado
+$ nginx -v
+-------------------------------------
+NGINX configuração de site pasta:site-enable
+sudo ln -s /etc/nginx/sites-available/abola.pt.conf /etc/nginx/sites-enabled/abola.pt.conf
+------------------------------------
+Melhor forma de consultar o erro em vez do Journal -xe
+
+sudo nginx -s reload
+------------------------------------------------------------
+
+Verificar arquivos em execução
+cd /run
+---------------------------------
+#Verificar os logs no NGINX
+[root@localhost nginx]# 
+
+-------------------------------------------
+#Logs para verificar as tentativas de acesso ao NGINX
+[root@localhost ~]# tail -f /var/log/nginx/access.log

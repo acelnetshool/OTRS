@@ -1,0 +1,8 @@
+1. Criação de user acesso Naemon -> OK
+2. Corrigir o serviço TLT-DC-HAPPE00 - LB HTTP ERRORs 5xx ->?
+3. Criação de service - Host TLT-DC-SWIP017 ->
+4. Naemon - Alterações host TLT-DC-CRIP001 ->
+5. Adicionar Numero de Telemóvel para receber Notificações ->
+6. Atualização de canais em Naemon ->
+7. Remoção dos SW2 do DWDM ->
+8. Alterar Serviços ->

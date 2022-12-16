@@ -1,0 +1,16 @@
+Tlt-dc-zre01
+1. http://zapams.zap.intra:8080/search/clu
+3 - criar ficheiro na minha home directory no servidor ZRE01 e copiar a informação no tab solução para o ficheiro new_changes.js
+4 - Executar comando com root para processar alterações na DB:
+    mongo --host 10.151.52.194 zapams < new_changes.js 
+-------------------------------------------
+
+temos que migrar isso para podman
+-----------------
+Carlos qual é o processo que executa no iis no BE00 em que temos o log do processo do import epg ?
+
+é um serviço EPGSyncer: EPGSyncer é para detetar se temos erro no log
+-------------------------------..............................................
+IIS é o serviço às STBs
+---------------------------------
+não. isso é o Check EPG Syncer Task Log ou lá como se chama a task. Vê o command da task

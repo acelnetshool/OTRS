@@ -1,0 +1,23 @@
+Adicionar/Remover Canais - Nordija & CLU ( IPTV )
+
+Quando existem alterações a grelha, estas tem que ser comunicadas a NOS.
+
+1 - Aceder a Nordija PRD
+http://10.151.152.119:8080/itvadmin/
+
+Tv Services > channels >
+
+Criar novo canal
+
+definir: epg source ; position ; iris id ; logo ; dash http://cdn.iptv.zap/stream/live/ZAPR/2275.stream_zap/manifest.mpd ; npvr ;
+
+Adicionar o canal a um Bundle (Geralmente o ZAP_Testes)
+
+2 - No CLU, devemos garantir que a informação se mantém o mais atualizada.
+
+Criar canal IPTV:
+
+- definir o pacote que pertence
+- wowza clusters
+- LBs
+- flags gravaçao e restart

@@ -1,0 +1,28 @@
+TRNS - nPVR [alarm critical] TLT-DC-TRNS01
+-------
+Procurar o nome do serviço no TRNS indicado no check com 
+
+#systemctl status Trans.* systemctl status Trans.BENFICATV1
+
+Reiniciar o serviço caso tenha erros no log, # systemctl restart Trans.BENFICATV1
+
+Se restart nao resolve / nao tem erros nos logs:
+
+Solução - Reimportar no Redis:
+
+vi /opt/nPVR/npvr-manager/configs.ini
+
+ssh user@10.151.2.40
+
+$ redis-cli 
+
+> mget 2245 
+
+> del 2245
+
+> mget 2245
+
+Force Check Command no Naemon
+---------------------
+
+tail -f /opt/nPVR/npvr-manager/events.log

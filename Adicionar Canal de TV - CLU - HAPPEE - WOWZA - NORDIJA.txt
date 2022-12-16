@@ -1,0 +1,37 @@
+1. Adicionar o Canal no CLU
+- Verificar se pares ou impares: WTFARM selecione 
+- Verificar Pacote: Bundlers: seleciona todos:
+MAX
+Premium
+Premium Plus
+MINI
+MINI+
+- Todos os LoadBalancers
+
+2. Aceder o Visual Code: 
+- Terminal do VSCODE
+
+1º BRANCH
+2º GIT ADD .
+3º GIT Status
+4º GIT COMMIT
+------------------------
+CASO ERRO
+git config --global http.sslVerify "false" : caso erro
+$ git push --set-upstream origin adicinar-canal-GirassolTV : pushar novamente
+
+--------------------------------------------------------------
+
+1º Configuração/Happee:
+- Clonar o projecto Happee/gitlab
+- Adicionar canal no 003.bachends.conf
+- Adicionar canal no Channels_be_map
+- git push e comentario
+
+2º Configuração/WOWZAS:
+- Clonar o projecto WOWZAS/gitlab
+- Adicionar o canal no Conf > StartupStreams(Impares ou Pares)
+- Criar canal no conf > content - pegar o multicast referente no CLU
+- git push
+
+2. 

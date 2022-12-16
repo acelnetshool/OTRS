@@ -1,0 +1,39 @@
+Hapee - Canal Girassol
+----------------------------
+1. Abertura do Visual Studio Code
+2. Clonagem do ficheiro
+3. Configuração do Gitlab: SSH /Acesso
+4. Colocação do canal
+
+Nota:Se não tem gravação é no ZAP, e não no ZAPR
+---------------------------
+Objectivo da configuração do Happe
+
+"002.frontends.conf"
+
+1 .Se o cliente estiver a ouvir uma stream no lado do frontend - primeiro bate nos CDN_fe através dos 4 IPs do DNS (bind):
+10.151.129.70, 71, 72, 73 - São os 4 IPs VIPs - usam o protocolo VRRP (Virtual Router Round Protocol) 
+$dig 2379.cdn.iptv.zap
+
+2. Cada VIP pertence a um hapee (00,01,02,03)
+
+2. depois temos o use_backends channel_... que determina em que backend é que ele há de tocar.
+
+"003.backends.conf"
+1. colocamos o serviço do canal - 2074 Girassol TV
+2. verificamos a sua posição no CLU - se encontra na posição: 20
+3. Verificar quantos servidores estão a servir o canal - Neste caso temos 5 servidores pares
+4. O load balancer faz a destribuição nestes 5 Servidores
+5. Se tivermos 5 clientes a verem o canal Girassol o mais certo é cada um estar amarrado em cada transcoder 
+
+Nota: Os transcoders fazer duas coisas: fazem transcoder e fazem packaging /Os transcoding só fazem aúdio.
+O vídeo que aquele que consome mais recursos em transcoding a malta não faz.Eles atendem um grande volume de pedido.
+
+Obs: Se a caixa não conseguisse tocar o video que saí do encoding, ai terimaos que fazer transcoding de audio e vídeo, esse seria o motivo (técnico).
+Mas como toca, não há necessidade.
+
+6. Usamos o HLS para o helph check para os servidores de trás (as streams) de saida e a pedir o manifeto HLS
+7. O codigo 200 e para verificar o estado
+8. quanto ao helph check por duas vezes o servidor sai fora do ar e fica offline
+----------------------------------------------------------
+

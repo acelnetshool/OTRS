@@ -1,0 +1,14 @@
+Para problemas de Failed, confirmar com o cliente: ​
+
+- Valor de Sinal - deve ser entre 60 e 76.
+- BER - tem de ser entre E-9 e E-7
+
+- Service Group: deve estar num destes Service Group (SG10 - SG12 - SG14 - SG16 - SG18 - SG20 - SG22 - SG24 - SG26 - SG28 - 
+SG44 - SG42 - SG40 - SG38 - SG36 - SG34 - SG32 - SG30) e deve ser o mesmo que aparece no ftthStatustem de ser entre 1 a 4,
+ e deve ser o mesmo que aparece no ftthStatus
+
+- Valores fora deste parâmetro, devem ser encaminhados para equipa técnica Caso problema se verifique apenas em uma das caixas do cliente,
+ convém confirmar se os valores de sinal são coerentes em todas as caixas.
+
+- Como complemento aos despistes já mencionados, deverão usar o ZAPBOX, aa qual se consegue ter um resumo do estado da STB,
+ a opção está disponível através do FTTH status conforme imagem”

@@ -1,0 +1,8 @@
+localhost-NaemonMZ -> DISK CRITICAL - free space
+
+Solution:
+
+1. SSH to NaemonMZ (172.17.2.143)
+2. Clean the following log file:
+
+echo '' > /var/log/naemon/livestatus.log

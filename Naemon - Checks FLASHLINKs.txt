@@ -1,0 +1,21 @@
+Bom dia caros,
+ 
+Dando seguimento á atualização de checks de alguns hosts nossos em Naemon, solicito que se façam as seguintes alterações
+a)
+Hostname HE-FLINK00
+IP 10.4.48.56
+Services                                    SlotID                checks
+TPA LINK                                     2                        opticalinputstatus  = Já está adicionado.
+TVZimbo LINK                            5                        opticalinputstatus  = Já adicionado.
+TPA VIA HOCHIMIN                  8                        opticalinputstatus  =  Novo serviço p adicionar
+Apaguem o resto dos serviços deste host que não estejam nesta lista sff.
+ 
+b)
+Hostname TLT-PRD-FLINK00
+IP atual 172.20.0.14 = Alterar p o novo IP=172.20.0.17
+Services                                                   slotID                       checks
+RX Retorno VIVA e INTERN.                    3                                 OpticalInputStatus
+Apagar qualquer outro serviço além deste.
+ 
+-------------------------------------------------------------------------------------------------------------
+ 

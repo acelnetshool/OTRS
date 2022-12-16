@@ -1,0 +1,7 @@
+IRISFE00 - Match_CCUR_VOD_Importer
+
+Este alarme é um passive check que corre na importação do Catalogo de Vods da IRIS.
+
+A importação acontece de 3 em 3h, pelo que é expectável que volte a Ok após este periodo.
+
+Correndo a task Vod_Catalog_Importer no FE em erro, deve também corrigir o problema.

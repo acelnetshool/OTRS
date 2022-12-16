@@ -1,0 +1,28 @@
+#Como resetar a senha do usuario root a partir do disco.
+
+1. Inserir o disco
+2. Resetar o sistema 
+3. Menu grub: selecione a 1º opção
+4. digitar: e - edit
+5. encotrar a linha do kernel linux: ~
+linux16 /vmlinuz-3... :procurar dentro desta linha a letra "ro" que significa Read Only e altera "ro para rw" que significa Read Write
+depois espaco e acrescenta init=/sysroot/bin/sh
+
+"rw init=/sysroot/bin/sh"
+
+6. executar: ctrl * x para inicializar e salvar
+
+7. Ao inicializar
+:/# chroot /sysroot -> dar o enter
+:/# passwd root
+
+digitar
+Senha:
+Nova Senha:
+
+8. Atualizar o sistema de segurança do linux .
+:/# touch /.autorelabel dar enter
+
+:/# exit
+
+Feito.!

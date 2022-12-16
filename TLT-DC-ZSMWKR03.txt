@@ -1,0 +1,1 @@
+mnadei um restart ao docker do zsmwkr03 mas não chego ao genie

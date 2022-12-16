@@ -1,0 +1,45 @@
+#Nota: O "env" serve para trocar o conteudo da variavel de uma forma temporaria para um comando.
+
+#ENV : Comado de envio um ambiente modificado no SHELL para um determinado comando
+
+[root@naemon naemon]# man env : verificar o manual
+
+####CRIAIR SCRIPT ATRAVES DA VARIAVEL###
+
+1.Passo: Criar a variavel
+[root@naemon naemon]# LIVRO="Certificação ZAP"
+
+2.Passo: Para vericar "echo"
+[root@naemon naemon]# echo $LIVRO
+Certificação ZAP
+
+3.Passo: Criar o script
+[root@naemon naemon]# vi lerLivro
+
+#!/bin/bash
+echo $LIVRO
+ wq!
+
+4.Passo: Executar o "chmod"
+[root@naemon naemon]# chmod +x lerLivro
+[root@naemon naemon]# ./lerLivro
+                          :Resultado vazio.
+
+5.Passo: Exportar a variavel
+[root@naemon naemon]# export LIVRO
+
+6.Passo: Voltar a executar
+[root@naemon naemon]# ./lerLivro
+Certificação ZAP
+
+7.Passo: Trocar o conteudo da variavel definida no parametro "env"
+[root@naemon naemon]# env LIVRO="Hora do almoço começa as 12h30 minutos" ./lerLivro
+
+Nota: O "env" serve para trocar o conteudo da variavel de uma forma temporaria para um comando.
+
+[root@naemon naemon]# ./lerLivro
+Certificação ZAP
+
+
+
+

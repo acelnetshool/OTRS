@@ -1,0 +1,73 @@
+#cut : comando que server para fazer cortes
+
+[root@TLT-DC-NAEMON ~]# cat /etc/passwd | cut -f1 -d":"
+------------
+[root@naemon ~]# cut -d':' -f5 /etc/passwd
+[root@naemon ~]# cut -d':' -f1 /etc/passwd
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+operator
+games
+ftp
+nobody
+dbus
+systemd-coredump
+systemd-resolve
+tss
+polkitd
+sssd
+chrony
+sshd
+edson
+unbound
+apache
+naemon
+adagios
+nagios
+rpc
+nginx
+nrpe
+acaluege
+[root@naemon ~]#
+
+
+#Verificar o nome dos usuarios / f5: realça a coluna
+[root@naemon ~]# cut -d':' -f5 /etc/passwd
+root
+bin
+daemon
+adm
+lp
+sync
+shutdown
+halt
+mail
+operator
+games
+FTP User
+Kernel Overflow User
+System message bus
+systemd Core Dumper
+systemd Resolver
+Account used for TPM access
+User for polkitd
+User for sssd
+
+Privilege-separated SSH
+edson
+Unbound DNS resolver
+Apache
+naemon
+
+
+Rpcbind Daemon
+Nginx web server
+NRPE user for the NRPE service
+

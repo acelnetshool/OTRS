@@ -1,0 +1,10 @@
+#Quando o cliente estiver com erro 404 deve ser feito o pedido de reenvio de direitos.
+
+Erros comuns para reenvio de direitos:
+
+1. Produto não encontrado  no DRM: Filtração dos pacotes disponiveis para os clientes
+
+1. BO > IPTV Status > Reenviar direitos
+2. Manifesto_Proxy: Verificar o Erro 404
+3. A STB caso, o pedido de reenvio de direitos não funcione, deve-se enviar para a 2ª linha
+pois o problema esta no PROV (Provioning) que não esta a reenviar os direitos.

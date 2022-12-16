@@ -1,0 +1,4 @@
+#HEAD: Verifica os conteudos da primeira linha
+
+#Verifica 
+[root@naemon conf.d]# head /etc/naemon/conf.d/commands.cfg

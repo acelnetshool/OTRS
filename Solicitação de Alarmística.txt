@@ -1,0 +1,38 @@
+Bom dia caros,
+ 
+Queiram por favor criar os seguintes alarmes,
+ 
+Equipamento: LAD-DC-OLT005
+IP: 10.151.5.76
+Alarme: Ping no IP do OLT
+ 
+ 
+Equipamento: LAD-DC-SWIP001A
+IP: 10.151.5.71
+Alarme: Ping no IP do OLT
+ 
+Interface: Eth1/19/1     Descrição: LAD-DC-OLTIP005 0/9/0
+Warning: 8  GB
+Critical: 9   GB
+ 
+Interface: Eth1/19/2     Descrição: LAD-DC-OLTIP005 0/10/1
+Warning:  8  GB
+Critical: 9   GB
+ 
+ 
+Equipamento: LAD-DC-SWIP001B
+IP: 10.151.5.72
+Alarme: Ping no IP do OLT
+ 
+Interface: Eth1/19/1     Descrição: LAD-DC-OLTIP005 0/9/1
+Warning: 8  GB
+Critical: 9   GB
+ 
+Interface: Eth1/19/2     Descrição: LAD-DC-OLTIP005 0/10/0
+Warning: 8  GB
+Critical: 9   GB
+ 
+ 
+Interface: Port-channel15     Descrição: ##LINK to LAD-DC-OLT005##
+Warning: 36 GB
+Critical: 38,5 BG

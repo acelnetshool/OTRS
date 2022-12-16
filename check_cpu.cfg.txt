@@ -1,0 +1,3 @@
+check_cpu.cfg
+
+command[check_cpu]=/usr/lib64/nagios/plugins/check_cpu.sh

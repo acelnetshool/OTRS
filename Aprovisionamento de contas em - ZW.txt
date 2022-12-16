@@ -1,0 +1,19 @@
+1. Aprovisionamento em conta ZW
+R: Devem contactar a DSI para questões de aprovisionamento de contas - helpdesk.dsi@zap.co.ao
+
+Informar: Motivo e Dados do equipamento
+
+Exemplo:
+
+>>>Prezados podem por favor aprisionar a conta a seguir para fins de teste:
+ 
+Conta: 161713820701
+ 
+HGW
+Mac: 90:50:CA:74:2D:20
+Sn: 4857544306A2799F
+ 
+BOX
+Mac: 30:EB:25:1A:76:AF
+ 
+NOTA: Pacote residencial 12M para 7 dias no mínimo.

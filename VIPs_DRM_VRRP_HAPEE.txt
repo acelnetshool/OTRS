@@ -1,0 +1,173 @@
+Configurar VIPs no DRM (Gestão de direitos) no VRRP (Virtual Router Redundancy Protocol) dos LBs de Produção.
+O DRM - impossibilita o download dos videos ou compartilhamento dos videos na internet aberta.
+-------------------------------------------
+Legenda:
+---------------------------------------------------ID do RT Virtual
+# virtual_router_id  1 -  4 = HAPEE00_* instances
+#                   11 - 14 = HAPEE01_* instances
+#                   21 - 24 = HAPEE02_* instances
+#                   31 - 34 = HAPEE03_* instances
+---------------------------------------------------Se falhar o Happe02
+# on fail:
+#   -> HAPEE02
+---------------------------------------------------Priorizar a sequencia/bate
+CDN:->Stream já passado
+NBE:->Direitos Nordija(Verifica se o cliente tem direito de visualizar conteudo)
+OTN:->Verificar o firmware
+DRM:->Gerenciar os direitos.
+# Priority
+#           Hapee00      happee01     hapee02     hapee03
+# 00_cdn    101          99           100         
+# 00_nbe    101          99           100         
+# 00_otn    101          99           100         
+# 00_drm    101          99           100         
+#
+# 01_cdn    99           101                      100
+# 01_nbe    99           101                      100
+# 01_otn    99           101                      100
+# 01_drm    99           101                      100
+#
+# 02_cdn    100                       101         99
+# 02_nbe    100                       101         99
+# 02_otn    100                       101         99
+# 02_drm    100                       101         99
+#
+# 03_cdn                 100          99          101
+# 03_nbe                 100          99          101
+# 03_otn                 100          99          101
+# 03_drm                 100          99          101
+#
+------------------------------------------------------Verificações
+##### VERIFICAÇÕES #####
+
+# Verifique a presença do daemon SSH. Dessa forma, se o SSH morrer, preferimos
+# o outro nó que permanece gerenciável remotamente.
+
+vrrp_script chk_sshd {
+        script "pkill -0 sshd"          # pkill -0 is cheaper than pidof
+        interval 5                      # check every 5 seconds
+        weight -4                       # remove 4 points of prio if missing
+        fall 2                          # check twice before setting down
+        rise 1                          # check once before setting up
+}
+-------------------------------------------------------Verificar a presença do balanceador
+# Verifique a presença do próprio daemon do balanceador de carga (hapee-lb). o
+# o peso é maior do que para SSHD, porque se um nó tiver apenas SSHD e o
+# outro só tem o LB rodando, preferimos o LB.
+vrrp_script chk_lb {
+        script "pkill -0 hapee-lb"      # pkill -0 is cheaper than pidof
+        interval 1                      # check every second
+        weight 6                        # add 6 points of prio if present
+        fall 2                          # check twice before setting down
+        rise 1                          # check once before setting up
+}
+--------------------------------------------------------Verificar servidores operacionais
+# Este é um exemplo de como seria possível verificar se o LB vê algum
+# servidores operacionais, e usar o resultado para decidir ser mestre ou backup.
+# A url "/are-you-ok" deve ser referenciada como "monitor-uri" em hapee-lb,
+# e este vrrp_script deve ser referenciado no bloco "track_script" do
+# instâncias de VRRP em questão.
+vrrp_script chk_servers {
+        script "echo 'GET /are-you-ok' | nc 127.1 8080 | grep -q '200 OK'"
+        interval 2                      # check every 2 seconds
+        weight 2                        # add 2 points of prio if OK
+        fall 2                          # check twice before setting down
+        rise 2                          # check twice before setting up
+}
+----------------------------------------------------------Instancia do CDN - Conteudos já passados
+##### INSTANCES #####
+
+vrrp_instance vrrp_HAPEE00_CDN {
+    interface FE_CDN                 # or bond0 or whatever prod interface
+    state MASTER                     # try to be master without waiting
+    virtual_router_id 1              # use a distinct value for each instance
+    priority 101                     # 101 on master, 100 on backup
+    virtual_ipaddress_excluded {
+        10.151.129.70                # your shared service IP address(es)
+    }
+    track_interface {
+        FE_CDN weight -2             # interfaces to monitor
+    }
+    track_script {
+        chk_sshd
+        chk_lb
+    }
+}
+----------------------------------------------------NBE - Direitos de visualização Nordija
+vrrp_instance vrrp_HAPEE00_NBE {
+    interface FE_NBE                # or bond0 or whatever prod interface
+    state MASTER                    # try to be master without waiting
+    virtual_router_id 2             # use a distinct value for each instance
+    priority 101                    # 101 on master, 100 on backup
+    virtual_ipaddress_excluded {
+        10.151.129.200              # your shared service IP address(es)
+        10.151.129.201              # your shared service IP address(es)
+    }
+    track_interface {
+        FE_NBE weight -2            # interfaces to monitor
+    }
+    track_script {
+        chk_sshd
+        chk_lb
+    }
+}
+-----------------------------------------------Trata dos firmware stbs
+vrrp_instance vrrp_HAPEE00_OTN {
+    interface FE_OTN                # or bond0 or whatever prod interface
+    state MASTER                    # try to be master without waiting
+    virtual_router_id 3             # use a distinct value for each instance
+    priority 101                    # 101 on master, 100 on backup
+    virtual_ipaddress_excluded {
+        10.151.130.10               # your shared service IP address(es)
+    }
+    track_interface {
+        FE_OTN weight -2            # interfaces to monitor
+    }
+    track_script {
+        chk_sshd
+        chk_lb
+    }
+}
+--------------------------------------------------Gestão de direitos
+vrrp_instance vrrp_HAPEE00_DRM {
+    interface FE_DRM                # or bond0 or whatever prod interface
+    state MASTER                    # try to be master without waiting
+    virtual_router_id 4             # use a distinct value for each instance
+    priority 101                    # 101 on master, 100 on backup
+    virtual_ipaddress_excluded {
+        10.151.129.40               # your shared service IP address(es)
+    }
+    track_interface {
+        FE_DRM weight -2            # interfaces to monitor
+    }
+    track_script {
+        chk_sshd
+        chk_lb
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

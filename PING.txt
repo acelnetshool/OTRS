@@ -1,0 +1,2 @@
+Receber somente o Resumo do status da maquina
+ping -c 1 DESTINATION

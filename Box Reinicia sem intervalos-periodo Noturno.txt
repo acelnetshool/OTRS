@@ -1,0 +1,9 @@
+Despiste:
+Box reinicia ciclicamente sem intervenção seguido de Por Favor Aguarde, com mais
+frequência no período noturno (3 vezes).
+
+----------------------------
+1. Verificar atualização do HGW
+2. Verificar 1ª linha se existe algum dispositivo ligado a causar conflito?
+3. Verificar no Kibana os times de desligamento
+3. Encaminhar para a Rede IP

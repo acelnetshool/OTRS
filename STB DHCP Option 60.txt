@@ -1,0 +1,12 @@
+STB DHCP Option 60
+
+Para o HGW colocar a porta de rede na vlan VOD, é necessário que no pedido DHCP inicial a opção 60 (Vendor) seja nds.
+
+Configuração de rede para eth0 para simular este cenário, /etc/network/interfaces (testado em Alpine Linux)
+
+  iface eth0 inet dhcp
+        udhcpc_opts -V nds
+
+
+É necessário reboot, caso contrário vão estar a ser emitidos dois pedidos DHCP de cada vez, 
+um com a config antiga outro com a nova (um bug em linux?).

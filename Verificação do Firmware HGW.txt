@@ -1,0 +1,7 @@
+Firmware do HGW desatualizado Versão de firmware:-> V5.50(ABPM.5)S0
+------------------------------------------
+HGW Hitron última Versão: 4.11.3.7.43.1.105.2.5
+------------
+HGW Zyxel última versão: 
+1. Modelo EMG5523-T50B: V5.50(ABPM.6)b7_S1
+2. Modelo VMG8324-B10A: 1.00(AAKL.29)S0

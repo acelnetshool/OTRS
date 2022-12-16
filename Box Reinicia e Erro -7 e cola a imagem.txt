@@ -1,0 +1,9 @@
+STB dá erro -7, que significa perda de conectividade entre a STB e o HGW.
+Não identificamos problemas nos sistemas IPTV.
+
+Despiste:
+1. Verificar a versão do HGW se estiver com a versão "V5.50(ABPM.2)b3_S0)"
+2. Falta de IP 
+3. Aceder o JRMS para verificar a versão do HGW
+
+Nota: Encaminhar para a Rede IP

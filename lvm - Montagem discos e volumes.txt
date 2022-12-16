@@ -1,0 +1,179 @@
+Link/criar partições LVM: https://www.youtube.com/watch?v=2-QeDahot8g&list=PLucm8g_ezqNoSuVhriGdoevNcMDECEsgl
+
+PV - Volume
+VG - Grupo de volume
+
+# LVM - Sistema de gerenciamento de discos versatil que permite alocar espaço em dispositivos de armzenamento 
+de forma volatil e flexivel do que os esquemas de particionamento.
+
+Pai:
+Disco1         		-    Disco 2
+Particão 1 e 2		-    partição 1 e 2
+Volume fisico 1 e 2	-    Volume fisico 1 e 2
+Grupo de volume 01      -    Grupod de volume 03
+Volume logico 1 LVM	-    Volume logico 1 LVM
+
+1º Instalar o LVM
+[root@naemon ~]# yum install lvm2
+
+2º 
+Listar os disco
+[root@naemon ~]# fdisk -l
+
+3º Selecionar o disco a ser particionado
+[root@naemon ~]# fdisk /dev/sda2
+
+4º Definir as partições:
+4.1: digite: n
+4.2. Partition Type: p: Primaria (p: primary, e:extended)
+4.3. Default/Padrão -: Enter
+4.4. Last sector/quantidade do disco a ser particionado: ex: +1G
+4.5. ajuda para ver os tipos de partições/digite: #m
+Command (m for help): #m
+4.5. Listar as partições conhecidas: #l
+
+5º criar volume fisico e especifica a partição
+[root@naemon ~]#sudo pvcreate /dev/sdb1
+
+6º verificar nome dos volumes criados
+[root@naemon ~]#vgdisplay ou pvdisplay ou lvdisplay
+
+7º para remover volume    
+[root@naemon ~]# pvremove ou vgremove
+
+8º criar grupo de volumes
+[root@naemon ~]# sudo vgcreate grupo-volume1 /dev/sdb1
+
+9º verificar os grupo de volumes
+[root@naemon ~]#vgscan
+
+10º criar volume logico -L[tamanho] -n[nome do volume] e o grupo 
+[root@naemon ~]# lvcreate -L 2GB -n vol01 grupo-volume1
+
+11º Renomear nome do volume para backups
+[root@naemon ~]#lvrename grupo-volume2 vol03 backups
+
+12º Formatar os volumes e grupos
+[root@naemon ~]# sudo mkfs.ext4 /dev/grupo-volume1/vol01
+
+13º criar os diretorios dos volumes
+[root@naemon ~]#sudo mkdir /lvm1 /lvm2/ /lvm3/ /lvm4
+
+14º Montar agora os volumes logicos/
+[root@naemon ~]# mount -t ext4 /dev/grupo-volume1/vol01 /lvm1
+[root@naemon ~]# mount -t ext4 /dev/grupo-volume2/vol01 /lvm2
+[root@naemon ~]# mount -t ext4 /dev/grupo-volume1/backups /lvm3
+
+15º Desmontar um volume para expandir a capacidade
+[root@naemon ~]# sudo umount /lvm2
+
+16ª Expandir o volume
+[root@naemon ~]#~lvresize -L 3G /dev/grupo-volume2/vol02
+
+17º Verificar se existe erro no volume extendido
+[root@naemon ~]#e2fsck -f /dev/group-volume2/vol02
+
+18º Atualizar no sistema de arquivo o volume redimensionado
+[root@naemon ~]# resize2fs /dev/group-volume2/vol02
+
+19º montar o volume outraves
+[root@naemon ~]# mount -t ext4 /dev/grupo-volume2/vol02 /lvm2
+
+20º Reduzir o  tamanho da tabela 1º
+Nota: primeiro desmontar o volume, 2º verificar se existe erro
+
+[root@naemon ~]#resize2fs /dev/grupo-volume2/backups 1024M
+
+21º diminuir o volume
+[root@naemon ~]#lvresize -L 1GB /dev/grupo-volume2/backups
+
+22º Montar os volumes dentro do diretorio criado no fdtab
+[root@naemon ~]# vi /etc/fstab
+
+# /etc/fstab
+# Created by anaconda on Wed Jun  1 16:07:52 2022
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/rl-root     /                       xfs     defaults        0 0
+UUID=46f0f287-d47d-436e-aba4-4d92f2346489 /boot                   xfs     defaults        0 0
+/dev/mapper/rl-swap     none                    swap    defaults        0 0
+/dev/grupo-volume01/vol02      /lvm2   ext4 defaults 0  2  -:aqui começa a montagem :- o caminho e o diretorio criado :-type 
+/dev/grupo-volume01/vol01      /lvm1   ext4 defaults 0  2  -:aqui começa a montagem :- o caminho e o diretorio criado :-type 
+/dev/grupo-volume04/vol04      /lvm4   ext4 defaults 0  2  -:aqui começa a montagem :- o caminho e o diretorio criado :-type
+/dev/grupo-volume02/backups    /lvm3   ext4 defaults 0  2  -:aqui começa a montagem :- o caminho e o diretorio criado :-type
+
+:wq!
+
+[root@naemon ~]# sudo mount -a : forçar a montagem definido no fstab
+----------------------------------------------------------------------
+Help:
+
+  DOS (MBR)
+   a   toggle a bootable flag
+   b   edit nested BSD disklabel
+   c   toggle the dos compatibility flag
+
+  Generic
+   d   delete a partition
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition
+   p   print the partition table
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+
+  Misc
+   m   print this menu
+   u   change display/entry units
+   x   extra functionality (experts only)
+
+  Script
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+
+  Save & Exit
+   w   write table to disk and exit
+   q   quit without saving changes
+
+  Create a new label
+   g   create a new empty GPT partition table
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty DOS partition table
+   s   create a new empty Sun partition table
+----------------------------------------------------------------------
+Command (m for help): l
+
+ 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris
+ 1  FAT12           27  Hidden NTFS Win 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden or  c6  DRDOS/sec (FAT-
+ 4  FAT16 <32M      40  Venix 80286     85  Linux extended  c7  Syrinx
+ 5  Extended        41  PPC PReP Boot   86  NTFS volume set da  Non-FS data
+ 6  FAT16           42  SFS             87  NTFS volume set db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Dell Utility
+ 8  AIX             4e  QNX4.x 2nd part 8e  Linux LVM       df  BootIt
+ 9  AIX bootable    4f  QNX4.x 3rd part 93  Amoeba          e1  DOS access
+ a  OS/2 Boot Manag 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor
+ c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad hi ea  Rufus alignment
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         eb  BeOS fs
+ f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ee  GPT
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        ef  EFI (FAT-12/16/
+11  Hidden FAT12    56  Golden Bow      a8  Darwin UFS      f0  Linux/PA-RISC b
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f1  SpeedStor
+14  Hidden FAT16 <3 61  SpeedStor       ab  Darwin boot     f4  SpeedStor
+16  Hidden FAT16    63  GNU HURD or Sys af  HFS / HFS+      f2  DOS secondary
+17  Hidden HPFS/NTF 64  Novell Netware  b7  BSDI fs         fb  VMware VMFS
+18  AST SmartSleep  65  Novell Netware  b8  BSDI swap       fc  VMware VMKCORE
+1b  Hidden W95 FAT3 70  DiskSecure Mult bb  Boot Wizard hid fd  Linux raid auto
+1c  Hidden W95 FAT3 75  PC/IX           bc  Acronis FAT32 L fe  LANstep
+1e  Hidden W95 FAT1 80  Old Minix       be  Solaris boot    ff  BBT
+----------------------------------------------------------------------------------
+
+

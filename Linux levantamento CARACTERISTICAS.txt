@@ -1,0 +1,10 @@
+# lshw -C CPU : Verificar a quantidade de processadores;
+#nproc: mostra o numero de processadores presentes no PC
+# dmidecode -t system : informação do modelo/serial da maquina
+#cat /proc/cpuinfo
+#lscpu
+
+---------------------
+pacotes 12m - Max - canais 120
+30 - 120
+

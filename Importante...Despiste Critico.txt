@@ -1,0 +1,4 @@
+1- Validamos bo zw notamos que está tudo em ordem com a stb e o hgw
+2- validamos no bo também está tudo em ordem, a caixa faz pedidos ao otn,
+3- Validamos também no kibana, notamos que o cliente comunica-se de boa
+--------------------------------------------

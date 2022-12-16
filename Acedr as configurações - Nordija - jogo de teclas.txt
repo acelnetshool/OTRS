@@ -1,0 +1,15 @@
+# Quando aparecer a informação:
+
+"STB não registado devemos aceder as configs nordija.
+
+1. Ligado com a informação: Equipamento não registado.
+[09:54] Carlos Peixoto
+12345678911111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+
+2. Reiniciar a STB e vai pressione novamente a inicializar - até entrar nas configs da nordija
+[09:54] Carlos Peixoto
+
+12345678911111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+
+
+

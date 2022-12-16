@@ -1,0 +1,20 @@
+1.cliente que não consegue comprar filme:
+2.Cliente não consegue selecionar o filme os Incríveis interatividades
+--------------------------------
+Despiste:
+1.Verificar no BO e vizualizar as compras feitas pelo cliente
+2. Verificar no IPTV Status no "drm"
+3. Verificar no ZW se o cliente tem pontos ou descontou
+4. Ver no ZW se existe pontos ou se foi descontado
+5. Verificar no ZW os pontos e o historico de vods
+6. Filtrar pelo cipk e pelo IP no index do cdn
+Nota: Se ele já viu e entretanto expirou... Se quiser ver novamente que compre
+
+KIBANA:
+Filtrar:
+CDN-* ->clientip:xx.xx.xx.xx ->Ex: CIPK2E6A8053AD764F77
+Nota:
+1. Verificar nos cdn se o cliente comprou e não reproduziu
+2. Verificar se ha registo nos CDNs
+---------------------
+Nota: Se no Kibana aparecer grafico e registo é porque o cliente visualizou o filme.

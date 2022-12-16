@@ -1,0 +1,1 @@
+[root@naemon naemon]# yum install wget php gcc glibc-common gd gd-devel make net-snmp perl perl-devel openssl -y

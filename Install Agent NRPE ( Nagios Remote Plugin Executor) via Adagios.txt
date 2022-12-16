@@ -1,0 +1,27 @@
+Install Agent NRPE ( Nagios Remote Plugin Executor) via Adagios
+
+1.
+
+adagios - install agent via ssh with root password
+
+2.
+
+# firewall-cmd --add-port=5666/tcp --permanent
+# firewall-cmd --reload
+
+3.
+
+scp /usr/lib64/nagios/plugins/check_service.sh user@10.151.52.203:/usr/lib64/nagios/plugins/
+
+4.
+
+vi /etc/nrpe.d/ok-bundle.cfg
+
+5.
+
+selinux disabled
+
+6.
+
+systemctl start nrpe
+systemctl enable nrpe

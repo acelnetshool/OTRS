@@ -1,0 +1,7 @@
+Cliente sem a função interatividade apenas no canal 68, quando tentar ver do inicio
+aparece a sms pedido não autorizado. Testado na stb em sala e funciona bem.
+------------------------
+Despiste:
+
+1. Verificar se o canal tem timewarp
+2.

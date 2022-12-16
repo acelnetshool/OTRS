@@ -1,0 +1,10 @@
+
+Solicito por favor que adicionem os checks solr memory, tomcat memory, service alfresco (como no AFRSCO-PP01-10.151.52.150 ) ao host de produção (TLT-DC-ARFSCO01 - 10.151.52.100).
+
+Nota: Já copiei os dois checks para o /usr/lib64/nagios/plugins/ por serem scripts customizados.
+
+Solicito também a criação (nos dois hosts) dos checks referenciados abaixo:
+      
+     threads tomcat: sudo -u alfrescoprd ./check_jvm -n org.apache.catalina.startup.Bootstrap -p threads -w 140 -c 145 
+     threads solr: sudo -u alfrescoprd ./check_jvm -n start.jar -p threads -w 9000 -c 9500
+

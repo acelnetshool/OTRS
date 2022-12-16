@@ -1,0 +1,31 @@
+MONGODBOOV4
+-----------------------------------------
+#Verificar espaços no disco duro
+$ df -h
+-----------------------
+Legenda:
+#df . df significa “disk free“
+Nota:Para mostrar o espaço em disco em formato legível adicione -h (df -h), e então verá o espaço listado em MB e GB
+----
+#tmpfs: refere-se ao sistema de arquivos temporário usado pela memória virtual. Não leve em consideração
+#udev: também não é uma partição em um disco rígido permanente, é um Disco RAM  que armazena informações sobre dispositivos e outras coisas do sistema
+#/dev/loop: um loop device, é um pseudo-dispositivo que torna um arquivo acessível como um dispositivo de bloco. 
+Os loops ficam no root, e usam o mesmo espaço que a partição principal, portanto não precisam calcular o espaço separadamente. 
+É muito comum ver o /dev/loop em sistemas Ubunto.
+-----------------------------------------------------------
+
+1.# Aceder o MONGODBV4
+$ cd /var/log
+
+2.# Visualizar a Capacidade do Disco em Geral
+$ df -h
+
+3.# Verificar a capacidade da pasta
+$ du -sh
+
+4.# Verificar todos os logs da Pasta : cd /var/log
+4.1. $ ll
+4.2. $ sudo vi -c sh
+
+#Limpeza geral dos logs
+$ echo "" > mongod.log 

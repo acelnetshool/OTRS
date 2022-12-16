@@ -1,0 +1,7 @@
+#Habilitar porta no linux
+1.
+firewall-cmd --zone=public --permanent --add-service=ssh
+2. 
+firewall-cmd --reload
+3.
+firewall-cmd --list-all

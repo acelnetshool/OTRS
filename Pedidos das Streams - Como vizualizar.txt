@@ -1,0 +1,1 @@
+Os pedidos das streams devem ser vistos pelo IP VOD e não pelo MAC

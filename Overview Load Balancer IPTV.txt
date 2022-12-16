@@ -1,0 +1,8 @@
+1.OTT
+1.1. Os clientes fazer o primeiro pedido ao DNS para saber aonde podem chegar a um determinado serviço ex: Stream;
+1.2. O DNS responde sempre com 4 Ips a cada novo pedido (DNS Round Robin):1234,2341,3412,4123
+
+
+2.LBS
+2.1.Temos 4 Load Balancers - São os Happee [00,01,02,03]
+2.2.Os LBs também tem o objectivo de tratar a tolerancia a fal

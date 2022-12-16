@@ -1,0 +1,17 @@
+IRISFE00 01 02 - EPG LastUpdateHash - InitRepo não atualizado
+
+Sem atualização de EPG nos FE da IRIS.
+
+Verificar processo de importação de EPG:
+
+- EPGSyncer (LOGs) -> IRISBE00
+
+Se se verificar erro (normalmente por falha de rede), reiniciar o processo de importação:
+
+- Task "EPG_REPO_NOTIFY" -> NPVRBE00.
+
+Verificar no BO do nPVR IRIS se a importação de EPG para o nPVR falhou. Em caso de falha, reiniciar o processo de importação para o nPVR:
+
+- Task "NPVR_EPG_NOTIFY" -> NPVRBE00.
+
+Verificar no Naemon e no Mongo quando atualização estiver ok.

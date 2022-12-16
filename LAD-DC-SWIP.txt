@@ -1,0 +1,19 @@
+Bom dia,
+ 
+Solicito que sejam adicionados os seguintes serviços:
+
+
+Hostname            IP:                SNMP Community    warning     critical       Service Description      Interfaces
+
+LAD-DC-SWIP001A    10.151.5.71           zapnet2014      3,000       5,000          CPU Usage Memory Usage
+
+
+----
+Exemplo para "CPU Usage" e "Memory Usage":
+
+http://172.16.105.45/naemon/cgi-bin/status.cgi?host=LAD-DC-SWIP01
+
+ 
+
+
+

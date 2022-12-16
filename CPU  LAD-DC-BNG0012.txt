@@ -1,0 +1,37 @@
+Bom dia,
+ 
+Solicito que sejam adicionados os seguintes serviços:
+
+ 
+
+Hostname            IP:             SNMP Community        Service Description
+
+LAD-DC-BNG001       10.151.5.73     zapnet2014            Cisco ASR CPUs
+
+LAD-DC-BNG002       10.151.5.74     zapnet2014            Cisco ASR CPUs
+
+ 
+
+Exemplo: http://172.16.105.45/naemon/cgi-bin/status.cgi?host=TLT-DC-CRIP001
+
+Hostname                 Service Description             Status Information 
+
+TLT-DC-CRIP001           Cisco ASR CPUs                  CPU OK:
+
+							 Mod_0_6_CPU0_5min_avg=6%,
+
+							 Mod_0_4_CPU0_5min_avg=47%,
+
+							 Mod_0_5_CPU0_5min_avg=30%,
+
+							 Mod_0_2_CPU0_5min_avg=12%,
+
+							 Mod_0_1_CPU0_5min_avg=9%,
+
+							 Mod_0_7_CPU0_5min_avg=20%,
+
+							 Mod_0_0_CPU0_5min_avg=30%,
+
+							 Mod_0_3_CPU0_5min_avg=7%,
+
+							 Mod_0_RSP0_CPU0_5min_avg=14%,

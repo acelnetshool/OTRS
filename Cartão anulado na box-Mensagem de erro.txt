@@ -1,0 +1,3 @@
+Mensagem de erro: Cartão anulado na BOX
+
+Nota: Se a caixa for FTTH e apresenta erro de cartão devemos encaminhar o assunto para a Engenharia.!

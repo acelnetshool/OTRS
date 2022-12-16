@@ -1,0 +1,7 @@
+Devices - GenieACS
+
+User:admin
+Pw:admin
+
+Verificar o firmware dos HGW Zyxel-Atenção: estamos como administrador
+Confrontar no ZW

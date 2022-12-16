@@ -1,0 +1,59 @@
+WowzaEngine - Install/ Uninstall / Update/ Rollback
+-------------------------------------------------------
+Plano de Update:
+
+ - Stop Service WowzaStreamingEngine
+
+ - Unistall do pacote depreciado
+
+ - Install (WowzaStreamingEngine-Update-4.8.12+1)
+
+ - nDVR
+
+ - nPVR
+
+ - Upgrade da nova versão (WowzaStreamingEngine-Update-4.8.17+1.zip)
+
+ - live
+
+ - nDVR
+
+ - nPVR
+
+**Install
+
+sudo chmod +x WowzaStreamingEngine-4.8.17+1-linux-x64-installer.run
+sudo ./WowzaStreamingEngine-4.8.17+1-linux-x64-installer.run
+
+**Uninstall
+
+cd /usr/local/WowzaStreamingEngine-[old-instance-version]
+sudo ./uninstall
+
+**Check Version
+
+http://10.151.152.4:1935/ServerVersion
+
+**Upgrade
+
+mkdir /usr/local/WowzaStreamingEngine/updates/WowzaStreamingEngine-Update-4.8.17+1
+	
+unzip /tmp/WowzaStreamingEngine-Update-4.8.17+1.zip -d /usr/local/WowzaStreamingEngine/updates/WowzaStreamingEngine-Update-4.8.17+1/
+
+cd /usr/local/WowzaStreamingEngine/updates/WowzaEngineUpdate4.8.17+1/linux 
+sudo chmod +x *.sh 
+
+systemctl stop WowzaStreamingEngine && systemctl stop WowzaStreamingEngineManager 
+	
+sudo ./update.sh 	
+	
+systemctl start WowzaStreamingEngine && systemctl start  WowzaStreamingEngineManager 
+systemctl status WowzaStreamingEngine && systemctl status  WowzaStreamingEngineManager
+
+**Fallback
+cd /usr(local/WowzaStreamingEngine/updates/WowzaStreamingEngine-Update-4.8.17+1/linux 
+
+sudo ./update.sh -u
+
+**Link Documento
+WowzaDocumentation : https://www.wowza.com/docs/how-to-update-your-wowza-streaming-engine-installation

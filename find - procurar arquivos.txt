@@ -1,0 +1,19 @@
+Procurar a localização do diretorio okconfig
+[root@naemon ~]# find / -name "okconfig*"
+------------------------
+Verificar em que plano esta a ser rodado o diretorio "okconfig"
+[root@naemon ~]# ps aux | grep okconfig
+
+
+[root@naemon ~]# find / -name "jose.mendes*"
+
+-------------------
+Colocar um arquivo ou diretorio em 2º plano
+[root@naemon ~]# find / -name "arquivo*" &
+-----------------------
+Lista programas em 2º plano "jobs"
+[root@naemon ~]# jobs
+
+-----------------------------------
+#Encontrar o dcoumento especifico
+[root@naemon~]#ll | less

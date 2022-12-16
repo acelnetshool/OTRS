@@ -1,0 +1,71 @@
+Boa tarde,
+ 
+Podem por favor incluir na alarmística do naemon empresarial os colegas abaixo.
+ 
+esdras.madekanga@zap.co.ao
+sergio.sado@zap.co.ao
+noc@zap.co.ao
+---------------------------
+[root@NAEMON-EMP /]# cd /etc/naemon/
+
+--------------------------------------
+[afonso.caluege@NAEMON-EMP /]$ cd /etc/thruk/
+conf.d  module-conf.d  naemon.cfg  resource.cfg
+
+[root@NAEMON-EMP naemon]# cd conf.d/
+commands.cfg  contacts.cfg  hgw.cfg  localhost.cfg  templates  timeperiods.cfg
+
+###############################################################################
+###############################################################################
+#
+# CONTACT GROUPS
+#
+###############################################################################
+###############################################################################
+# We only have one contact in this simple configuration file, so there is
+# no need to create more than one contact group.
+
+define contact {
+  contact_name                   miguel.matos
+  alias                          IP - MIguel Matos
+  use                            Rede IP
+  email                          miguel.matos@zap.co.ao
+}
+
+
+define contact {
+  contact_name                   esdras.madekanga
+  alias                          IP - Esdras Madekanga
+  use                            Rede IP
+  email                          esdras.madekanga@zap.co.ao
+}
+
+
+define contact {
+  contact_name                   segio.sado
+  alias                          IP - Sergio Sado
+  use                            Rede IP
+  email                          sergio.sado@zap.co.ao
+  pager                          244942586642
+
+}
+
+
+define contact {
+  contact_name                   noc
+  alias                          IP - Noc
+  use                            Rede IP
+  email                          noc@zap.co.ao
+}
+
+
+------------------------------------------------------
+----------ACESSO/ADMIN:
+# ADMIN ACCESS
+# A comma-delimited list of usernames that have administration privileges.
+# Those contacts will automatically get all authorized_for... roles except
+# the readonly one.
+authorized_for_admin=antonio.dambi,biel.vunge,belizandra.costa,nelson.lopes,raphael.reis,rodrigo.abrantes,thrukadmin,tiago.lobato,miguel.matos,luis.camindo,esdras.madekanga,sergio.sado,noc
+authorized_contactgroup_for_admin=
+
+

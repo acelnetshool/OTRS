@@ -1,0 +1,33 @@
+# Configurar o logrotate; Verificar o local especificado ex:
+
+/opt/zap_iris_bo/app/logs/
+/opt/zap_iris_bo/jpgraph/logs/
+
+Adicionar as configurações:
+
+[root@TLT-DC-INT00 logrotate.d]# cat boapp /opt/zap_iris_bo/app/logs/.log{ compress missingok daily copytruncate rotate 4 notifempty}
+
+[root@TLT-DC-INT00 logrotate.d]# cp jpgraph /opt/zap_iris_bo/jpgraph/logs/.log{ compress missingok daily copytruncate rotate 4 notifempty}
+
+
+/opt/zap_iris_bo/app/logs/*.log /opt/zap_iris_bo/jpgraph/logs/*.log {
+	compress
+	missingok
+	weekly
+	copytruncate
+	rotate 4
+	notifempty
+	dateext
+	dateformat -%Y-%m-%d
+}
+
+Executar o logrotate: 
+
+root@TLT-DC-INT00 logrotate.d]# logrotate -v -f /etc/logrotate.d/livestatus
+
+
+
+
+/etc/logrotate.d/boapp reading config file /etc/logrotate.d/boapp 
+
+Allocating hash table for state file, size 15360 B

@@ -1,0 +1,18 @@
+#Rotacionamento de LOGs "logrotate"
+
+È um agendados de tarefas e faz o rotacionamento dos logs de backup do servidor pode ser:
+diario, semanal e mensal.
+
+----------------------------
+Tarefa@David Correia:
+/opt/zap_iris_bo/app/logs/
+/opt/zap_iris_bo/jpgraph/logs/
+-------------------------
+
+IP do BO
+10.151.52.119
+
+--------------
+[afonso.caluege@TLT-DC-INT00 ~]$ cd /opt/zap_iris_bo/app/logs/
+-rw-r--r-- 1 33 tape 48953 Sep  6 15:03 php-error.log
+

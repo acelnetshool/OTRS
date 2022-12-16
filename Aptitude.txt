@@ -1,0 +1,4 @@
+#aptitude
+----------
+Comando para gerir pacotes no modo grafico (Ubunto) podemos remover, inserir, visualizar pacotes
+instalados e não instalados no nosso debian.

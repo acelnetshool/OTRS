@@ -1,0 +1,7 @@
+CACHE - LAD -> MAIANGA: 10.151.155.17 -> LAD-00-CACHE00 - UP
+CACHE - KIL -> KILAMBA: 10.151.155.33 -> KIL-00-CACHE00 - DOWN
+CACHE - TLT -> TALATONA: 10.151.155.1 -> TLT-00-CACHE00 - DOWN
+-----------------------------------------------------------------
+CACHE - LAB -> LABORATORIO: 10.151.155.49 -> LAB-DC-CACHE00 - DOWN
+
+

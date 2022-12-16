@@ -1,0 +1,26 @@
+#Limpeza do Disco/ logs no MONGO
+-----------------------
+
+ssh: conexão remota
+df -h : verificar a capacidade do disco
+cd /etc/var/log
+
+:Aceder o cd mongodb para efetuar a limpeza dos logs "fazer a limpeza dos logs em runtime"
+
+echo "" > mongod.log
+
+du -sh: verificar a capacidade da pasta
+
+----------------------------
+Nota:
+
+[29/06 09:44] Carlos Peixoto
+podes "limpar" o mongodb/mongod.log, mas como está em uso não pode ser removido
+
+[29/06 09:45] Carlos Peixoto
+sabes como em runtime "limpar" um ficheiro que esteja em uso?
+
+
+###Limpar disco em "Runtime"############
+[root@mongodb00v4 mongodb]# echo "" > mongod.log
+

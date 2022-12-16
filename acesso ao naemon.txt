@@ -1,0 +1,10 @@
+#Acesso ao Naemon
+
+Cd /etc/naemon
+htpassword htpassword cirirlo.santos
+New pw:
+Pw:
+
+---------------------------
+Empresarial
+cd /etc/thruk

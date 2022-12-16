@@ -1,0 +1,17 @@
+[10:53] Carlos Peixoto
+Bem... o Naemon faz os checks normalmente aos serviços por MGTM - Gestão
+
+
+Esses serviços configuras nos hosts *_MGT
+
+[10:54] Carlos Peixoto
+Nos *_FE fica apenas o serviço ping
+
+[10:54] Carlos Peixoto
+na LAN estão todas, estão é em vlans diferentes
+
+[10:56] Carlos Peixoto
+vlans diferentes têm regras de firewall na rede diferentes
+
+
+

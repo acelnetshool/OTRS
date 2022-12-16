@@ -1,0 +1,13 @@
+ZRE' s Disk Space
+
+ZRE01 & ZREDB
+
+echo '' > /var/log/mongodb/mongod.log
+
+echo "" > /var/log/audimetria/populate_altech.log
+
+find /var/log/supervisor/* -mtime +30 -exec rm {} \;
+
+ZREDB
+
+find /opt/zapams/zapams/public/files/* -mtime +15 -exec rm {} \;

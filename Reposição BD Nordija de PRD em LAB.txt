@@ -1,0 +1,26 @@
+Restore da BD de produção do fokuson no laboratório IPTV.
+
+
+ Parar serviços TLT-DC-NBE00-PP - 10.151.152.115  &  TLT-DC-NBEMG00-PP - 10.151.152.113
+
+ Parar serviços Mysql TLT-DC-NBEDBS-PP - 10.151.152.129
+
+ /etc/init.d/mysqld stop  // systemctl stop mysql
+
+
+ Executar no TLT-DC-NBEDBS-PP:
+
+ innobackupex --copy-back /mnt/backupmysql/data/backup-iptv-prd-2022-08-31.tar.gz --force-non-empty-directories
+
+
+ Alterar user e group em /var/lib/mysql para mysql:mysql
+
+ chown -R mysql:mysql /var/lib/mysql
+
+
+ Iniciar Mysql Server TLT-DC-NBEDBS-PP - 10.151.152.129
+
+ /etc/init.d/mysqld start  // systemctl start mysql
+
+
+ Iniciar Serviços TLT-DC-NBE00-PP & TLT-DC-NBEMG00-PP

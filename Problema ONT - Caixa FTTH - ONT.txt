@@ -1,0 +1,9 @@
+Em ZFM indica-nos que os aparelhos estão ligados, ONT com todas as luzes, mas o U2000 não
+apresenta os dados, como se os equipamentos estivessem desligados da energia.
+----------------------------------------------------------------
+Despiste:
+
+1. ZAP BO -> Circuito -> Verificar o U2000
+2. Caixa FTTH comproblemas - passar para a 2ºlinha, caso o ONT esteja com problemas.
+
+OBS: FTTH é sinal RF (Radio Frequencia)

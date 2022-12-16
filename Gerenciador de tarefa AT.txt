@@ -1,0 +1,16 @@
+Gerenciador de Tarefa AT
+-----------------------
+O gerenciador de tarefas existe para alertar tarefas definidas pelo Administrador do Sistema como:
+- Manutenção da rede;
+- Atualizações em curso
+
+comandos:
+atq: Lists all the scheduled tasks that are pending
+atrm: Removes scheduled tasks
+
+etc.
+
+1. Definir a tarefa:
+# vi manutenção.txt
+echo "O Servidor será reniciado as 15h30 para manutenção!"
+

@@ -1,0 +1,25 @@
+[root@TLT-DC-AFRSCO01 ~]# cd /etc/nrpe.d/
+[root@TLT-DC-AFRSCO01 nrpe.d]# cat ok.bundle.cfg
+--------------------------------------------------------
+*********10.151.52.100*******
+[root@TLT-DC-AFRSCO01 ~]# cd /usr/lib64/nagios/plugins/
+[root@TLT-DC-AFRSCO01 plugins]# ll
+total 304
+-rwxr-xr-x. 1 root root  6470 Feb 20  2014 check_cpu.sh
+-rwxr-xr-x. 1 root root  6005 Sep  6 17:14 check_jvm
+-rwxr-xr-x. 1 root root    73 Sep  9 10:21 check_jvm.sh
+-rwxr-xr-x. 1 root root 12330 Oct  1  2015 check_linux_memory
+-rwxr-xr-x. 1 root root 49560 Apr 10  2020 check_load
+-rwxr-xr-x. 1 root root 62448 Apr 10  2020 check_procs
+-rwxr-xr-x. 1 root root   140 Oct 13  2014 check_procs.sh
+-rwxr-xr-x. 1 root root 10182 Sep  6 17:14 check_service.sh
+-rwxr-xr-x. 1 root root 45392 Apr 10  2020 check_swap
+drwxr-xr-x. 2 root root     6 Apr  7  2020 eventhandlers
+-rwxr-xr-x. 1 root root   906 Mar 31  2014 get_ifoperstate.sh
+-rwxr-xr-x. 1 root root 41136 Apr 10  2020 negate
+-rwxr-xr-x. 1 root root 36840 Apr 10  2020 urlize
+-rwxr-xr-x. 1 root root  2791 Apr 10  2020 utils.sh
+------------------------------------------------------------
+Comandos Checks Name"Adagios":
+http://10.151.12.97/adagios/objectbrowser/#command-tab
+--------------------------------------------------------------

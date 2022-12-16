@@ -1,0 +1,25 @@
+#FOR(LOOP) : Comando utilizado para fazer LOOP
+
+------------------------------------------------
+[root@naemon ~]# cat lista
+cat: lista: No such file or directory
+[root@naemon ~]# touch lista
+[root@naemon ~]# vi lista
+[root@naemon ~]# cat lista
+Banana
+Manga
+Cerveja
+Fuba
+Cocacola
+Sumo
+
+[root@naemon ~]# for i in 'cat lista'
+> do echo "Comprar $i para 10 pessoas"
+> done
+Comprar cat lista para 10 pessoas
+[root@naemon ~]# for i in ´cat lista´
+> do echo "Comprar $i para 10 pessoas"
+> done
+Comprar ´cat para 10 pessoas
+Comprar lista´ para 10 pessoas
+[root@naemon ~]#

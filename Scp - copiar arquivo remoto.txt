@@ -1,0 +1,41 @@
+[afonso.caluege@TLT-DC-NAEMON plugins]$ scp check_nrpe afonso.caluege@10.151.152.195:/home/afonso.caluege\@zap.intra/
+
+afonso.caluege@10.151.152.195's password:
+check_nrpe                                                                                                      100%   24KB  24.1KB/s   00:00
+
+
+----------------------------------------------------------------------------------------------------------------
+MAQUINA TRANSPORTADA
+-------------------------
+[afonso.caluege@LAB-WVPROXY00 home]$ cd afonso.caluege\@zap.intra/
+[afonso.caluege@LAB-WVPROXY00 ~]$ ll
+
+
+[afonso.caluege@LAB-WVPROXY00 ~]$ mv check_nrpe /usr/lib64/nagios/plugins/
+
+mv: cannot move ‘check_nrpe’ to ‘/usr/lib64/nagios/plugins/check_nrpe’: Permission denied
+
+[afonso.caluege@LAB-WVPROXY00 ~]$ sudo vi -c sh
+
+[root@LAB-WVPROXY00 afonso.caluege@zap.intra]# mv check_nrpe /usr/lib64/nagios/plugins/
+
+[root@LAB-WVPROXY00 afonso.caluege@zap.intra]# ll
+
+
+[root@LAB-WVPROXY00 ~]# cd /usr/lib64/nagios/plugins/
+
+[root@LAB-WVPROXY00 plugins]# ll
+total 320
+-rwxr-xr-x. 1 root           root          6470 Feb 20  2014 check_cpu.sh
+-rwxr-xr-x. 1 root           root         12330 Apr  4  2019 check_linux_memory
+-rwxr-xr-x. 1 root           root         49560 Apr 10  2020 check_load
+-rwxr-xr-x. 1 afonso.caluege domain users 24712 Sep 28 14:44 check_nrpe
+-rwxr-xr-x. 1 root           root         62448 Apr 10  2020 check_procs
+-rwxr-xr-x. 1 root           root           140 Oct 13  2014 check_procs.sh
+-rwxr-xr-x. 1 root           root         10004 Dec 17  2019 check_service.sh
+-rwxr-xr-x. 1 root           root         45392 Apr 10  2020 check_swap
+drwxr-xr-x. 2 root           root             6 Mar  7  2021 eventhandlers
+-rwxr-xr-x. 1 root           root           906 Mar 31  2014 get_ifoperstate.sh
+-rwxr-xr-x. 1 root           root         41136 Apr 10  2020 negate
+-rwxr-xr-x. 1 root           root         36840 Apr 10  2020 urlize
+-rwxr-xr-x. 1 root           root          2791 Apr 10  2020 utils.sh

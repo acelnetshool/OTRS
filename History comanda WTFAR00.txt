@@ -1,0 +1,1000 @@
+30  history
+   31  ip r
+   32  history | grep route
+   33  cd /etc/sysconfig/network-scripts/
+   34  cat rule-TRANSFARM_FE
+   35  cat old_rule-TRANSFARM_BE
+   36  cat route-TRANSFARM_BE
+   37  cat route-TRANSFARM_FE
+   38  cat /etc/iproute2/rt_tables
+   39  ping 10.151.137.197
+   40  tcpdump src 10.151.128.37
+   41  tcpdump src 10.151.137.198
+   42  tcpdump -i TRANSFARM_FE
+   43  tcpdump -i TRANSFARM_FE icmp
+   44  ping 10.151.152.213
+   45  arp -a
+   46  ping 10.151.152.213
+   47  ping -a 10.151.152.213
+   48  arp -a
+   49  tcpdump -i TRANSFARM_FE icmp
+   50  tcpdump -i TRANSFARM_MGT icmp
+   51  tcpdump -i TRANSFARM_MGNT icmp
+   52  tcpdump -i icmp
+   53  tcpdump icmp
+   54  tcpdump
+   55  tcpdump host 10.151.137.198
+   56  tcpdump -i host 10.151.137.198 -vv
+   57  tcpdump -i TRANSFARM_MGNT
+   58  tcpdump -i TRANSFARM_MGNT host 10.151.137.198
+   59  tcpdump -i TRANSFARM_FE host 10.151.137.198
+   60  arp
+   61  tcpdump -i TRANSFARM_MGNT host 10.151.137.197
+   62  tcpdump -i TRANSFARM_FE host 10.151.137.197
+   63  ip route del 10.151.137.192/28 via 10.151.137.30 dev TRANSFARM_FE
+   64  tcpdump -i TRANSFARM_FE host 10.151.137.197
+   65  ip a
+   66  ip r
+   67  nano rule-TRANSFARM_FE
+   68  nano route-TRANSFARM_FE
+   69  nano route-TRANSFARM_BE
+   70  nano rule-TRANSFARM_FE
+   71  mv rule-TRANSFARM_FE old_rule-TRANSFARM_FE
+   72  cat route-TRANSFARM_BE
+   73  cat route-TRANSFARM_FE
+   74  mv old_rule-TRANSFARM_FE rule-TRANSFARM_FE
+   75  nano route-TRANSFARM_FE
+   76  service network status
+   77  service network restart
+   78  service network status
+   79  systemctl status network.service
+   80  systemctl status network.service -l
+   81  ip r
+   82  ifdown TRANSFARM_FE
+   83  ifup TRANSFARM_FE
+   84  ip a
+   85  ip r
+   86  ls -latrh
+   87  nano route-TRANSFARM_
+   88  nano route-TRANSFARM_FE
+   89  ifdown TRANSFARM_FE
+   90  ifup TRANSFARM_FE
+   91  ip r
+   92  nano route-TRANSFARM_FE
+   93  ls -latrh
+   94  ip r
+   95  history | grep Wowza
+   96  ystemctl status WowzaStreaming
+   97  ~systemctl status WowzaStreaming
+   98  systemctl status WowzaStreaming
+   99  systemctl status WowzaStreamingEngine
+  100  systemctl status WowzaStreamingEngineManager
+  101  systemctl stop WowzaStreamingEngine
+  102  systemctl stop WowzaStreamingEngineManager
+  103  cd /usr/local/WowzaStreamingEngine
+  104  cd /usr/local/WowzaStreamingEngine/updates/WowzaStreamingEngine-Update-4.8.14+9/linux/
+  105  ls
+  106  ./update.sh
+  107  cd /
+  108  rm /usr/local/WowzaStreamingEngine
+  109  mv /usr/local/WowzaStreamingEngine-4.8.12+1 /usr/local/WowzaStreamingEngine
+  110  systemctl start WowzaStreamingEngine
+  111  systemctl start WowzaStreamingEngineManager
+  112  ifconfig
+  113  ifdown APPEAR_TF_BE
+  114  ifup APPEAR_TF_BE
+  115  ip a
+  116  systemctl stop WowzaStreamingEngine
+  117  ps aux | grep java
+  118  systemctl stop WowzaStreamingEngineManager
+  119  ps aux | grep java
+  120  kill -9 180561
+  121  ps aux | grep java
+  122  systemctl start WowzaStreamingEngine
+  123  systemctl start WowzaStreamingEngineManager
+  124  ps aux | grep java
+  125  systemctl stop WowzaStreamingEngineManager
+  126  systemctl stop WowzaStreamingEngine
+  127  ps aux | grep java
+  128  kill -9 187250
+  129  ps aux | grep java
+  130  cd /usr/local/WowzaStreamingEngine/updates/WowzaStreamingEngine-Update-4.8.14+9/linux/
+  131  ./update.sh -u
+  132  cd /
+  133  cd /usr/local/WowzaStreamingEngine
+  134  ls
+  135  cd ..
+  136  ls
+  137  systemctl start WowzaStreamingEngine
+  138  systemctl start WowzaStreamingEngineManager
+  139  ip r
+  140  history
+  141  exit
+  142  arp -a
+  143  history
+  144  diff /etc/sysconfig/network-scripts/rule-TRANSFARM_FE /etc/sysconfig/network-scripts/old_rule-TRANSFARM_BE
+  145  tcpdump -i TRANSFARM_FE host 10.151.137.197
+  146  tcpdump -nnn -i TRANSFARM_FE host 10.151.137.197
+  147  cd /usr/local/WowzaStreamingEngine/logs/
+  148  ls -lrt
+  149  tail -f wowzastreamingengine_access.log
+  150  tail -f wowzastreamingengine_access.log | grep -i ".197"
+  151  tail -f wowzastreamingengine_access.log | grep -v "fokusOn"
+  152  tail -f wowzastreamingengine_access.log
+  153  tail -f wowzastreamingengine_access.log | egrep -v "10.151.137.12|10.151.137.13"
+  154  tail -f wowzastreamingengine_access.log | egrep -v "10.151.137.12|10.151.137.13|overlap"
+  155  tail -f wowzastreamingengine_access.log | egrep -v "10.151.137.12|10.151.137.13"
+  156  tail -f wowzastreamingengine_access.log | grep 10.151.137.197
+  157   grep 10.151.137.197 *
+  158  ls -lrt
+  159  tail -f wowzastreamingengine_error.log
+  160  tail -f wowzastreamingengine_stats.log
+  161  less wowzastreamingengine_access.log
+  162  ls -lrt
+  163  tcpdump -nnn -i TRANSFARM_FE host 10.151.137.197 -w /home/nelson.ribeiro\@zap.intra/probe01.pcap
+  164  cd
+  165  cd /home/nelson.ribeiro\@zap.intra/
+  166  ls -lrt
+  167  ls -lrth
+  168  tcpdump -nnn -i TRANSFARM_FE host 10.151.137.197 -w /home/nelson.ribeiro\@zap.intra/probe01.pcap
+  169  ls -lrth
+  170  cd
+  171  cd /usr/local/WowzaStreamingEngine/logs/
+  172  ls -lrt
+  173  grep 10.151.137.197 wowzastreamingengine_access.lo
+  174  grep 10.151.137.197 wowzastreamingengine_access.log
+  175  ls -lrt
+  176  cd ..
+  177  cd con
+  178  cd conf/
+  179  ls -lrt
+  180  less log4j2-config.xml
+  181  cd ..
+  182  ls -lty
+  183  ls -lrt
+  184  cd logs/
+  185  ls -lrt
+  186  tail -f wowzastreamingengine_access.log | grep 10.151.137.197
+  187  tail -f wowzastreamingengine_access.log | grep 10.151.137.198
+  188  tail -f wowzastreamingengine_access.log | grep 10.151.137.197
+  189  tail -f wowzastreamingengine_access.log | grep 10.151.137.198
+  190  tail -f wowzastreamingengine_access.log | grep 10.151.137.197
+  191  tail -f wowzastreamingengine_access.log | grep 10.151.137.197
+  192  history
+  193  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log | grep 10.151.137.197
+  194  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log | grep 10.151.137.198
+  195  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  196  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log | grep -v msnifest
+  197  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log | grep -v manifest
+  198  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log | grep -v manifest
+  199  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log | grep 10.151.137.197
+  200  history | grep diff
+  201  diff /etc/sysconfig/network-scripts/rule-TRANSFARM_FE /etc/sysconfig/network-scripts/old_rule-TRANSFARM_BE
+  202  last
+  203  who
+  204  ps aux
+  205  htop
+  206  cd /etc/sysconfig/network-scripts/
+  207  ls -latrh
+  208  cat rule-TRANSFARM_FE
+  209  cat old_rule-TRANSFARM_BE
+  210  history
+  211  exit
+  212  grep 10.151.137.193 /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  213  grep 10.151.137.193 /usr/local/WowzaStreamingEngine/logs/*
+  214  grep 10.151.137.194 /usr/local/WowzaStreamingEngine/logs/*
+  215  systemctl status WowzaStreamingEngineManager
+  216  history
+  217  ip r
+  218  firewall-cmd --list-all-zones
+  219  history | grep add
+  220  exit
+  221  cat /etc/sudoers.d/policy
+  222  cd /usr/local/WowzaStreamingEngine/
+  223  git pull && make
+  224  cd /usr/local/WowzaStreamingEngine/
+  225  git pull && make
+  226  history
+  227  history | grep stat
+  228  cd /usr/local/WowzaStreamingEngine
+  229  ls
+  230  exit
+  231  cd /usr/local/WowzaStreamingEngine
+  232  make stats
+  233  exit
+  234  cd /usr/local/WowzaStreamingEngine/
+  235  git pull && make
+  236  cd /etc/sysconfig/network-scripts/
+  237  ls
+  238  cat old_rule-TRANSFARM_BE
+  239  cat ifcfg-TRANSFARM_BE
+  240  ping 10.151.144.222
+  241  ip a
+  242  ping 10.151.144.193
+  243  ping 10.151.144.220
+  244  exit
+  245  last
+  246  df -h
+  247  exit
+  248  clear
+  249  cd /usr/local/WowzaStreamingEngine/
+  250  git pull && make
+  251  history|grep tail
+  252  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  253  history
+  254  systemctl status WowzaStreamingEngineManager
+  255  systemctl status WowzaStreamingEngine
+  256  systemctl stop WowzaStreamingEngine
+  257  ps aux |grep java
+  258  sudo kill -9 199218
+  259  sudo kill -9 199286
+  260  systemctl status WowzaStreamingEngine
+  261  systemctl stop WowzaStreamingEngine
+  262  systemctl start WowzaStreamingEngine
+  263  systemctl start WowzaStreamingEngineManager
+  264  systemctl status WowzaStreamingEngineManager
+  265  systemctl stop WowzaStreamingEngineManager
+  266  systemctl start WowzaStreamingEngineManage
+  267  systemctl status WowzaStreamingEngine
+  268  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  269  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  270  ps aux |grep java
+  271  sudo kill -9 82196
+  272  sudo kill -9 83950
+  273  systemctl stop WowzaStreamingEngineManager
+  274  systemctl stop WowzaStreamingEngine
+  275  systemctl start WowzaStreamingEngine
+  276  systemctl start WowzaStreamingEngineManager
+  277  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  278  htop
+  279  ll /usr/local/
+  280  ll /usr/local/WowzaStreamingEngine/
+  281  ll /usr/local/WowzaStreamingEngine/updates/
+  282  history
+  283  last
+  284  lastlog
+  285  history
+  286  tail /var/log/lastlog
+  287  tail /var/log/lastlog
+  288  cat /var/log/lastlog
+  289  tail /var/log/
+  290  tail /var/log/messages
+  291  less /var/log/messages
+  292  head /var/log/messages
+  293  less /var/log/messages
+  294  grep 'Oct 18' /var/log/messages | less
+  295  less /var/log/messages
+  296  cd /usr/local/WowzaStreamingEngine/logs/
+  297  ll
+  298  tail wowzastreamingengine_error.2021-10-17.log
+  299  less wowzastreamingengine_error.2021-10-17.log
+  300  history
+  301  yum update
+  302  exit
+  303  yum update
+  304  yum upgrade
+  305  cd /mnt/dstore/
+  306  df 'h
+  307  df -h
+  308  df -h
+  309  systemctl status WowzaStreamingEngineManager
+  310  systemctl stop WowzaStreamingEngineManager
+  311  systemctl stop WowzaStreamingEngine
+  312  shutdown -r now
+  313  ps aux | grep java
+  314  htop
+  315  ls
+  316  cd /mnt/dstore/
+  317  ls
+  318  cd /mnt/dstore/
+  319  mount 'a
+  320  mount -aa
+  321  mount -a
+  322  ls
+  323  cd TLT-DC-WTFARM10/
+  324  ls
+  325  cd ''
+  326  cd ..
+  327  cd npvr/
+  328  ls
+  329  cd channels/
+  330  ls
+  331  cd ..
+  332  htop
+  333  ls
+  334  cd ..
+  335  ls
+  336  exit
+  337   du -sh /var/log/*
+  338  df -h
+  339  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  340  cd /mnt/dstore/
+  341  ls
+  342  cd ..
+  343  ls
+  344  systemctl stop WowzaStreamingEngine
+  345  systemctl start WowzaStreamingEngine
+  346  systemctl status WowzaStreamingEngine
+  347  systemctl status WowzaStreamingEngineManager
+  348  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  349  history | grep ntp
+  350  cat /etc/ntp.conf
+  351  ntpdate -buv 10.151.59.1
+  352  ntpd -gq
+  353  history
+  354  exit
+  355  systemctl status WowzaStreamingEngine
+  356  cat /usr/lib/systemd/system/WowzaStreamingEngine.service
+  357  history
+  358  echo 'export HISTTIMEFORMAT="%d/%m/%y %T "' >> ~/.bash_profile
+  359  history
+  360  ll
+  361  history
+  362  date
+  363  timedatectl
+  364  cd /usr/local/WowzaStreamingEngine/
+  365  git pull && make
+  366  cd /usr/local/WowzaStreamingEngine/
+  367  git pull && make
+  368  history|grep curl
+  369  systemctl status WowzaStreamingEngine
+  370  systemctl status WowzaStreamingEnginemanager
+  371  systemctl status WowzaStreamingEngineManager
+  372  firewall-cmd --list-all-zones
+  373  firewall-cmd --zone=public  --remove-port=1935/tcp
+  374  df -h
+  375  systemctl restart WowzaStreamingEngineManager
+  376  systemctl stop WowzaStreamingEngine
+  377  ps aux | grep java
+  378  kill -9 6094
+  379  ps aux | grep java
+  380  kill -9 220668
+  381  ps aux | grep java
+  382  systemctl start WowzaStreamingEngine
+  383  systemctl start WowzaStreamingEngineManager
+  384  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  385  systemctl status WowzaStreamingEngineManager
+  386  systemctl status WowzaStreamingEngine
+  387  systemctl restart WowzaStreamingEngineManager
+  388  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  389  firewall-cmd --zone=public  --add-port=1935/tcp
+  390  exit
+  391  dmesg -T
+  392  less /var/log/messages
+  393  grep '^No 16' /var/log/messages | less
+  394  grep 'No 16' /var/log/messages | less
+  395  grep '^Nov 16' /var/log/messages | less
+  396  grep '^Nov 16 11:' /var/log/messages | less
+  397  df -h
+  398  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  399  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  400  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  401  cd /usr/local/WowzaStreamingEngine/
+  402  git pull && make
+  403  git s
+  404  git status
+  405  cd /usr/local/WowzaStreamingEngine/
+  406  git pull && make
+  407  cd /usr/local/WowzaStreamingEngine/updates/
+  408  mkdir updatelog4j
+  409  cd updatelog4j/
+  410  wget https://www.wowza.com/downloads/log4jupdater/updatelog4j.zip
+  411  pwd
+  412  ll
+  413  unzip updatelog4j.zip
+  414  ll
+  415  htop
+  416  systemctl stop WowzaStreamingEngine
+  417  ps aux |grep java
+  418  kill -9 220861
+  419  kill -9 223049
+  420  ps aux |grep java
+  421  systemctl stop WowzaStreamingEngine
+  422  systemctl stop WowzaStreamingEngineManager
+  423  ./updatelog4j.sh
+  424  systemctl start WowzaStreamingEngineManager
+  425  systemctl start WowzaStreamingEngine
+  426  systemctl status WowzaStreamingEngine*
+  427  systemctl status WowzaStreamingEngine*
+  428  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  429  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  430  ps aux |grep java
+  431  kill -9 266319
+  432  kill -9 266510
+  433  systemctl stop WowzaStreamingEngine*
+  434  systemctl status WowzaStreamingEngine*
+  435  systemctl status WowzaStreamingEngine*
+  436  systemctl start WowzaStreamingEngine*
+  437  systemctl status WowzaStreamingEngine*
+  438  systemctl start WowzaStreamingEngine
+  439  systemctl start WowzaStreamingEngineManager
+  440  systemctl status WowzaStreamingEngine*
+  441  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  442  df -h
+  443  cd ..
+  444  ll
+  445  cd ..
+  446  ll
+  447  cd logs/
+  448  ll
+  449  ll -h
+  450  rm wowzastreamingengine_access.2021-12-3*
+  451  ll
+  452  df -h
+  453  pwd
+  454  history
+  455  cd /usr/local/WowzaStreamingEngine/logs/
+  456  ll
+  457  ls -latrh
+  458  cat /etc/cron.daily/log_compress.sh
+  459  df -h
+  460  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +3
+  461  find . -type f -iname "wowzastreamingengine_access.*" -not -name ".gz" -mtime +3
+  462  find . -type f -iname "wowzastreamingengine_access.*" -not -mtime +3
+  463  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +4
+  464  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +2
+  465  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +1
+  466  ls -latrh
+  467  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +2
+  468  find . -type f -iname "wowzastreamingengine_access.*" -mtime +2
+  469  find . -type f -iname "wowzastreamingengine_access.*" -mtime +3
+  470  cat /etc/cron.daily/log_compress.sh
+  471  df -h
+  472  exit
+  473  cat /etc/crontab
+  474  crontab -e
+  475  history
+  476  cd /etc/cron.daily/
+  477  ll
+  478  cat *
+  479  ls
+  480  who
+  481  history
+  482  cd logs/
+  483  cat /etc/logrotate.d
+  484  cd /etc/logrotate.d
+  485  ls
+  486  cat /etc/logrotate.conf
+  487  sudo logrotate --force  /etc/logrotate.d/
+  488  logrotate /etc/logrotate.conf -d
+  489  l
+  490  ls
+  491  cd ..
+  492  ls
+  493  cat /etc/logrotate.conf
+  494  cat /etc/crontab e
+  495  df -h
+  496  cat /etc/crontab
+  497  cat /etc/cron.hourly
+  498  history
+  499  s
+  500  ls
+  501  cd crontab
+  502  ls
+  503  cat crontab
+  504  cat logrotate.conf
+  505  who
+  506  cat crontab.hourly
+  507  cat /etc/crontab.hourly
+  508  cd /etc/crontab.hourly
+  509  cd /etc/cron.hourly
+  510  cat /etc/cron.hourly
+  511  ls
+  512  cat 0anacron
+  513  cd /etc/cron.daily/
+  514  ll
+  515  cat logrotate
+  516  cat log_compress.sh
+  517  ll
+  518  cd ..
+  519  l
+  520  ll
+  521  cd /etc/cron.daily/
+  522  ll
+  523  cat /var/log/syslog | grep CRON >> /tmp/cron.log
+  524  cat log_compress.sh
+  525  who
+  526  who
+  527  cd /usr/local/WowzaStreamingEngine/logs
+  528  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +3
+  529  ll
+  530  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +3
+  531  find . -type f -iname "wowzastreamingengine_access.*"
+  532  find . -type f -iname "wowzastreamingengine_access.*" -mtime +3
+  533  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +3 ;
+  534  find . -type f -iname "wowzastreamingengine_access.*" -mtime +3 ;
+  535  ll
+  536  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +3
+  537  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +2
+  538  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +1
+  539  ll
+  540  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz"
+  541  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +1
+  542  cd /usr/local/WowzaStreamingEngine/logs/
+  543  ll
+  544  cat wowzastreamingengine_stats.log
+  545  vi /etc/logrotate.conf
+  546  vi /etc/cron.daily/log_compress.sh
+  547  ll
+  548  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +3 -exec gzip '{}' \;
+  549  ll
+  550  find . -type f -iname "wowzastreamingengine_access.*" -not -name "*.gz" -mtime +2 -exec gzip '{}' \;
+  551  ll
+  552  df -h
+  553  vi /etc/cron.daily/log_compress.sh
+  554  ll -h
+  555  df -h
+  556  cd  /usr/local/WowzaStreamingEngine/logs/
+  557  ll -h
+  558  df -h
+  559  cd ..
+  560  cd ..
+  561  ll
+  562  du -sh *
+  563  pwd
+  564  du -sh *
+  565  ll
+  566  ll WowzaStreamingEngine/logs/
+  567  ll
+  568  cd /usr/local/
+  569  ll
+  570  du -sh *
+  571  rm -rf WowzaStreamingEngineTest
+  572  rm -rf WowzaStreamingEngine-4.8.12+1-linux-x64-installer.run
+  573  rm -rf WowzaStreamingEngine-4.7.7.tar.gz
+  574  ll
+  575  mv WowzaStreamingEngine-4.7.7/ WowzaStreamingEngine-remover
+  576  ll
+  577  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  578  ll
+  579  rm -rf WowzaStreamingEngine-remover
+  580  ll
+  581  ll wowzas/
+  582  ll WowzaStreamingEngine/
+  583  cat update.sh
+  584  rm update.sh
+  585  ll
+  586  cd wowzas/
+  587  ll
+  588  cat Makefile
+  589  cd ..
+  590  ll
+  591  ll wowzas/
+  592  cd wowzas/
+  593  cat Makefile
+  594  ll conf/
+  595  ll content/
+  596  ll
+  597  cat README.md
+  598  cd ..
+  599  ll
+  600  rm -rf wowzas/
+  601  cd WowzaStreamingEngine/
+  602  cat Makefile
+  603  pwd
+  604  cd ..
+  605  ll
+  606  cd /etc/
+  607  cd sysconfig/
+  608  cd network-scripts/
+  609  ls
+  610  cat route-APPEAR_TF_BE
+  611  cat route-IRIS_BE
+  612  cat route-IRIS_BE
+  613  cat route-TRANSFARM_
+  614  cat route-TRANSFARM_FE
+  615  cat route-APPEAR_TF_BE
+  616  cat route-IRIS_BE
+  617  cat /etc/iproute2/rt_tables
+  618  ip route-
+  619  ip route
+  620  cat /etc/iproute2/rt_tables
+  621  ls
+  622  cat route-TRANSFARM_FE
+  623  ll /usr/local/WowzaStreamingEngine/conf/
+  624  cat /usr/local/WowzaStreamingEngine/conf/log4j2-config.xml
+  625  cat /usr/local/WowzaStreamingEngine/conf/log4j2-config.xml |wc -l
+  626  history
+  627   cat wowzastreamingengine_stats.log
+  628    922  vi /etc/logrotate.conf
+  629    923  vi /etc/cron.daily/log_compress.sh
+  630  who
+  631  cat etc/cron.daily/log_compress.sh
+  632  ls
+  633  cd /etc/
+  634  ll
+  635  cat logrotate.conf
+  636  cat cron.daily/
+  637  cd cron.daily/
+  638  ls
+  639  cat log_compress.sh
+  640  pwx
+  641  pwd
+  642  ll /usr/local/
+  643  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  644  htop
+  645  ps aux |grep java
+  646  kill -9 269357
+  647  kill -9 269432
+  648  systemctl stop WowzaStreamingEngine*
+  649  systemctl start WowzaStreamingEngine*
+  650  systemctl status WowzaStreamingEngine*
+  651  systemctl status WowzaStreamingEngine
+  652  systemctl start WowzaStreamingEngine
+  653  systemctl start WowzaStreamingEngineManager
+  654  systemctl status WowzaStreamingEngine
+  655  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  656   ps aux | grep java | grep -v grep | awk '{print $2}' |  xargs -r kill -9 && systemctl stop WowzaStreamingEngineManager && systemctl stop WowzaStreamingEngine
+  657  systemctl start WowzaStreamingEngineManager && systemctl start WowzaStreamingEngine
+  658  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  659  ls -latrh /usr/local/
+  660  ls -latrh /usr/local/WowzaStreamingEngine/
+  661  exit
+  662  firewall-cmd --list-all-zones
+  663  history|grep rich
+  664  cat /home/pedro.rodrigues\@zap.intra/.bash_history |grep rich
+  665  ntpd -gq
+  666  ntpdate -buv 10.151.59.1
+  667  exit
+  668  firewall-cms --list-all-zones
+  669  firewall-cmd --list-all-zones
+  670  firewall-cmd --zone=public  --remove-port=1935/tcp
+  671  systemctl stop WowzaStreamingEngine
+  672  ps aux | grep java
+  673  systemctl stop WowzaStreamingEngineManager
+  674  ps aux | grep java
+  675  kill -9 38326
+  676  systemctl start WowzaStreamingEngine
+  677  systemctl start WowzaStreamingEnginemanager
+  678  systemctl start WowzaStreamingEngineManager
+  679  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  680  firewall-cmd --zone=public  --add-port=1935/tcp
+  681  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  682  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.
+  683  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  684  exit
+  685  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  686  systemctl stop WowzaStreamingEngine
+  687  killall -9 java
+  688  systemctl start WowzaStreamingEngine
+  689  systemctl start WowzaStreamingEngineManager
+  690  systemctl stop WowzaStreamingEngine
+  691  systemctl stop WowzaStreamingEngineManager
+  692  killall -9 java
+  693  firewall-cmd --zone=public  --remove-port=1935/tcp
+  694  systemctl start WowzaStreamingEngineManager
+  695  systemctl start WowzaStreamingEngine
+  696  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  697  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.L
+  698  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  699  firewall-cmd --zone=public  --add-port=1935/tcp
+  700  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  701  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  702  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  703  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  704  exit
+  705  cat logrotate
+  706  cd ..
+  707  ls
+  708  cat logrotate.conf
+  709  cat /etc/filebeat/filebeat.yml
+  710  vi /etc/filebeat/filebeat.yml
+  711  history
+  712  cd /mnt/dstore/
+  713  ll
+  714  tar -czf wowza-conf.tar.gz applications/ conf/ manager/
+  715  mv wowza-conf.tar.gz /tmp/wowza-conf.tar.gz
+  716  cd /tmp/
+  717  ll
+  718  cd -
+  719  ll
+  720  ll transcoder/
+  721  ll transcoder/templates/
+  722  tar -czf wowza-conf.tar.gz transcoder/
+  723  mv wowza-conf.tar.gz /tmp/
+  724  ll /mnt/dstore/TLT-DC-WTFARM00/ndvr/ZAPR/_definst_/2
+  725  ll /mnt/dstore/TLT-DC-WTFARM00/ndvr/ZAPR/_definst_/
+  726  pwd
+  727  df -h
+  728  ll /mnt/dstore/
+  729  ll /mnt/dstore/
+  730  ll /mnt/dstore/TLT-DC-WTFARM00/
+  731  ll /mnt/dstore/TLT-DC-WTFARM00/npvr/
+  732  ll -ltr  /mnt/dstore/TLT-DC-WTFARM00/npvr/
+  733  cd /usr/local/WowzaStreamingEngine/
+  734  ll
+  735  cd content
+  736  ll
+  737  ll -ltr
+  738  ll
+  739  cd ..
+  740  cd /mnt/dstore/TLT-DC-WTFARM00/npvr/
+  741  pd
+  742  pwd
+  743  cd /usr/local/WowzaStreamingEngine/
+  744  ll
+  745  ll -ltr
+  746  ll
+  747  cd /mnt/dstore/
+  748  ll -ltr
+  749  cd TLT-DC-WTFARM
+  750  cd TLT-DC-WTFARM00/npvr/
+  751  ll -ltr
+  752  cd ..
+  753  cd ndvr/
+  754  ll -ltr
+  755  cd ZAPR/
+  756  ll
+  757  cd _definst_/
+  758  ll
+  759  ll -hltr
+  760  cd
+  761  cd /mnt/dstore/
+  762  ll -ltr
+  763  ll
+  764  cd TLT-DC-WTFARM00
+  765  ll -ltr
+  766  cd ndvr/
+  767  ll
+  768  cd ZAPR/
+  769  cd _definst_/
+  770  ll -hltr
+  771  pwd
+  772  cd ..
+  773  cd ..
+  774  ll
+  775  cd ..
+  776  ll
+  777  cd npvr/
+  778  ll
+  779  ll -hltr
+  780  ~pwd
+  781  pwd
+  782  cd /var/log/ipt
+  783  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/ndvr/ZAPR/_definst_/
+  784  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/ndvr/ZAPR/_definst_/ | grep 2066
+  785  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/ndvr/ZAPR/_definst_/ | grep 2462
+  786  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/ndvr/ZAPR/_definst_/ | grep 2116
+  787  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/npvr/2
+  788  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/npvr/
+  789  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/npvr/ | grep 2355
+  790  cd
+  791  ll -hltr /mnt/dstore/TLT-DC-WTFARM00/npvr/
+  792  cd /usr/local/WowzaStreamingEngine/
+  793  git pull && make
+  794  cd /usr/local/WowzaStreamingEngine/
+  795  grep -lri 'api'
+  796  ll
+  797  cd conf/
+  798  grep -lri 'api'
+  799  cat ZAP/PushPublishMap.txt
+  800  grep -lri 'AdminZAP'
+  801  cat admin.password
+  802  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log |grep init
+  803  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error. |grep init
+  804  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log |grep init
+  805  cd /usr/local/WowzaStreamingEngine/conf/
+  806  cat Server.xml
+  807  ll /tmp/
+  808  scp /tmp/WowzaStreamingEngine-Update-4.8.17+1.zip david.correia@10.151.152.11:/tmp/
+  809  mv /tmp/WowzaStreamingEngine-Update-4.8.17+1.zip /usr/local/WowzaStreamingEngine/updates/
+  810  ll /usr/local/WowzaStreamingEngine/updates/
+  811  df -h
+  812  cd /usr/local/WowzaStreamingEngine/updates/
+  813  ll
+  814  unzip WowzaStreamingEngine-Update-4.8.17+1.zip
+  815  ll
+  816  unzip WowzaStreamingEngine-Update-4.8.17+1.zip WowzaStreamingEngine-Update-4.8.17+1/
+  817  mkdir WowzaStreamingEngine-Update-4.8.17+1/
+  818  mv actions WowzaStreamingEngine-Update-4.8.17+1/
+  819  mv files/ WowzaStreamingEngine-Update-4.8.17+1/
+  820  mv Instructions.txt WowzaStreamingEngine-Update-4.8.17+1/
+  821  mv lib/ WowzaStreamingEngine-Update-4.8.17+1/
+  822  mv linux/ WowzaStreamingEngine-Update-4.8.17+1/
+  823  mv osx/ WowzaStreamingEngine-Update-4.8.17+1/
+  824  mv README.txt WowzaStreamingEngine-Update-4.8.17+1/
+  825  mv windows/ WowzaStreamingEngine-Update-4.8.17+1/
+  826  ll
+  827  ll backup/
+  828  mv WowzaStreamingEngine-Update-4.8.17+1.zip WowzaStreamingEngine-Update-4.8.17+1/
+  829  ll
+  830  ll
+  831  cat stop
+  832  cat stop_wowza.sh
+  833  cat start_wowza.sh
+  834  sh stop_wowza.sh
+  835  systemctl status WowzaStreamingEngine
+  836  cd /usr/local/WowzaStreamingEngine/
+  837  cd updates/
+  838  ll
+  839  cd WowzaStreamingEngine-Update-4.8.17+1/
+  840  ll
+  841  cd li
+  842  cd linux/
+  843  ll
+  844  sudo chmod +x *.sh
+  845  ll
+  846  sudo ./update.sh
+  847  cd /home/david.correia\@zap.intra/
+  848  ll
+  849  sh start_wowza.sh
+  850  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  851  ll
+  852  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  853  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_error.log
+  854  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  855  history
+  856  systemctl status WowzaStreamingEngine
+  857  ll /usr/local/WowzaStreamingEngine/updates/
+  858  CAT
+  859  pwd
+  860  ll
+  861  cd /usr/local/WowzaStreamingEngine/
+  862  git pull && make
+  863  systemctl stauts nrped
+  864  systemctl status nrped
+  865  systemctl status nrpe
+  866  cd /usr/local/WowzaStreamingEngine/
+  867  git pull && make
+  868  ip a
+  869  cd /usr/local/WowzaStreamingEngine/
+  870  git pull && make
+  871  cd /usr/local/WowzaStreamingEngine/
+  872  git pull && make
+  873  ip a
+  874  cat /etc/sysconfig/network-scripts/ifcfg-bond0
+  875  ntpdate -buv 10.151.59.1
+  876  exit
+  877  dnf install nload
+  878  yum install nload
+  879  nload -m
+  880  EY4hVoqvtr
+  881  cd /usr/local/WowzaStreamingEngine/
+  882  git pull && make
+  883  cd /usr/local/WowzaStreamingEngine/conf/
+  884  ll
+  885  ll ZAP/Application.xml
+  886  cat ZAP/Application.xml
+  887  ll
+  888  cat StartupStreams.xml
+  889  ll
+  890  ll live/
+  891  cd ..
+  892  ll
+  893  ll content
+  894  cd /usr/local/WowzaStreamingEngine/
+  895  ll
+  896  ls -latrh
+  897  history
+  898  git pull && make
+  899  cd conf/
+  900  ll
+  901  cat StartupStreams.xml
+  902  nano StartupStreams.xml
+  903  cd /usr/local/WowzaStreamingEngine/
+  904  ll
+  905  cd content
+  906  ll
+  907  vi 2469.stream
+  908  git status
+  909  git checkout .
+  910  git pull
+  911  cd /usr/local/WowzaStreamingEngine/
+  912  cd conf/
+  913  cd ..
+  914  cd content
+  915  ll
+  916  cat 2469.stream
+  917  cat 2467.stream
+  918  exit
+  919  cd /usr/local/WowzaStreamingEngine/
+  920  git status
+  921  ll
+  922  git pull
+  923  git pull
+  924  aassasassasas
+  925  cd /usr/local/WowzaStreamingEngine/
+  926  git status
+  927  git pull
+  928  ll
+  929  cd conf/
+  930  ll
+  931  cd ..
+  932  ll
+  933  cd content
+  934  ll
+  935  cat 2470.stream
+  936  cd ..
+  937  ll
+  938  make
+  939  cd conf/
+  940  ll
+  941  cd /usr/local/WowzaStreamingEngine/
+  942  git status
+  943  git pull
+  944  grep -lri 2470
+  945  history
+  946  history -d 1001
+  947  history
+  948  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  949  cd WowzaStreamingEngine/
+  950  ll
+  951  nano content/nova.stream
+  952  git status
+  953  pwd
+  954  ll
+  955  git status
+  956  rm content/nova.stream
+  957  cd WowzaStreamingEngine/
+  958  xat .git/config
+  959  cat .git/config
+  960  tail -f /usr/local/WowzaStreamingEngine/logs/wowzastreamingengine_access.log
+  961  cd /usr/local/WowzaStreamingEngine/
+  962  cd ..
+  963  ll
+  964  cd WowzaStreamingEngine/
+  965  git pull
+  966  cd /usr/local/WowzaStreamingEngine/
+  967  ll
+  968  ls -latrh
+  969  exit
+  970  git pull
+  971  cd
+  972  ll
+  973  cd .ssh/
+  974  ll
+  975  cp /home/david.correia\@zap.intra/.ssh/id_rsa.pub .
+  976  ll
+  977  cat id_rsa.pub
+  978  cd /usr/local/WowzaStreamingEngine/
+  979  git pull
+  980  cd
+  981  cd .ssh/
+  982  ll
+  983  rm id_rsa.pub
+  984  cd /home/carlos.peixoto\@zap.intra/
+  985  ll .ss
+  986  cd /home/david.correia\@zap.intra/
+  987  ll .ssh/
+  988  ll
+  989  sudo su carlos.peixoto
+  990  exit
+  991  last
+  992  exit
+  993  cat /etc/sysconfig/network-scripts/rule-TRANSFARM_FE
+  994  cat /etc/sysconfig/network-scripts/route-TRANSFARM_FE
+  995  ip a
+  996  ls -lh
+  997  df -Th
+  998  cd
+  999  history | grep mount
+ 1000  history
+ 1001  dmidecode
+ 1002  dmidecode
+ 1003  Base Board Information
+ 1004          Manufacturer: Dell Inc.
+ 1005          Product Name: 0177V9
+ 1006          Version: A03
+ 1007          Serial Number: .BZJV2T2.CNFCP008AF007S.01.
+ 1008          Asset Tag: Not Specified
+ 1009          Features:
+ 1010                  Board is a hosting board
+ 1011                  Board is removable
+ 1012                  Board is replaceable
+ 1013                  Board is hot swappable
+ 1014          Location In Chassis: Slot 01
+ 1015          Chassis Handle: 0x0300
+ 1016          Type: Server Blade
+ 1017  dmidecode -t 16
+ 1018  lscpu
+ 1019  lshw -short
+ 1020  lsscsi
+ 1021  -df -h
+ 1022  df -h
+ 1023  cat /proc/cpuinfo | grep processor | wc -l
+ 1024  lsdev
+ 1025  lspci
+ 1026  demidecode | more
+ 1027  dmidecode | more
+ 1028  lsdev | less
+ 1029  history

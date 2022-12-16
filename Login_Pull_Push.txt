@@ -1,0 +1,53 @@
+# Criar o repositorio remoto
+.............................
+conta de acesso:acaluege.docker@gmail.com - @...0
+
+--------------------------------------------------
+# Acesso para pull no repositorio
+[root@naemon ~]# sudo docker login -u acaluegedocker 
+Password: 
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store 
+
+Login Succeeded 
+----------------------------------------------------------------
+# Verificar as imagens
+[root@naemon ~]# sudo docker images
+
+REPOSITORY                       TAG                 IMAGE ID       CREATED       SIZE 
+mysql                            5.7                 14905234a4ed   10 days ago   495MB
+zabbix/zabbix-web-apache-mysql   ubuntu-4.0-latest   c169f1c29750   6 weeks ago   335MB
+zabbix/zabbix-server-mysql       ubuntu-4.0-latest   f8116abccb23   6 weeks ago   255MB
+--------------------------------------------------------------------------------------------
+# Transportar a  1ª imagens para push
+[root@naemon ~]# sudo docker tag 14905234a4ed acaluegedocker/zabbix01112022:MYSQL_Zabbix_1.0
+[root@naemon ~]# sudo docker push acaluegedocker/zabbix01112022:MYSQL_Zabbix_1.0
+---------------------------------------------------------------------------------------------
+# Transportar a  2ª imagens para push
+[root@naemon ~]# sudo docker tag c169f1c29750 acaluegedocker/zabbix01112022:Zabbix_Web_Apache_MYSQL_1.0
+[root@naemon ~]# sudo docker push acaluegedocker/zabbix01112022:Zabbix_Web_Apache_MYSQL_1.0
+------------------------------------------------------------------------------------------------
+# Transportar a  3ª imagens para push
+[root@naemon ~]# sudo docker tag f8116abccb23 acaluegedocker/zabbix01112022:Zabbix_Server_MYSQL_1.0
+[root@naemon ~]# sudo docker push acaluegedocker/zabbix01112022:Zabbix_Server_MYSQL_1.0
+
+--------------------------------------------
+#Remover imagens do container
+sudo docker image rm acaluegedocker/zabbix01112022:x
+-------------------------------------------------------------------
+# Baixar a imagem para dentro da máquina
+sudo docker pull acaluegedocker/zabbix01112022:Zabbix_Server_MYSQL_1.0
+
+---------------------------------------------------------------
+#Executar o container
+sudo docker run -it acaluegedocker/zabbix01112022:Zabbix_Server_MYSQL_1.0 bash - bash caso seja necessario
+
+# Start o apache
+sudo service apache2 start
+
+# To delete all container including its volumes use
+docker rm -vf $(docker ps -aq)
+
+#To delete all the images
+docker rmi -f $(docker images -aq)

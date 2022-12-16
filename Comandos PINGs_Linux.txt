@@ -1,0 +1,1 @@
+[afonso.caluege@TLT-DC-NAEMON ~]$ ping -c -7 -q google.com [Hostname]

@@ -1,0 +1,12 @@
+# Cliente não consegue aceder ao ZAPPLAY
+
+Erro: Não esta dentro da rede ZAP
+
+Nota: Passar para a rede IP
+-------------------------------------------------
+
+FTTH
+Clt ctt recuperamos a palavra passe mas quando tenta entrar diz erro no servidor interno
+está a se conectar a rede ZAP.
+
+R: Informar a malta

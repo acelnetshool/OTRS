@@ -1,0 +1,27 @@
+Match CCUR - IRIS
+
+Descrição
+
+Objectivo é remover de catalogo automaticamente conteudos que tenham problemas no filme, trailer ou preço no sistema IRIS - FTTH.
+
+Verificar email recebido referente ao Match CCUR se contém algum VOD com "NOK"
+
+Abrir os dois ficheiros em anexo:
+
+.AssetMap.csv (Contêm informação referente a cada VOD registada na DB)
+
+.lista.txt (Contêm lista de VOD em storage)
+
+.Casos a corrigir:
+
+. Caso VOD não exista em storage é necessário fazer ingest do VOD. Solicitar reingest à NOS através de email.
+
+. Caso VOD exista em storage mas a versão que está registada na DB não corresponda à que está em storage, devera ser efetuado update na DB:
+
+. DB : MongoIRISPRD 
+. IP : 10.151.8.193
+. Encontrar VOD através de PackageId
+
+   db.getCollection('AssetMap').find({'MediaId.PackageId':'CIPK478D2EC2F45D4B46'})
+
+Nota: https://gitlab.zap.intra/integracao/kb/issues/48

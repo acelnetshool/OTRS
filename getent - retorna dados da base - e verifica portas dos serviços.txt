@@ -1,0 +1,67 @@
+#GETENT : Retorna os dados da base quando é solicitada
+----------------------------------------------------------
+
+[root@naemon ~]# getent services
+
+trinity-dist          4711/tcp
+trinity-dist          4711/udp
+intelliadm-disc       4746/udp
+gre-in-udp            4754/udp
+gre-udp-dtls          4755/udp
+RDCenter              4756/tcp
+converge              4774/tcp
+mftp                  5402/tcp
+mftp                  5402/udp
+cbus                  5550/tcp
+storageos             5705/tcp
+ricardo-lm            6148/tcp
+ricardo-lm            6148/udp
+ieee11073-20701       6464/tcp
+ieee11073-20701       6464/udp
+nexgen-aux            6629/tcp
+nexgen-aux            6629/udp
+rtimeviewer           6900/tcp
+
+------------------------------------------------------------------------------------------
+
+#Todo repositorio que ele pega para retornar dados é configurado aqui dentro
+
+[root@naemon ~]# cd /etc/
+[root@naemon etc]# vi nsswitch.conf
+
+---------------------------------------------
+
+[root@naemon ~]# getent shadow acaluege
+acaluege:$6$nK3g2bzGwzLK5w/F$6mwI2lCajYkvaYgIZIbA9HdQopPNYvb.YBJBpFwVcdILW.9uX88tVYZJ51ZtpNdaJdoRbvET7Gwy32qhAmruY0:19248:2:30:5::19266:
+
+------------------------------------------
+[root@naemon ~]# getent passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+
+----------------------------------------------------------
+
+[root@naemon ~]# getent group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:

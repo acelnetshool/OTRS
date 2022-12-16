@@ -1,0 +1,20 @@
+#apt-get [options auxiliares]
+----------------
+Comando usado nos sistemas debian e abaixo os seus auxiliares:
+
+update: lista de pacotes
+upgrade: performance upgrade
+install: instalar
+remove: remover
+autoremove: remover automaticamente os pacotes
+purge: Remove pacotes e configuraçao dos ficheiros
+source: Download do arquivo dos pacotes
+build-dep: configurar dependencia dos pacotes
+dist-upgrade: Distribuir upgrade
+dselect-upgrade: seleção
+clean: limpa os download dos ficheiros
+autoclean:limpa automaticamente os ficheiros
+check:verifica dependencias quebradas
+changelog:verifica os log
+download:descarrega pacotes
+

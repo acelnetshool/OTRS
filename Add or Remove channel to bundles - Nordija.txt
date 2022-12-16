@@ -1,0 +1,21 @@
+#add channel to bundles (nordija)#
+
+
+Fim Promo - Remover Bom Som MINI - 23 Jan 2022
+1. ZAP BO > Criar Job
+
+Nome: Remover Bom Som do MINI
+Date: 23 Jan 2022
+Canais: Bom Som TV 2459
+bundles: MINI
+
+Observações: Colocar a issue referente a remoção do canal no campo de "observações"
+
+Gravar.
+
+
+-------------------------------------
+add channel to bundles (nordija)
+login in https://intbo.zap.intra/ via AD
+
+IPTV -> Intervenções -> Nordija gestão de canais e pacotes

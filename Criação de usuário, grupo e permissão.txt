@@ -1,0 +1,72 @@
+1.criar um grupo com GID padrão
+# groupadd -g 1002 usuario
+
+2.certificar se o GID já foi atribuido
+#cat /etc/group | grep 1002
+convidado:x:1002:
+
+3.criar o usuário com o grupo e o GiD definido acima e inserindo uma descrição
+# useradd -u 22022 -g 22022 -c " Usuario carolina.neves expira em 90 dias" carolina.neves
+
+# cat /etc/passwd | grep carolina
+carolina.neves:x:22022:22022: Usuario carolina.neves expira em 90 dias:/home/carolina.neves:/bin/bash
+
+4.Estipular uma data para o usuário expirar. Usuário expira em 90 dias (coloque a data que o mesmo deve expirar):
+# usermod -e 2016-09-14 carolina.neves
+(data em que escrevi o artigo com 3 meses acima)
+
+5.definir a senha 1234:
+# echo 1234 | passwd --stdin carolina.neves
+Changing password for user convidado.
+passwd: all authentication tokens updated successfully.
+
+6.conferir o usuário no arquivo "/etc/passwd"
+# cat /etc/passwd | grep convidado
+
+Nota:dar as permissões necessárias para o usuário e verificar as permissões da home se estão corretas, conforme sua necessidade.
+
+As permissões são divididas da seguinte forma, exemplo:
+
+rwxr--r-- 2 convidado carolina.neves  4096 Jun 14 03:13 carolina.neves
+
+Onde:
+d = diretório
+Do 1º ao 3º octeto = Permissões do proprietário
+Do 4º ao 6º octeto = Permissões do grupo em qual o usuário pertence
+Do 7º ao 9º octeto = Permissões para demais usuários/outros
+
+Significado:
+4 - r = Leitura
+2 - w = Escrita
+1 - x = Execução
+
+
+---------------------------------------------------------------
+# chmod 744 convidado
+# ls -ltr
+drwxr--r-- 2 convidado root 4096 Jun 14 03:24 convidado
+
+Nesse caso, as permissões são as seguintes:
+O proprietário "convidado" está com a permissão total / 7 ((r) 4+ (w) 2+ (x) 1 =7)
+O grupo "root " está com a permissão somente de leitura / r = 4
+Os outros usuários, também estão somente com acesso a leitura / r = 4
+
+Caso necessite mudar as permissões de owner ou grupo (ou os dois), some as permissões que deseja.
+
+Vou exemplificar mais um uma situação, onde quero dar permissão para tudo:
+
+# chmod 777 convidado
+# ls -ltr
+drwxrwxrwx 2 convidado root 4096 Jun 14 03:24 convidado
+
+Caso eu queira que somente o meu usuário tenha acesso a tudo e o grupo/outros não tenha acesso a nada, sete a permissão 700:
+
+# chmod 700 convidado
+# ls -ltr
+drwx------ 2 convidado root 4096 Jun 14 03:24 convidado
+
+Caso eu queira trocar o owner (dono) ou o grupo, dê o comando "chown" seguido do <usuário_dono>:<grupo> <diretório>.
+
+# chown root:convidado convidado
+# ls -ltr
+drwx------ 2 root convidado 4096 Jun 14 03:24 convidado

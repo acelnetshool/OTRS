@@ -1,0 +1,36 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>DESPISTES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Os problemas de interatividade são os seguintes:
+•	Não obtém o EPG
+•	Não consegue fazer RestartTV ou ver conteúdos do VideoClube (ERRO:05 ou ecrã preto).
+•	Não aparece a opção de fazer RestarTV no EPG.
+•	Cliente alega que não conseguiu visualizar um filme do VideoClube.
+•	Não acede ás APPS.
+
+As funcionalidades de interatividade EPG são as seguintes:
+•	RestartTV - Recomeçar um conteúdo que esta a passar agora
+•	npvr = o cliente quer ver um conteudo que ja terminou (gravado) = "seja como for... se vemos pedidos desse tipo, são acções que o cliente está a ter no comando"
+	ndvr = o cliente quer ver um conteudo que ainda não terminou (está gravado mas ainda não acabou)
+•	Timewarp - Visualizar um conteúdo que deu nos últimos 7 dias
+•	VOD - Video on Demand / VideoClube
+
+Diagnostico de clientes que não obtém EPG:
+As STB’s não obtêm EPG em 2 casos:
+•	Perde conectividade com a ZAP
+•	Existe um problema nas plataformas de serviço 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Para despiste deve-se:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+•	Verificar se caixa fez pedidos aos servidores IRIS nas últimas horas (Elasticsearch, index irisfe-*).
+o	Caso negativo, caixa deixou de contactar servidores da ZAP. Normalmente problema de conectividade do cliente.
+o	Pedir para fazer reset de fábrica, confirmar cabos, e confirmar que luz ETH aparece ligada na STB.
+•	Verificar se caixa aparece ligada ao HG(via cabo).
+o	Verificar no JRMS se macaddress da caixa se encontra ligado ao Home Gateway.
+•	Verificar se existem mais ocorrências para o mesmo problema e encaminhar para Integração.
+o	Caso exista um número considerável de reclamações do mesmo tipo, deve ser contactado imediatamente um membro da equipa de Integração
+
+Para despiste de problemas relacionados com RestartTV/Timewarp/VOD:
+•	Verificar últimos pedidos do cliente (Elasticsearch, index: rtsp-*)
+
+
+
+

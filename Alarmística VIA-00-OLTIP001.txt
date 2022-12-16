@@ -1,0 +1,7 @@
+Bom dia,
+Solicito à troca dos valores deste alarme:
+http://10.151.12.97/naemon/#cgi-bin/extinfo.cgi?type=2&host=VIA-00-OLTIP001&service=Temperatura%20OLT&backend=328c5#pnp_th2/1661434854/1661524854
+ 
+Para:
+Warning: 52
+Critical: 56

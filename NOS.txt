@@ -1,0 +1,4 @@
+#Nota:
+
+1. A NOS: fornece os EPGs e a programação dos canais;
+2. A NOS: fornece os filmes

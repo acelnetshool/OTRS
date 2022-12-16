@@ -1,0 +1,130 @@
+# Instale e configure o HAProxy
+yum install haproxy
+systemctl start haproxy
+systemctl enable haproxy
+systemctl status haproxy
+------------------------
+# Configurar o SELinux
+Nota:para permitir o acesso do HAProxy à porta 5002 quando o SELinux estiver habilitado, devemos modificar as políticas do SELinux
+
+grep haproxy /var/log/audit/audit.log | audit2allow -M mypol
+
+semodule -i mypol.pp
+
+systemctl restart haproxy
+systemctl status haproxy
+---------------------------------
+#Configurar HAProxy
+vim /etc/rsyslog.d/haproxy.conf
+----------------------------------- OBS: Copiar e colar toda a linha De: $ModL..até..admin.log -> dentro do haproxy.conf 
+$ModLoad imudp
+$UDPServerAddress 127.0.0.1
+$UDPServerRun 514
+local2.* /var/log/haproxy-traffic.log
+local2.notice /var/log/haproxy-admin.log
+---------------------------------------------
+----------------------------------------------
+
+systemctl restart rsyslog
+systemctl status haproxy
+
+----------------------------------------------------
+vim /etc/haproxy/haproxy.cfg   
+-----------------------------------------------------
+[root@localhost haproxy]# vi haproxy.cfg
+#---------------------------------------------------------------------Nota: Colocar parametros tal e qual abaixo.
+# common defaults that all the 'listen' and 'backend' sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    option http-server-close
+    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
+    timeout http-keep-alive 10s
+    timeout check           10s
+    maxconn                 3000
+#---------------------------------------------------------------------
+# main frontend which proxys to the backends
+#---------------------------------------------------------------------
+listen stats
+    bind *:9000
+    stats enable
+    stats hide-version
+    stats uri /stats
+    stats admin if LOCALHOST
+    stats auth haproxy:@cels0123
+
+frontend TT
+    bind *:80
+    mode tcp
+    option tcplog
+    option contstats
+    option tcpka
+    default_backend TT_web_servers
+backend TT_web_servers
+    balance roundrobin
+    mode tcp
+    option tcpka
+    option srvtcpka
+    server webserver1 192.168.232.135:80 weight 1 maxconn 1024 check
+    server webserver2 192.168.232.136:80 weight 1 maxconn 1024 check
+
+   # acl url_static       path_beg       -i /static /images /javascript /stylesheets
+    #acl url_static       path_end       -i .jpg .gif .png .css .js
+
+   # use_backend static          if url_static
+   # default_backend             app
+
+#---------------------------------------------------------------------
+# static backend for serving up images, stylesheets and such
+#---------------------------------------------------------------------
+#backend static
+#    balance     roundrobin
+#    server      static 127.0.0.1:4331 check
+
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+#backend app
+#   balance     roundrobin
+#    server  app1 127.0.0.1:5001 check
+#    server  app2 127.0.0.1:5002 check
+#    server  app3 127.0.0.1:5003 check
+#    server  app4 127.0.0.1:5004 check
+
+-------------------------------------------------------------------------------
+#firewall
+firewall-cmd --zone=public --permanent --add-service=http
+firewall-cmd --zone=public --permanent --add-service=https
+firewall-cmd --zone=public --permanent --add-port=9000/tcp
+
+Nota: Caso haja erro via SSH execute localmente mas 1º execute:
+
+#remover o serviço de firewalld
+sudo systemctl unmask firewalld
+
+# Configurar o Host
+[root@localhost haproxy]# vi /etc/hosts
+
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.232.135 localhost localhost.localdomain
+--------------------------------------------------------------------------------------------
+# Configurar o Hostname
+[root@localhost haproxy]# vi /etc/hostname
+
+localhost.localdomain
+
+#Acesso WEB/FrontEnd
+http://192.168.232.135:9000/stats

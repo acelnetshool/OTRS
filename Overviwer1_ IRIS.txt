@@ -1,0 +1,26 @@
+NOS:
+1. A NOS faz o ingest (VOD) nos sistemas IRIS no lado deles
+----Dependemos da NOS dos Ingests------------
+
+NOS > CCUR (Ficheiro) - CCUR: Storage dos ficheiros
+---------------------------
+NOS > IRISFE (SQL Server)
+NOS > Mongo  (BD)
+(metadata capas)
+----------------------------
+
+SRM_AssetMapping - 10.151.8.193 - [CIPK - Filmes] - [CPTR - Conteúdos de EPG]
+Import_VOD (script) /BO: Verifica o que esta no catalogo IRISFE / e vai no mongo para verificar o nome do ficheiro associado/MONGO.
+
+CCUR: Storage dos ficheiros
+Wowza: serve live ou conteudo que não acabou...
+CDN : Conteudos já terminados ; EPG e VODs
+
+e conveter em MP4
+
+IRIS - PORTA INTERNET E RF - ENCRIPTAÇAO NAGRA
+
+INVENTAS - 
+AAAA - AUTORIZAÇAO E AUTENTICAÇAO
+PZE - REGITO DE COMPRAS
+RTSP - TRADUZ OS PEDIDOS DE VIZUALUZAÇAO E VOD 

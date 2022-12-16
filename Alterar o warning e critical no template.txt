@@ -1,0 +1,24 @@
+#Alterar o Warning e Critical no template
+---------------------------------------
+Procurar o check: 'Check_Docker_Container'
+Processo de procura pelo Check
+
+[root@TLT-DC-NAEMON hosts]# grep -rnw '/etc/naemon/okconfig' -e 'Check_Docker_Container'
+
+Result:
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBE00-host.cfg:135:       use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBE00-host.cfg:143:       use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBE02-host.cfg:126:       use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBE02-host.cfg:134:       use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBE01-host.cfg:132:       use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBE01-host.cfg:140:       use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBEMG01-host.cfg:166:     use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/IPTV/TLT-DC-NBEMG01-host.cfg:174:     use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/TLT-DC-ZSMWKR03.cfg:155:      use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/TLT-DC-ZSMWKR03.cfg:163:      use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/TLT-DC-ZSMWKR03.cfg:171:      use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/TLT-DC-ZSMWKR03.cfg:179:      use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/TLT-DC-ZSMWKR03.cfg:187:      use                            Check_Docker_Container
+/etc/naemon/okconfig/hosts/TLT-DC-ZAPEPG00.cfg:171:      use                            Check_Docker_Container
+/etc/naemon/okconfig/templates/services.cfg:431:        name                            Check_Docker_Container  :amarrado o template
+

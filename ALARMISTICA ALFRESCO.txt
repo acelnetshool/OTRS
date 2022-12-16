@@ -1,0 +1,38 @@
+Boas caros,
+
+
+Solicito por favor configuração de alarmistica para o host AFRSCO-PP01 (10.151.52.150) com os seguintes checks:
+
+
+      - CPU Utilization, Disk Inodes Usage, Disk Usage, Load, Memory, Running Processes, Ping, Swap Usage, Time, Uptime
+      - Check alfresco.service (systemd service)
+      - Check a interface de front-end: 10.151.58.53
+
+Solicito também os seguintes serviços configurados da seguinte maneira:
+      tomcat memory - sudo -u alfrescoprd /usr/lib64/nagios/plugins//check_jvm -n org.apache.catalina.startup.Bootstrap -p heap -w 1600  -c 1800
+      solr memory - sudo -u alfrescoprd /usr/lib64/nagios/plugins//check_jvm -n start.jar -p heap -w 800 -c 900
+
+user: root
+senha: password
+          
+-----------------------------------------
+Boas caro,
+
+Não há script semelhante pra os checks de memoria do tomcat e do solr, são check's novos.
+
+O que é há é a documentação do nagios plugin na doc official: https://exchange.nagios.org/directory/Plugins/Java-Applications-and-Servers/Apache-Tomcat/check_jvm/details
+
+O check em si já lá está em: /usr/lib64/nagios/plugin/check_jvm. Falta meter os comandos abaixo nas configs nrpe e fazerem a vossa mágica do lado do naemon (se for preciso)
+
+Errata: Os valores de warning e critical devem ser passados em bytes, assim da seguinte maneira:
+     tomcat memory - sudo -u alfrescoprd /usr/lib64/nagios/plugins//check_jvm -n org.apache.catalina.startup.Bootstrap -p heap -w 1677721600  -c 1887436800
+     solr memory - sudo -u alfrescoprd /usr/lib64/nagios/plugins//check_jvm -n start.jar -p heap -w 838860800 -c 891289600 
+
+Localização do script:
+
+[root@AFRSCO-PP01 plugins]# ls -lhz
+
+Execução do comando:
+
+[root@AFRSCO-PP01 plugins]# sudo -u alfrescoprd /usr/lib64/nagios/plugins//check_jvm -n org.apache.catalina.startup.Bootstrap -p heap -w 1677721600  -c 1887436800
+OK 694M |max=2112618496;;; commited=911474688;;; used=727056528;;;

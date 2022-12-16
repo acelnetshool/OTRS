@@ -1,0 +1,175 @@
+#Instalação do docker
+-------------------------------------
+1. Instalação Rocky Linux
+
+using script with latest changes :
+curl https://raw.githubusercontent.com/rancher/install-docker/master/dist/20.10.10.sh|sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 21946  100 21946    0     0   159k      0 --:--:-- --:--:-- --:--:--  159k
+# Executing docker install script, commit: 93d2499759296ac1f9c510605fef85052a2c32be
+Warning: the "docker" command appears to already exist on this system.
+
+If you already have Docker installed, this script can cause trouble, which is
+why we're displaying this warning and provide the opportunity to cancel the
+installation.
+
+If you installed the current Docker package using this script and are using it
+again to update Docker, you can safely ignore this message.
+
+You may press Ctrl+C now to abort this script.
++ sleep 20
+Packages for SLES are currently only available for s390x
+
+-----------------------------------
+1. Direciona a pagina de instalação para a distribuição correta e faz a instalação de todos os pacotes: Distro Ubuntu
+~# curl -fsSL https://get.docker.com | bash 
+
+1. Executar o container em 2º plano para a maquina não travar
+#docker container run --name ws1 -P -d nginx 
+[
+ Nota:-P (Mapeia a porta do nginx para uma porta aleatoria entre 49153 a 65535 do host)
+      -d (executa o container em modo detached)
+
+2. Atribuir nome ao container
+#docker container run --name caluege nginx
+
+2. Verificar a vesrão
+~# docker version
+
+3. Verificar containers em execução
+~# docker container ls
+
+4. habilitar o docker
+ru
+~# systemctl enable docker
+
+5. start docker
+~# systemctl start docker
+
+6. Instalar a 1ª imagem de teste docker
+~# docker container run -ti hello-world
+
+7. Instalar a imagem
+~# docker container run -ti ubuntu
+~# docker container run -ti centos
+~# docker container run -d nginx : executar o nginx como daemon (d) pois ti (interatividade) funciona para SO que tem terminal
+
+8.mostrar os processos
+~# ps -ef
+
+Nota: Sair do container sem matar o container
+CTRL + pq
+
+9. Voltar no container em execução
+~# docker container attach 182acd81286gs -<devemos o container ID que pretendemos aceder
+
+10. executar dentro do container que não possui interatividade:exemplo nginx
+~# docker container exec -ti e726gdjhf7778ujjf ls /usr/share/nginx
+~# docker container exec -ti e726gdjhf7778ujjf ls /usr/share/nginx/html
+~# docker container exec -ti e726gdjhf7778ujjf bash
+
+
+11. Install "curl"
+~# curl localhost
+
+12. parar um container sem deixar morrer - Forma de gerir container
+~# docker container stop 182acd81286gs  - stop
+~# docker container start 182acd81286gs - start
+~# docker container restart 182acd81286gs - restart
+~# docker container pause182acd81286gs - pause
+~# docker container unpause182acd81286gs - unpause
+
+13. Inspecionar o container
+~# docker container inspect 182acd81286gs
+
+14. Logs
+~# docker container logs -f 182acd81286gs 
+
+echo "GIRO MERDA" > /usr/share/nginx/html/index-html  : curl 172.16.1.1
+
+15. remover container
+~# docker container rm -f 182acd81286gs
+
+16. Verificar a quantidade de uso memoria/cpu/io rede e disco
+~# docker container stats 182acd81286gs
+
+17. chamar o bash dentro do container : Ajuadar a executar um programa sem terminal ex:Nginx
+~# docker container exec -ti 182a bash
+
+18. Instalar comando de stress : Serve para simular cpu, memoria etc
+# apt-get update && apt-get install stress
+# apt-get update && apt-get install -y stress
+
+Teste de stress
+# stress --cpu 1 --vm-bytes 128M --vm 1
+# stress --cpu 1 --vm 1 --vm-bytes 64
+
+19. top: mostrar os processos dentro do container
+~# docker container top 182acd81286gs
+
+20. definir maximo de memoria para o container Nginx
+~# docker container run -d -m  128M nginx
+
+#Calculadora: bc
+
+20. definir limite de memoria e cpu para o container Nginx
+~# docker container run -d -m  128M --cpu 0.5 nginx
+
+21. Infomação da cpu
+# cat /proc/cpuinfo 
+
+22. atualizar container em execução: (0.25, 0.5,0.8 etc) - definir a limite de stress de um container
+# docker container update --cpus 2.0 182acd81286gs - para cpus
+
+# docker container update --cpus 2.0 --memory 64M 182acd81286gs - para memory
+
+23.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

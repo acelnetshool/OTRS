@@ -1,0 +1,24 @@
+#GRUB é o gerenciador de boot do sistema linux
+-------------------------------
+[root@naemon ~]# cd /boot
+[root@naemon boot]# ls -l
+total 218652
+-rw-r--r--. 1 root root   192098 Jun 17  2021 config-4.18.0-305.3.1.el8_4.x86_64
+-rw-r--r--. 1 root root   195983 May 10 16:01 config-4.18.0-372.9.1.el8.x86_64
+drwxr-xr-x. 3 root root       17 Jun  1 17:08 efi
+drwx------. 4 root root       83 Sep 27 14:56 grub2
+-rw-------. 1 root root 66050126 Jun  1 17:13 initramfs-0-rescue-6367aebaa39c472590d30d2eca49c2ae.img
+-rw-------. 1 root root 31153430 Jun  2 09:27 initramfs-4.18.0-305.3.1.el8_4.x86_64.img
+-rw-------. 1 root root 28017664 Jun  2 09:25 initramfs-4.18.0-305.3.1.el8_4.x86_64kdump.img
+-rw-------. 1 root root 31206806 Jun  2 09:26 initramfs-4.18.0-372.9.1.el8.x86_64.img
+-rw-------. 1 root root 28040704 Jun  2 14:17 initramfs-4.18.0-372.9.1.el8.x86_64kdump.img
+drwxr-xr-x. 3 root root       21 Jun  1 17:10 loader
+lrwxrwxrwx. 1 root root       49 Jun  2 09:25 symvers-4.18.0-372.9.1.el8.x86_64.gz -> /lib/modules/4.18.0-372.9.1.el8.x86_64/symvers.gz
+-rw-------. 1 root root  4164308 Jun 17  2021 System.map-4.18.0-305.3.1.el8_4.x86_64
+-rw-------. 1 root root  4359450 May 10 16:01 System.map-4.18.0-372.9.1.el8.x86_64
+-rwxr-xr-x. 1 root root 10019200 Jun  1 17:12 vmlinuz-0-rescue-6367aebaa39c472590d30d2eca49c2ae <--------Pasta de recuperação do kernel
+-rwxr-xr-x. 1 root root 10019200 Jun 17  2021 vmlinuz-4.18.0-305.3.1.el8_4.x86_64 <--------Pasta principal do kernel
+-rwxr-xr-x. 1 root root 10457392 May 10 16:02 vmlinuz-4.18.0-372.9.1.el8.x86_64 <--------Pasta principal do kernel
+------------------------------------------------------------
+
+

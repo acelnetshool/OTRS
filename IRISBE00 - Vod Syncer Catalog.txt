@@ -1,0 +1,22 @@
+IRISBE00 - Vod Syncer Catalog
+
+Caso o passive check
+
+----VODSyncer_Task_Log do naemon estiver Critical :
+----(encontrou erros FATAL no ficheiro de log)
+
+verificar o ficheiro de Log D:\Logs\Repositories.VOD\Importer\ZON.VOD.Catalog.Syncer.ConsoleApp.log
+
+Correr novamente a importação Vod: VOD Catalog Syncer (Mongo) v4
+
+Correr novamente a verificação : CheckVODSyncer
+
+Se o erro persistir,
+
+Enviar email para
+
+
+
+TO: Alexandra Manuela Vieira alexandra.vieira@nos.pt; Carlos Peixoto carlos.peixoto@zap.co.ao; David Correia david.correia@zap.co.ao; NOS Support nos.ddp.tickets@gmail.com
+
+CC: Leandro Miguel Tavares leandro.m.tavares@nos.pt; DL DER Integração dl.der.integracao@zap.co.ao; Fábio André Sousa (P) Fabio.ASousa@parceiros.nos.pt; Roberto Cruz Martins roberto.a.martins@nos.pt; Joao Andre Gracio (P) Joao.Gracio@parceiros.nos.pt

@@ -1,0 +1,15 @@
+MATCH [AMS vs CLU]
+
+Verificar se existem incompatibilidades entre a informação presente no mongo do ZAPAMS vs MySQL do CLU.
+
+Proposta de resolução:
+
+1. Criar de ficheiro changes.js com as queryes a aplicar no mongo.
+
+2. Criar/reconectar screen
+
+screen -S ams || screen -R ams
+
+3. Correr script dentro do screen
+
+[root@tlt-dc-zre01 directory@zap.intra]# mongo --host 10.151.52.194 zapams < changes.js

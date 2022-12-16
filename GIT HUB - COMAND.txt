@@ -1,0 +1,168 @@
+Exemplo 1:
+People A
+CSS->JS->HTML
+1. git add HTML
+2. git commit (Representa as mudanças feitas)
+3. git push (mover o arquivo para o remote server)
+
+People B
+1. git pull (pega o the same project e trabalha com people A)
+--------------------------------------------
+****Pedro Rodrigo******
+$ git config http.sslVerify "false"
+$ git push
+$ git log --graph --decorate --all ---oneline
+$ vi ~/.gitconfig
+----
+[user]
+        name = afonso.caluege
+        email = acaluege@outlook.com
+[http]
+        sslVerify = false
+[color]
+        ui = auto
+--------------------------------------
+Por exemplo, ao querer fazer o merge de sua branch do recurso na branch dev
+
+Primeiro, troque para a branch dev:
+git checkout dev
+
+Antes do merge, atualize sua branch dev local:
+git fetch
+
+Por fim, faça o merge da sua branch do recurso em dev:
+git merge <nome-da-branch-com-o-recurso>
+------------------------------------------
+git branch -d <nome-da-branch>- remover branch
+git push -u <local-remoto> <nome-da-branch>
+git branch ou git branch --list
+git branch <nome-da-branch>
+git checkout <nome-da-branch>
+git checkout -b <nome-da-branch> - criar e automaticamente trocar a brach
+git pull <repositório-remoto>
+git revert 3321844
+shift + q para sair
+
+$ git checkout master - mudar para a branch principal
+$ git merge --no-ff desenv - fazer o merge
+
+--------------------
+Exemplo 2: Criar pastas no Desktop e adicionar arquivos
+People A
+1. git config --global user.name "afonso.caluege"
+2. git config --global user.email "acaluege@outlook.com"
+3. git 
+4. $ cd Desktop/
+5. $ mkdir GITESTE
+6. cd GITESTE
+7. git init . (Inicializar a pasta como sendo master/branch new project)
+8. ls -a (verificar caminhos e pastas git)
+9. $ rm -rf .git (despromove o repositorio GITESTE como master e arquivo git)
+10. $ git add . (Vai adiciona-lo como sendo uma Branch)
+11. $ touch index.html (Criar os arquvos do exemplo 1: HTML)
+12. $ touch index.js (Criar os arquvos do exemplo 1: JS)
+13. $ touch main.css (Criar os arquvos do exemplo 1: CSS)
+14  $ ls (Verificar os ficheiros criados)
+15. $ git status (Verificar os ficheiros criados)
+16. $ git add index.html  adicionar o arquivo "index.html" a branch master)
+17. $ git rm --cached index.html (Remover o ficheiro no cached da branch master/caso seja necessario)
+18. $ git add . (Adicionar todos os ficheiros no cached do diretorio)
+19. $ git rm -r --cached . (Remover todos os ficheiro no cached da branch master/caso seja necessario)
+20. $ mkdir Principal (Criar pasta)
+21. $ cd Principal/ (Aceder a pasta Principal)
+22. $ git add -A (Adiciona todos os arquivos que est-ao fora para dentro da pasta "principal")
+23. $ cd .. (Voltar a pasta master)
+24. $ git commit -m "bootstrap project" (Cometarios referente aos ficheiros criados)
+25. $ git status
+26. $ git log (Verificar o identificador "hash" do comit "commit 21a36fe6159538c09cdfe1860e67609f6d00c3b4 (HEAD -> master)")
+27. $ git show 21a36fe6159538c09cdfe1860e67609f6d00c3b4 (Verificar as ultimas alterações com o hash do comite)
+28. $ vi index.js (Trabalhar dentro do ficheiro JS)
+29. $ cat index.js (Verificar o que foi escrito no ficheiro JS)
+30. $ git status (Verificar o que foi modificado)
+31. $ git diff (Verificar o que foi modificado ou adicionado no ficheiro)
+32. $ git add . (Adicionar os ficheiros) ****
+33. $ git status (Verificar o estado)
+34. $ git commit -m "foi adicionado console.log do JS"
+35. $ git log (Verificar os comites criados no projecto)
+36. $ git show ab79c45259abcc45968e25bc44f4b19531127d61 (Mostra o que foi adicionado neste Hash)
+37. $ git diff (Verificar o que foi modificado ou adicionado no ficheiro)
+38. $ git status (Verificar o que foi modificado)
+39. $ git restore index.js (Restaurar o arquivo "index.js" removido)
+40. $ vi main.css (Arquivo CSS mexer)
+41. $ git status (Verificar)
+42. $ git add . (Adicionar)
+43. $ git status (Verificar modanças)
+44. $ git commit -m "foi alterado o arquivo main.css" (Adicionar comites na alteração)
+45. $ git commit --amend -m "foi alterado o arquivo main.css"
+45. $ git log (Verificar os comites )
+46. $ echo "# learning-git" >> README.md (Preparar arquivo README)
+47. $ git init (Preparar arquivo README)
+48. $ git add README.md (Preparar arquivo README)
+49. $ git commit -m "first commit" (Preparar arquivo README)
+50. $ git branch -M main (Preparar arquivo README)
+51. $ git remote add origin acaluege@outlook.com:afonso.caluege/learning.git (Abertura remota para envio)
+52. $ git push -u origin main (Colocar na WEB)
+51. $ git log
+52. $ git branch (Verificar a branch principal do projeto)
+53. $ git branch -M main (Preparar arquivo README)
+54. $ git push -u origin main (Colocar na WEB)
+55. $ ssh-keygen -t ed25519 -C "acaluege@outlook.com" (Criar chave para conexão SSH) **
+56. $ eval "$(ssh-agent -s)" (Adicionar o Agente para controlar a conexão do SSH) **
+57. $ touch ~/.ssh/config (Criar ficheiro config caso não exista para colar o arquivo)
+58. $ vi ~/.ssh/config (Colar as configurações das conexões)
+59. $ git pull (Baixar o projecto para a maquina local)
+60. $ git branch (Mostrar a branch criada)
+61. $ git branch -r (preparar a branch)
+62. $ git branch -a (Apresentar a branch padrão)
+63. $ git branch feature-a (Criar branch "feature-a")
+64. $ git checkout feature-a (Promover como branch principal)
+65. $ git checkout - (Comando para substituição de branch)
+66. $ git push -u origin feature-a (Baixar a brach criada para a maquina local)
+67. $ git checkout -b to-delete (Criar e promover a branch)
+68. $ git branch -a
+69. $ git branch -D feature-a (Deletar a branch "feature-a")
+70. $ ssh -V (Verificar a versão do OpenSSH do gitlab para conexção)
+
+Host *
+   AddKeysToAgent yes
+   UseKeychain yes
+   IdentityFile ~/.ssh/id_ed25519
+59. $ ssh-add -K ~/.ssh/id_ed25519 (Adicionar o PIN)
+60. $ cat  ~/.ssh/id_ed25519.pub (Forçar a autenticação)
+61. $ pbcopy <  ~/.ssh/id_ed25519.pub (Copiar o arquivo)
+---------------------------------------------------------------
+1. Criar uma pagina
+mkdir hello
+cd hello
+touch hello.html
+2. Criar um repositorio
+git init
+3. Adicione a página ao repositorio
+git add hello.html
+git commit -m "First Commit"
+4. Conferir o status do repositorio
+git status
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+- On Branch
+$ git status
+On branch master
+
+- Repositorio GIT
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/GITESTE
+$ git add
+fatal: not a git repository (or any of the parent directories): .git [Senão for repositorio git não será adicionado ao GitLab]
+
+
+- Verificar a versão do git
+$ git --version
+

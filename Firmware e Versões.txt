@@ -1,0 +1,4 @@
+Firmware OTN
+INTEK - hisi ->1.26.01
+INTEK - REALTEK ->1.03.04
+-----------------------------

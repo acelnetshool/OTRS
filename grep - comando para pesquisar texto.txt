@@ -1,0 +1,13 @@
+#GREP: Comando para pesquisar textos no shell
+
+#Pesquisar dentro da pasta o "check_ping"
+[root@naemon conf.d]# cat commands.cfg | grep check_ping
+
+----------------------------------------
+
+#Mostra arquivo sem a palavra "check"
+[root@naemon conf.d]# cat commands.cfg | grep -v check
+
+
+-----------------------
+[root@naemon ~]# man grep

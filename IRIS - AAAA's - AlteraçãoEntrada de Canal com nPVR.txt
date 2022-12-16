@@ -1,0 +1,21 @@
+IRIS - AAAA's - Alteração/Entrada de Canal com nPVR
+
+- Alvo do problema: Fazer restart, 'timewarp', 'NPVR' e 'restart' aos pacotes 152 e 153. (Cena onde o cliente de 2M nao consegue fazer pause e restart)
+
+- Alvo de solução: Necessitamos buscar os clientes na base de dados para atualizar com permissoes com estas alterações e executar update na base de dados.
+
+Observação: Inicialmente executar em laboratório(uri = "mongo://10.151.14.252"), logo em produção(uri = "mongo://10.151.8.193").
+
+Configuração MongoDB para aceder client na máquina 10.151.14.252
+
+1.2. Filtrar por Accounts'CostumerAccountId' para verificar os 'ProductCategories' viewing-rights(diretos de visualização), contendo 3 entradas, onde os Types= 1:npvr-rights, 2:restart-rights, 3:timewarp-rights
+
+1.3. Buscar os Collection com o id desejado; *Desde que o cliente tenha os direitos de visualização;
+
+Executar script em TLT-DC-INT00: opt/viewingRights/src/ addViewingRights.py (VirtualEnv)
+
+2.1. Verificar o id do canal em questão, na ocasião (Kix)'2462';
+
+2.2. Executar o scrit.
+
+-- Finished --

@@ -1,0 +1,29 @@
+>>>ATIVAÇÃO SUBSCRIÇÃO IPTV<<<<
+
+**Pedido a equipe: 
+
+----------------------------------------------------------<<<
+Para: helpdesk.dsi@zap.co.ao
+CC: dl.der.integracao@zap.co.ao / carlos.peixoto@zap.co.ao
+
+------------------------------------>>>>>>>>Mail a fazer:
+Bom dia,
+
+Solicito a ativação de subscrição da caixa IPTV “Bancada Engenharia de TV”
+Conta Serviço:  200577860201
+Nome: Bancada Laboratório Engª de TV
+
+---------------------------------------<<<DESPISTE>>>>
+1. Verificar se a bolsa esta zerado no ZW
+2. Verificar se aparece a imagem na STBs com a informação para carregar 
+>>>>>>>>>>TV MSG<<<<<<<<<<<<
+"Não Tem Subscrição ACTIVA"
+ Por favor Carregue o seu pacote
+  E ligue-se ao Futuro
+3. Reiniciar a TV e verifica se aparece o pop-up:
+>>>>>>>>>>TV MSG<<<<<<<<<<<<<<<
+ ZAP INFOMAÇÃO
+"Não tem subscrição activa
+Deseja efectuar carregamento?
+Cancelar / Ok
+4. Enviar Mail para a Equipe: helpdesk.dsi@zap.co.ao

@@ -1,0 +1,7 @@
+Disk Usage
+--------------
+Ordenar pastas por tamanho: du -h --max-depth=1 2>/dev/null | sort -n
+
+Mostrar ficheiros com mais de 30 dias: find . -mtime +30
+
+Eliminar ficheiros com mais de 30 dias: find . -mtime +30 -exec rm {} \;

@@ -1,0 +1,7 @@
+1. Pegar o comando e pressione:
+
+123
+456
+789
+
+e permanece com a tecla 1 sequencial até pegar a informação do DRM

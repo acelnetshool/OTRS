@@ -1,0 +1,8 @@
+PIN VOD
+------
+Clt com dificuldade em selecionar filme em VOD , efetuamos reposiçao de parametros. DVL
+aos equipamentos e reenvio de direito. Sem sucesso .
+
+# Sms de erro : Pin incorreto 
+
+R:# Pin default é 5555. O pessoal de BO tem acesso a http://pin.inttv.zapao/ para repor o PIN dos clientes.

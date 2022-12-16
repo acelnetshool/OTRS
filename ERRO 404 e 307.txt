@@ -1,0 +1,31 @@
+Nota: O erro 404 - significa que a caixa não recebe pedidos
+307 - pedidos então verificar profundamente a nivel de despiste.
+--------------------------------------------------
+* Cliente faz request para visualizar VOD (CDN)
+
+IF->Caso não exista em storage vai ser registado erro 404 e cliente não consegue visualizar.
+
+1. Processo de import VOD é executado varias vezes ao dia no servidor WTFARM10 a fim de detectar os erros 404
+que são despoltados no CDN.
+
+* É feito um match entre a duração registada na DB Iris e o ficheiro do VOD (*.mp4) guardado em storage
+
+IF-> Se existir diferença entre as durações é enviado email com esta informação.
+
+Processo de synchronização consiste:
+1. Fazer download do VOD da storage da IRIS
+2. Converter o ficheiro de *.ts.mpg para *.mp4
+3. Copy *.mp4 to storage
+4. Delete aos tmp files depois
+
+Path do projecto:
+/opt/nordija_vod/src/iptv_import_vod
+
+Verificação de logs (404)
+/opt/nordija_vod/src/iptv_import_vod/*.log
+
+Executar com root:
+#:screen -r
+#python /opt/nordija_vod/src/iptv_import_vod/run.py CIPK40F4F84B5DAD4491
+
+

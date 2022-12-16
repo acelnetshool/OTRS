@@ -1,0 +1,13 @@
+send_gearman - rocky linux
+
+# wget http://mod-gearman.org/download/v4.0.1/rhel8/x86_64/mod_gearman-4.0.1-1.rhel8.x86_64.rpm
+
+# yum install mod_gearman-4.0.1-1.rhel8.x86_64.rpm 
+
+# send_gearman
+
+Link de instalação:
+
+https://labs.consol.de/nagios/mod-gearman/#_installation
+
+lookup in prebuild packages http://mod-gearman.org/download/

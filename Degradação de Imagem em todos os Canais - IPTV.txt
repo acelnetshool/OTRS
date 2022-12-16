@@ -1,0 +1,29 @@
+Despiste- 1ª Linha Helpdesk:
+1. Verificar do Lado do Cliente: "Ligação do Cabo UTP"
+2. Verificação da ligação do Cabo HDMI DVL
+3. Restart HGW
+--------------------------------
+Despiste Rede IP:
+1. Validar a atualização do HGW
+--------------------------------
+Despiste Equipe AO:
+1. Verificar através do ZAP BO: "Manifestproxy" Os pedido de sintonizaçao de canais se estão a repetir-se 
+continuamente.....ao fim de alguns minutos a caixa pede novamente a mesma stream.
+
+OBS: Quando a caixa esta em "live" não é suposto ao fim de alguns minutos pedir a mesma "stream"
+Esse facto dá-se a erro de comunicação e reencaminha-se a equipe de Rede IP.
+
+Nota: Quer dizer que a meio do live teve problemas e voltou a pedir tudo de inicio...!
+
+----------------
+2. Verificar na area Circuito Zap BO a "ultima comunicação" do equipamento.
+3. Verificar no hepee-Iptv:
+3.1. Pegar o Mac Address da BOX e colar no Kibana para despiste;
+3.2. No Kibana validar -> Nota: Devemos ter atenção aos tempos dos pedidos "ultimos: 15min, 24h, 3h": 
+Filtro Kibana:
+> Tempo:
+> Status_code:"para ver se está a dar erro ou nao"
+> http_request:
+> time_duration:"Tempo que os pedidos estão a demorar para o cliente"
+> bytes_sent:"para ver a quantidade de informação nos pedidos de audio e video"
+

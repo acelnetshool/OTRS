@@ -1,0 +1,76 @@
+widvine trata das encrypta
+
+Transcodificação é a conversão direta de digital para digital de uma codificação para outra
+
+Filebeat: TLT-DC-HAPPE00
+# cat /etc/filebeat/filebeat.yml
+Nota: No lado do happe monitora uma serie de logs na pasta:# ll /var/log/hapee-2.2/
+
+"Filebeat" filtra os logs e envia para o "logstash" que se encarrega peça organizaçao "filtro especifico" e passa para o "ELK" - filtro e vizualizaça
+
+-----------------------------------------
+CDN [Stream que já passaram] - Responsaver pelos contéudos já passados (Servidores de conteudos passados)ex: novelas, bonecos, filme gravados etc.
+TLT-DC-CDN00 Á TLT-DC-CDN02 -> Bate nos CDN quando o programa esta completamente gravado.
+-------------------------------------------------------
+Nota: Se estiver ainda em live e fizer o pause, restart, npvr ainda é responsabilidade dos wowza
+-----------------------------------------
+WTFARM [Stream Live] - Conteúdos que esta a ser transmitido [LoadBalancer - faz a divisão dos pedidos de forma a não sobrecarregar os servidores]
+TLT-DC-WTFARM00 Á TLT-DC-WTFARM09 -> A distribuição passa devido aos canais que estão a ser gravados ZAPR 
+------------------------------------------------
+NBE [Direitos/Nordija] - Responsavel pelos direitos onde vizualiza se a pessoa tem ou não direitos para vizualizar os conteudos.
+Busca a imagem
+TLT-DC-NBE00 Á TLT-DC-NBE02
+---------------------------------------------------
+
+1. Nós do ELK (Servidores amarrados ao ELK/Instalados)
+Hostname:TLT-DC-ELKPRD00 - 10.151.52.245
+Hostname:TLT-DC-ELKPRD01 - 10.151.52.246
+Hostname:TLT-DC-ELKPRD02 - 10.151.52.247
+-----------------------------------------------------
+2. Kibana: Verificar stream com falha
+1º Select index: wowza-*
+2º Search: "found"
+- agent.hostname: verificar o servidor
+- message: filtrar o canal da stream em falta
+Nota: O alarme no Naemon dura cerca de 15 minutos
+---------------------------------------------
+3. kibana: verificar canais com maior volume de consumo no servidor
+1º vizualization:
+2º IPTV-wowza - channel vs Server
+---------------------------------------
+Focus_zone:APP Nordija: -> Responsavel pela gestão das Boxs e vizualização dos videos
+Wowza: Transcolders?-> logs dos wowza Resposavel por passar as stream para a frente (vizualização)
+Logs dos Loab Balance - Happear
+-----------------------------------------------------
+Nota: Todo trafego passa nos IRIs IIS resposavel por servir as Boxs
+OBS: Todos os logs são enviados para o ELK para verificar as metricas de todos os serviços
+- Verificar as falhas
+- Verificar o que esta otimo
+Etc.
+-------------------------------------------------
+O ELK da ZAP é gerido pela equipa de Infraestrutura
+------------------------
+graphs kibana
+wowza by stream_zap - >Verificar as stream que estão a ser consumidas
+happe by farm - verificar o load balancer com maior carga em relação aos outros
+stream not found -> Verificar as stream em falta "eeros"
+box do cliente (iris vs iptv) -> procurar a box do cliente [analisar se é uma box do tipo Iris ou IPTV]
+------------------------------------
+DRM - Gestão de direitos
+PROVISIONG - ?
+PRODUÇÃO - FICHEIRO NOS SERVIDORES WTFARMA - 
+IPTV SHARED - GUARDAR OS CERTIFICADOS E GERAR OS CERTIFICADOS - GITLAB
+CERTIFICADO DE DRM ?
+REVOGAR CERTIFICADOS?
+-------------------------------------------
+DRM - TRATA DOS DIREITOS DAS CAIXA - AUTORIZAÇÃO DA PASSAGEM DAS STREAMS CERTIFICADOS. - VALIDAR SE A CAIXA VAI TER DIREITO AS STREAMS
+
+CD /OPT/DRM
+-------------------------------------------
+Caixa com problema : aprovisionar caixa no DRM
+
+
+
+
+
+

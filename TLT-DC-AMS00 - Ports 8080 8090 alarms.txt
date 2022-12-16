@@ -1,0 +1,22 @@
+TLT-DC-AMS00 - Ports 8080 8090 alarms
+-------------------------------------
+The following alarms are active in Naemon:
+
+HOST - TLT-DC-AMS00
+
+Services:
+
+"Port 8080 - STBs"
+"Port 8090 - REST CONF"
+
+Restart:
+
+#kill screens
+
+screen -X -S AMS_SERVER quit
+
+screen -X -S AMS_WATCHDOG quit
+
+#start screens
+
+sh /home/suporte/startscript.sh

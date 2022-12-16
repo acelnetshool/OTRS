@@ -1,0 +1,17 @@
+------------------------------------------------------------------------------------------------
+Reenvio de direitos - Tem como bojectivo atualizar todos os sistemas.
+
+IRIS: Temos a Nagra e Os AAAs
+IPTV: DRM:Nordija:diretiros faz atualização dos sistemas:manifesto proxy_analisar os pacotes
+Provisiong: aprovisiona todas as caixas esta no meio do DRM e do ZW
+
+DRM:duas informações: a caixa e o produto que o cliente pode validar.
+
+-----------------------------------
+Canal TPA
+Validar na nordija se altera o bundle preso
+
+-------------------------
+Filebit manda para elasticsearch
+
+

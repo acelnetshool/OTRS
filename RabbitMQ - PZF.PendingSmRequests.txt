@@ -1,0 +1,9 @@
+RabbitMQ - PZF.PendingSmRequests
+
+Por norma basta aguarda uns 5 a 10m e o alarme deverá regularizar.
+
+Caso não regularize
+
+1.Fazer recycle das app pools no IIS dos PZFFE00 e/ou PZFFE01.
+
+2.Aguardar 1 a 2min e reagendar o check.

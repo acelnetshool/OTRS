@@ -1,0 +1,15 @@
+Check failed npvr content - MongoSR00
+---------------
+Naemon:
+/usr/lib64/nagios/plugins/check_npvr_failed.py -H 10.151.8.193
+
+Em Falha: 1 last failed: CPTR2161220111066508
+
+Mongo:
+
+db.getCollection('Asset').find({'_id':'CPTR2161220111066508'})
+
+Esperar que acabe
+
+BO:
+SE FALSO POSITIVO Fix Asset && Fix Recording

@@ -1,0 +1,47 @@
+#Definido comando para connection-time à DB
+
+cd /etc/nrpe.d/
+
+1º
+/usr/lib64/naemon/plugins/check_nrpe -H 10.151.152.129 -c check_mysql_health
+
+2º
+
+#Serviço naemon my_connection-time
+usa comando para verificar serviço check_mysql_health query para 
+verificar connection-time
+
+TLT-DC-NBEDBS-pp
+
+check_mysql_health executa querys com variaveis passadas no comando
+
+Nota:
+
+Então onde está a ser executado o check_mysql_health ?
+
+[15:00] Daniel Rosa
+o check_mysql_health é que têm definido o user e pass no servidor NBEDBS
+
+[15:01] Daniel Rosa
+é executado no servidor da DB
+
+[15:02] Daniel Rosa
+o nrpe liga-se ao servidor da DB
+
+[15:02] Daniel Rosa
+e executa esse serviço
+
+[15:03] Daniel Rosa
+que faz querys à db
+
+[15:03] Carlos Peixoto
+Então onde a achas que pode estar a ser metida a autenticação?
+
+R: cat /etc/nrpe.d/ok-mysql.cfg
+
+command[check_mysql_health]=/usr/lib64/nagios/plugins/check_mysql_health --userbname nagios --password Nag10s --mode '$ARG3$' --warning '$ARG4$' --critical '$ARG5$' '$ARG6$'
+
+
+
+
+

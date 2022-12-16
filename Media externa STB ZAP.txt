@@ -1,0 +1,5 @@
+As STBs da ZAP não suportam media externo. 
+--------------------------------------------------------------
+DTH - Suporta Medias externas como USB
+IPTV - A porta USB é para fins técnicos e não para usuarios comuns.
+

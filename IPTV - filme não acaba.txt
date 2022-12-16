@@ -1,0 +1,35 @@
+IPTV - Filme não acaba
+
+1. validar na STB se possivel
+2. ver se o tempo de reclamação é igual (se for pode ser um problema no conteudo)
+3. validar o ficheiro no storage
+[david.correia@TLT-DC-WTFARM10 ~]$ ffprobe /mnt/dstore/vod/CIPKF7C3852BEF8647AF/002801_ZAP_066633_LUS_VINGUERRINFIN_1073058_V2_MOVIE.mp4
+
+Duration: 02:23:08.28, start: 0.000000, bitrate: 6139 kb/s
+
+*validar os bytes enviados para o cliente no kibana CDN
+
+*validar se o pedido directo ao CDN é igual (bytes enviados)
+[david.correia@TLT-DC-WTFARM10 ~]$ curl -I http://10.151.152.34/vodhls/CIPKF7C3852BEF8647AF/002801_ZAP_066633_LUS_VINGUERRINFIN_1073058_V2_MOVIE.mp4/index.m3u8
+
+HTTP/1.1 200 OK
+
+Server: nginx/1.16.0
+
+Date: Fri, 17 Dec 2021 10:12:46 GMT
+
+Content-Type: application/vnd.apple.mpegurl
+
+Content-Length: 135638
+
+Connection: keep-alive
+
+ETag: "-1-211d6"
+
+Access-Control-Allow-Headers: *
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+
+Accept-Ranges: bytes

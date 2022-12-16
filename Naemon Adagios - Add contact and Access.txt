@@ -1,0 +1,15 @@
+Naemon Adagios - Add contact and Access
+1. Adicionar contact via adagios:
+
+Configuration > copy contact > edit
+
+2. Adicionar htpasswd
+
+cd /etc/naemon
+
+htpasswd htpasswd user.name
+
+------------------------------------
+Nota: aceder como super root
+
+>sudo vi -s sh

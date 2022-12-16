@@ -1,0 +1,36 @@
+ZRE getLiveRecommendation
+
+Checks
+
+- TLT-DC-ZRE01 HTTP getLiveRecommendation
+- TLT-DC-ZRE01 HTTP getLiveRecommendation-VOD
+- TLT-DC-ZREDB01 HTTP getLiveRecommendation
+- TLT-DC-ZREDB01 HTTP getLiveRecommendation-VOD
+
+Solução 1
+
+Reiniciar os serviços a correr no supervisord por ssh.
+
+curl http://admin:admin@localhost:9001/index.html?processname=zapre&amp;action=stop && sleep 1 && kill -9 $(ps aux | grep runserver.py | grep -v grep | awk {'print$2'}) && sleep 1 && curl http://admin:admin@localhost:9001/index.html?processname=zapre&amp;action=start
+
+Alternativa
+
+Efetuar os passos manualmente.
+
+- Supervisor ZREDB01
+- Supervisor ZRE01
+
+Credenciais: admin:admin
+
+1. Stop
+2. Kill kill -9 $(ps aux | grep runserver.py | grep -v grep | awk {'print$2'})
+3. Start
+
+Solução 2
+
+Se a solução 1 não resolver, foi os serviços de backend (PIO) que pararam.
+
+1. Restart PIO /opt/PredictionIO/bin/pio-stop-all && /opt/PredictionIO/bin/pio-start-all
+2. Restart ao screen EPG screen -DR PIO_EPG @TODO: commando para iniciar
+3. Restart ao screen VOD screen -DR PIO_VOD @TODO: commando para iniciar
+4. Continuar na Solução 1

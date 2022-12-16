@@ -1,0 +1,34 @@
+# Baixar a imagem do Nagios
+[root@naemon ~]# docker pull jasonrivers/nagios
+
+#Listar as imagens dos containers em execução
+[root@naemon ~]# docker images
+REPOSITORY                       TAG                           IMAGE ID       CREATED        SIZE
+acaluegedocker/zabbix01112022    MYSQL_Zabbix_1.0              14905234a4ed   12 days ago    495MB
+mysql                            5.7                           14905234a4ed   12 days ago    495MB
+acaluegedocker/zabbix01112022    Zabbix_Web_Apache_MYSQL_1.0   c169f1c29750   6 weeks ago    335MB
+zabbix/zabbix-web-apache-mysql   ubuntu-4.0-latest             c169f1c29750   6 weeks ago    335MB
+acaluegedocker/zabbix01112022    Zabbix_Server_MYSQL_1.0       f8116abccb23   6 weeks ago    255MB
+zabbix/zabbix-server-mysql       ubuntu-4.0-latest             f8116abccb23   6 weeks ago    255MB
+jasonrivers/nagios               latest                        0c33dd4f2c3e   2 months ago   794MB ---------<<<<<<
+
+#Nomeando o container e executando em modo de depreciação e mapeando o numero da porta
+[root@naemon ~]# docker run --name nagios -dp 8090:80 jasonrivers/nagios
+
+#Aceder no Browser o Nagios:
+User:nagiosadmin
+senha:nagios
+-------------------------------
+root@naemon ~]# docker exec -it bbdeb8fab105 bash
+Error: No such container: bbdeb8fab105
+[root@naemon ~]# docker run -it xetusoss/naemon bash
+Installing /etc/naemon
+Installing /var/log/naemon
+Installing /etc/thruk
+Installing /var/log/thruk
+!! SMTP not configured, email will be sent !!
+Adding password for user thrukadmin
+Set the thrukadmin password to: NTE1MmQz
+ * Starting naemon:                                                                                                                                        [ OK ] 
+ * Starting Apache httpd web server apache2                                                                                                                       
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.17.0.6. Set the 'ServerName' directive globally to suppress this message

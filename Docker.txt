@@ -1,0 +1,147 @@
+Nota: 
+docker rmi 216c552ea5ba : Deletar imagem (docker images)
+[root@fedora master]# docker rm 216c552ea5ba
+-----------------------------------------------------
+#Partilhar o volume e os projectos do nginx no local para salvar os daddos quado fechar o container
+docker run -p 8000:80 -v $(pwd)/html:/usr/share/nginx/html nginx
+
+
+
+
+docker run - cria um container
+docker exec - executa um comando que esta rodando contra um container
+[root@localhost-live liveuser]# docker ps 
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+3cb5f107d62a   nginx     "/docker-entrypoint.…"   10 minutes ago   Up 10 minutes   0.0.0.0:8000->80/tcp, :::8000->80/tcp   infallible_swanson
+b3d13babee05   nginx     "/docker-entrypoint.…"   14 minutes ago   Up 14 minutes   80/tcp                                  sleepy_rosalind
+
+[root@localhost-live liveuser]# docker exec -it sleepy_rosalind bash
+
+Aceder as configurações do NGINX
+root@b3d13babee05:/# cd /usr/share/nginx/html/
+root@b3d13babee05:/usr/share/nginx/html# ls
+50x.html  index.html
+----------------------------
+
+
+1.Instalação do docker
+sudo dnf install gnome-terminal
+sudo dnf -y install /path/to/package.rpm
+sudo dnf install dnf-plugins-core -y
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+sudo dnf install docker-ce docker-ce-cli containerd.io
+
+#Instalação do caminho
+sudo dnf install /path/to/file.rpm -y
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+chmod u+x ./get-docker.sh
+sudo sh ./get-docker.sh
+
+#Inicializar o docker
+sudo systemctl start docker
+
+
+#Container Teste hello-world
+sudo docker run hello-world
+
+#Verificar containers existente
+docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+#Verificar a hora de criação do container
+docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+d02bbb823bdb   hello-world   "/hello"   16 minutes ago   Exited (0) 16 minutes ago             pensive_dewdney
+
+#Criar imagem container ubuntu e executar no docker através do bash
+docker run -it ubuntu bash
+
+#verificar a versão no ubuntu
+uname -a
+
+#Update do container ubuntu
+apt update
+
+#Instalar o vim no container ubuntu
+apt install vim -y
+
+#Instalar o nginx no container ubuntu
+apt install nginx
+
+#Sair do container
+Ctrl+d
+
+#Verificar se existem container criado
+[root@localhost-live liveuser]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED        STATUS                        PORTS     NAMES
+b96c18f0ff03   ubuntu        "bash"     13 hours ago   Exited (130) 15 minutes ago             mystifying_pascal
+d02bbb823bdb   hello-world   "/hello"   14 hours ago   Exited (0) 14 hours ago                 pensive_dewdney
+
+#Baixar a imagem do container nginx
+docker run nginx
+
+#Limpar
+clear
+
+#Aceder um processo do container "nginx" de dentro para fora "maquina local"
+docker run -p 8000:80 nginx
+
+enter ->para rodar
+
+#verificar a porta de abertura para o processo existente para fora da maquina
+docker ps
+
+
+
+#Criar docker file para salvar as informações automaticamente
+CODE .
+
+----------------------------
+FROM nginx:latest
+
+COPY html/index.html /usr/share/nginx/html/index.html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemmon off;"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

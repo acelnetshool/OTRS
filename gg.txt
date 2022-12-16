@@ -1,0 +1,14 @@
+Pre requesitos: Curso NGINX
+----------------------
+Sysadmin
+DevOps
+Solution Architect
+NGINX Core
+Text Editor: Vim, Vi, Emacs
+Entendendo Topologi de rede
+
+------------Teste
+
+sudo chmod +x WowzaStreamingEngine-4.8.19+4-linux-x64-installer.run.
+sudo ./WowzaStreamingEngine-4.8.19+4-linux-x64-installer.run.
+Follow the onscreen instructions.

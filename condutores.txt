@@ -1,0 +1,36 @@
+condutores:
+capacidade de enviar dados de um programa para o outro e vice-versa
+----------------
+
+Enviando o relatorio dos logs "naemon" para um arquivo de "Teste"
+[acaluege@naemon ~]$ cat naemon.log > /home/acaluege/Teste
+
+
+Tem como objectivo de colocar os dados existente num arquivo para o outro.
+
+#Por ordenado um determinado ficheiro
+[acaluege@naemon ~]$ vi pessoas
+[acaluege@naemon ~]$ cat pessoas
+agua
+terr
+arma
+aula
+bela
+
+#Ordenar "Visualizar" de forma Ascendente
+[acaluege@naemon ~]$ cat pessoas | sort
+agua
+arma
+aula
+bela
+terr
+
+#Envio ordenado para um outro ficheiro
+[acaluege@naemon ~]$ cat pessoas | sort > Teste
+[acaluege@naemon ~]$ cat Teste
+agua
+arma
+aula
+bela
+terr
+

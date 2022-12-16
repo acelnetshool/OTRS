@@ -1,0 +1,33 @@
+#Alterar senha dos usuarios em Lote 
+
+1. colocar o comando e Enter
+2. nome do usuario[edson]:[senha]
+[root@naemon ~]# chpasswd
+edson:123
+root:123
+ana:123
+
+
+Nota: Para Salvar devemos colocar
+CTRL+d
+
+----------------------------------------
+# Definir conjunto de senhas a partir do ficheiro
+
+1. Definir os usuarios dentro do ficheiro
+[root@naemon ~]# vi senhas.txt
+
+edson:432
+ana:432
+fernando:432
+
+:x ->Salvar
+
+2. Apontar para ativar as passwords em lote
+[root@naemon ~]# chpasswd < senhas.txt
+
+3. Definir as senhas com criptografias MD5
+[root@naemon ~]# chpasswd --md5 < senhas.txt
+
+4. Verificar com CAT - Nota: etc/shadow é onde ficam as senhas criptografadas
+[root@naemon ~]# cat /etc/shadow

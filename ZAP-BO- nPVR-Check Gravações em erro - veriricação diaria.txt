@@ -1,0 +1,23 @@
+# Checagem gravações com erros diariamente.
+1. Acesso BO > IRIS > Outros > nPVR - Check Gravações em erro
+----depois CorrigirAsset + Corrigir Recording
+
+> 1º CorrigirAsset: Executar
+> 2º Corrigir Recording: Executar
+
+
+Nota: Isso corrige gravações que foram marcadas em erro na IRIS, mas que estão em storage e foram falsos positivos
+
+3. Após isso deve aparecer No Records
+
+Nota: 
+
+Aceder o site da NOS para verificar possiveis erros na GRID/IRIS NOS
+
+http://10.151.8.1/nPVR_BO/
+
+user:
+ IRISZAP\BO_NPVR
+pw:
+Q2w3e4r5
+

@@ -1,0 +1,5 @@
+
+Nota: devemos colocar o barra e o nome a seguir
+[root@TLT-DC-NAEMON hosts]# vi hosts/Rede\ IP/
+[root@TLT-DC-NAEMON hosts]# cd Rede\ Core/
+grep -rnw '/etc/naemon/okconfig' -e 'check_passive_noreport'

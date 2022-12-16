@@ -1,0 +1,7 @@
+/var/log : Logs do sistema
+/var/log/programa (nginx..etc) : Logs do sistema
+shred -n 70 -v -u arquivo : Destruir totalmente o arquivo [70 vezes][-u trunca e remove definitivamente]
+Ex:# shred -n 70 -v -u error.log-20220712.gz 
+
+
+[root@naemon Teste]# shred -n 30 -u Apagar arquivos definitivamente

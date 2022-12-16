@@ -1,0 +1,128 @@
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git commit -m "adiciona o canal-GirassolTV"
+[adiciona-canal-girassolTV 1d6e762] adiciona o canal-GirassolTV
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git show
+commit 1d6e762b7caf93775dba240fd15ed75e629ed4cd (HEAD -> adiciona-canal-girassolTV)
+Author: afonso.calueget <afonso.caluege@zap.co.ao>
+Date:   Wed Oct 19 15:14:56 2022 +0100
+
+    adiciona o canal-GirassolTV
+
+diff --git a/channels_be_map b/channels_be_map
+index 6bda38e..859769b 100644
+--- a/channels_be_map
++++ b/channels_be_map
+@@ -9,7 +9,7 @@ r5.cdn.iptv.zap r5
+ rnacional.cdn.iptv.zap rnacional
+ rviana.cdn.iptv.zap    rviana
+ rescola.cdn.iptv.zap   rescola
+-2275.cdn.iptv.zap      2471
++2471.cdn.iptv.zap      2471
+ 2275.cdn.iptv.zap      2275
+ 2276.cdn.iptv.zap      2276
+ 2280.cdn.iptv.zap      2280
+diff --git a/hapee-lb.cfg.d/003.backends.conf b/hapee-lb.cfg.d/003.backends.conf
+index 19dd448..7b1c10c 100644
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 447 bytes | 447.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: View merge request for adiciona-canal-girassolTV:
+remote:   https://gitlab.zap.intra/integracao/iptv/hapee/merge_requests/43
+remote:
+To https://gitlab.zap.intra/integracao/iptv/hapee.git
+   020adf3..1d6e762  adiciona-canal-girassolTV -> adiciona-canal-girassolTV
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git add .
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git status
+On branch adiciona-canal-girassolTV
+Your branch is up to date with 'origin/adiciona-canal-girassolTV'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hapee-lb.cfg.d/003.backends.conf
+
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git commit -m " Organizar o Canal GirassolTV"
+[adiciona-canal-girassolTV f634bbc]  Organizar o Canal GirassolTV
+ 1 file changed, 17 insertions(+), 17 deletions(-)
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 382 bytes | 382.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: View merge request for adiciona-canal-girassolTV:
+remote:   https://gitlab.zap.intra/integracao/iptv/hapee/merge_requests/43
+remote:
+To https://gitlab.zap.intra/integracao/iptv/hapee.git
+   1d6e762..f634bbc  adiciona-canal-girassolTV -> adiciona-canal-girassolTV
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git show
+commit f634bbcc02ec5ae1d2e627f924f7fe4c59ee91d1 (HEAD -> adiciona-canal-girassolTV, origin/adiciona-canal-girassolTV)
+Author: afonso.calueget <afonso.caluege@zap.co.ao>
+Date:   Wed Oct 19 16:01:38 2022 +0100
+
+     Organizar o Canal GirassolTV
+
+diff --git a/hapee-lb.cfg.d/003.backends.conf b/hapee-lb.cfg.d/003.backends.conf
+index 7b1c10c..d5332de 100644
+--- a/hapee-lb.cfg.d/003.backends.conf
++++ b/hapee-lb.cfg.d/003.backends.conf
+@@ -307,23 +307,6 @@ backend channel_rescola_be
+     server TLT-DC-WTFARM07 10.151.137.23:1935 check
+     server TLT-DC-WTFARM09 10.151.137.25:1935 check
+
+-backend channel_2471_be
+-    balance source
+-    option httpchk
+-    http-check send meth GET uri /ZAP/2471.stream_zap/manifest.mpd
+-    http-check expect status 200
+-    default-server inter 10s fall 2 rise 3
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git status
+On branch adiciona-canal-girassolTV
+Your branch is up to date with 'origin/adiciona-canal-girassolTV'.
+
+nothing to commit, working tree clean
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$ git clone https://gitlab.zap.intra/integracao/iptv/wowzas.git
+ *  History restored 
+
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$
+ *  History restored 
+
+
+afonso.caluege@LT1329FNST MINGW64 ~/Desktop/hapee (adiciona-canal-girassolTV)
+$
+
+
+
+
+
+
+
+
+

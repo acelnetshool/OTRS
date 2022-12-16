@@ -1,0 +1,3 @@
+Despiste:
+1. Box sem IP HGW e Sem IP VOD
+Nota: Encaminhar pedido para a Rede IP.

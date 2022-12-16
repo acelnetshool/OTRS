@@ -1,0 +1,3 @@
+#Executar o CD no Linux
+---------------------------
+[root@naemon acaluege]# apt-cdrom add

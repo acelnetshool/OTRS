@@ -1,0 +1,30 @@
+Imprime a lista de pacotes
+$ sudo dpkg -l
+
+Para descobrir se um pacote específico está instalado
+$ sudo yum list installed | less
+
+Para descobrir se o pacote descompactado está instalado
+sudo yum list installed | grep unzip
+
+listar todos os pacotes instalados
+$ sudo rpm -qa
+
+mostrar se o pacote (programa) naemon
+$ sudo rpm -q naemon
+
+obter mais informações sobre o pacote consultado, passe -i :
+$ sudo rpm -qi naemon
+
+Para remover o pacote
+$ sudo yum remove naemon-1.3.1-0.noarch
+
+Contar o número de pacotes instalados
+$ sudo rpm -qa | wc -l
+
+---------------
+remover o serviço de firewalld
+sudo systemctl unmask firewalld
+----------------------
+Comando para instalar pacotes baixados
+tar -zxvf nginx-1.19.3.tar.gz nginx-1.19.3

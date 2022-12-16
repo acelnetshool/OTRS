@@ -1,0 +1,3 @@
+#vi /etc/apt/sources.list
+------------
+Aparece uma lista de pacotes e origem de onde foram baixados.

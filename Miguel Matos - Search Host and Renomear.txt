@@ -1,0 +1,34 @@
+'/etc/naemon/okconfig//hosts/ZON_VPN_Peer.cfg'
+'/etc/naemon/okconfig//hosts/ZON_VPN_Peer.cfg', starting on line 11
+
+'/etc/naemon/okconfig//hosts/ZON_VPN_Peer.cfg'
+--------------------------------------------
+
+
+[root@TLT-DC-NAEMON hosts]# vi /etc/naemon/okconfig/hosts/NOS_VPN_Peer.cfg
+
+--------------------------------
+
+
+ - Não consigo editar no adagios
+ - Não consigo encontrar no adagios
+ - Nãoe encontro no adagios
+Mkesh.Tunel.MZ - Não encontro 
+
+
+Mcel_MKesh_VPN_Peer
+LLELO_VPN_Endpoint - Feito
+AWS_ZAP_Prod_VPN_Endpoint - Feito
+EMOLA_VPN_Endpoint - Feito
+BIM_VPN - Feito
+EMOLA_VPN_Endpoint - Feito
+Kwattel_Server_PROD - Feito
+MPESA_VPN_Peer - Feito
+Mcel_VPN_Peer - Feito
+ODKAS_VPN_Peer - Feito
+TELOPAY_VPN - Feito
+TOPUP_DR_CRYPTOMAP_VPN - Feito
+TOPUP_HQ_VPN - Feito
+VODACOM HQ_VPN_Peer - Feito
+ZON_VPN_Peer - Feito
+

@@ -1,0 +1,34 @@
+# Como vericar e instalar pacotes em falta:
+
+Nota: Para a instalação somente ecxcutar o "nome em negrito" sem a colocação da versão.
+
+[acaluege@naemon ~]$ nmap
+-bash: nmap: command not found
+
+1.# Verificar e baixa os pacotes existentes
+[acaluege@naemon ~]$ yum whatprovides nmap
+Rocky Linux 8 - AppStream                        412 kB/s |  10 MB     00:25
+Rocky Linux 8 - BaseO  6% [=                   ] 119 kB/s | 513 kB     01:02 ETA
+
+Last metadata expiration check: 0:00:01 ago on Tue 20 Sep 2022 04:57:35 AM WAT.
+nmap-2:7.70-6.el8.x86_64 : Network exploration tool and security scanner
+Repo        : appstream
+Matched from:
+Provide    : nmap = 2:7.70-6.el8
+
+2.# Apos terminado instalar o pacote desejado:
+[root@naemon acaluege]# yum install nmap
+
+Last metadata expiration check: 0:42:16 ago on Tue 20 Sep 2022 04:18:47 AM WAT.
+Dependencies resolved.
+=================================================================================
+ Package           Architecture   Version                Repository         Size
+=================================================================================
+Installing:
+ nmap              x86_64         2:7.70-6.el8           appstream         5.8 M
+Installing dependencies:
+ nmap-ncat         x86_64         2:7.70-6.el8           appstream         236 k
+
+Transaction Summary
+=================================================================================
+Install  2 Packages
